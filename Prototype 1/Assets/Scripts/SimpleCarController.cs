@@ -16,6 +16,8 @@ public class SimpleCarController : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    public string verticalAxisName;
+    public string horizontalAxisName;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -38,8 +40,8 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical1");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal1");
+        float motor = maxMotorTorque * Input.GetAxis(verticalAxisName);
+        float steering = maxSteeringAngle * Input.GetAxis(horizontalAxisName);
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
