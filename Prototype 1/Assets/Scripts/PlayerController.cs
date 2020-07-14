@@ -34,5 +34,7 @@ public class PlayerController : MonoBehaviour
     public void Celebrate()
     {
         print(gameObject.name + " Celebrates!");
+
+        GetComponent<Animator>().enabled = true;
     }
 }
