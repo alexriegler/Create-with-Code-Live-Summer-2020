@@ -23,7 +23,14 @@ public class SimpleCarController : MonoBehaviour
     public string horizontalAxisName;
 
     // Center of mass
+    public Vector3 com;
+    public Rigidbody rb;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = com;
+    }
 
     // finds the corresponding visual wheel
     // correctly applies the transform
