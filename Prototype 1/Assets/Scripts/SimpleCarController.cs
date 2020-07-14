@@ -23,7 +23,6 @@ public class SimpleCarController : MonoBehaviour
     {
         if (collider.transform.childCount == 0)
         {
-            // print("no wheel found");
             return;
         }
 
@@ -32,12 +31,6 @@ public class SimpleCarController : MonoBehaviour
         Vector3 position;
         Quaternion rotation;
         collider.GetWorldPose(out position, out rotation);
-
-        print("Position: " + position);
-        print("Rotation: " + rotation);
-
-        print("Cylinder Position: " + visualWheel.transform.position);
-        print("Cylinder Rotation: " + visualWheel.transform.rotation);
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
