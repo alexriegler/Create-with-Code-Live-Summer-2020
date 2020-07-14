@@ -8,6 +8,9 @@ public class EndTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.CompleteLevel();
+        if (other.tag == "Player")
+        {
+            gameManager.CompleteLevel();
+        }
     }
 }
