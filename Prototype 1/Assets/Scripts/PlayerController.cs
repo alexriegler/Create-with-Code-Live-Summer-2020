@@ -30,11 +30,4 @@ public class PlayerController : MonoBehaviour
         // Rotates the car based on horizontal input
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
-
-    public void Celebrate()
-    {
-        print(gameObject.name + " Celebrates!");
-
-        GetComponent<Animator>().enabled = true;
-    }
 }
