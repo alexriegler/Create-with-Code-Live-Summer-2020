@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    private float speed = 1.0f;
-    private float rotationSpeed = 100.0f;
+    private float speed = 0.5f;
+    private float rotationSpeed = 120.0f;
     public float verticalInput;
 
     public bool invertControls = true;
