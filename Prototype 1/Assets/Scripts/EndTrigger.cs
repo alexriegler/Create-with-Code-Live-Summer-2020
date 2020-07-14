@@ -10,6 +10,7 @@ public class EndTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            other.GetComponent<PlayerController>().Celebrate();
             gameManager.CompleteLevel();
         }
     }
