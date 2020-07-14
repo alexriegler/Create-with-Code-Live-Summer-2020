@@ -13,11 +13,17 @@ public class AxleInfo
 
 public class SimpleCarController : MonoBehaviour
 {
+    // Car wheels
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+
+    // Input
     public string verticalAxisName;
     public string horizontalAxisName;
+
+    // Center of mass
+
 
     // finds the corresponding visual wheel
     // correctly applies the transform
