@@ -1092,7 +1092,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &349530926
+--- !u!114 &349530931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1101,9 +1101,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 349530924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fb45c5838de5f4a9e1e88ba31bdbb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 024cd563bd4d521438b36a7d828b01df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalAxisName: Horizontal2
+  verticalAxisName: Vertical2
 --- !u!1001 &425238951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3478,6 +3480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024cd563bd4d521438b36a7d828b01df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalAxisName: Horizontal1
+  verticalAxisName: Vertical1
 --- !u!54 &1601884162
 Rigidbody:
   m_ObjectHideFlags: 0
