@@ -6477,8 +6477,8 @@ MonoBehaviour:
   maxMotorTorque: 2000
   maxSteeringAngle: 8
   brakeTorque: 1000
-  idealRPM: 30
-  maxRPM: 1200
+  idealRPM: 100
+  maxRPM: 1400
   antiRollStrength: 20000
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
