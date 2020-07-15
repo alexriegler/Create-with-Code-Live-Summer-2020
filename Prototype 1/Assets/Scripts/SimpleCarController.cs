@@ -57,7 +57,7 @@ public class SimpleCarController : MonoBehaviour
     void FixedUpdate()
     {
         // TODO: Remove debug print
-        print("Speed: " + Speed.ToString() + "km/h\t RPM: " + Rpm.ToString());
+        print("Speed: " + Speed.ToString("f0") + "km/h\t RPM: " + Rpm.ToString("f0"));
 
         // Get driving input
         float motorTorque = maxMotorTorque * verticleInput;
