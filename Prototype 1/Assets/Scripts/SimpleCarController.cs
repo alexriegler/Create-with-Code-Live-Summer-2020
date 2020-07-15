@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Experimental.PlayerLoop;
 
 [System.Serializable]
 public class AxleInfo
@@ -17,10 +18,20 @@ public class SimpleCarController : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    public float brakeTorque;
+    public float idealRPM = 500f;
+    public float maxRPM = 1000f;
+    public float antiRollStrength = 20000.0f;
+
+    private bool brakesApplied = false;
 
     // Input
     public string verticalAxisName;
     public string horizontalAxisName;
+    public string brakeButton;
+    
+    private float verticleInput;
+    private float hoziontalInput;
 
     // Center of mass
     public Vector3 comOffset;
@@ -28,9 +39,67 @@ public class SimpleCarController : MonoBehaviour
 
     void Start()
     {
+        // Set the center of mass of the car to the offset
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = comOffset;
     }
+
+    private void Update()
+    {
+        // Get driving input
+        verticleInput = Input.GetAxis(verticalAxisName);
+        hoziontalInput = Input.GetAxis(horizontalAxisName);
+
+        // Check if brakes are being applied
+        brakesApplied = Input.GetButton(brakeButton) ? true : false;
+    }
+
+    void FixedUpdate()
+    {
+        // TODO: Remove debug print
+        print("Speed: " + Speed.ToString() + "km/h\t RPM: " + Rpm.ToString());
+
+        // Get driving input
+        float motorTorque = maxMotorTorque * verticleInput;
+        float steeringTorque = maxSteeringAngle * hoziontalInput;
+
+        ControlRpm(ref motorTorque);
+
+        Stabilize();
+
+        ApplyTorque(motorTorque, steeringTorque);
+
+        if (brakesApplied)
+        {
+            ApplyBrakes();
+        }
+        else
+        {
+            ReleaseBrakes();
+        }
+    }
+
+    // Properties
+    public float Speed
+    {
+        // Returns the wheel speed in km/h
+        get
+        {
+            WheelCollider wheel = axleInfos[0].rightWheel;
+            return wheel.radius * Mathf.PI * wheel.rpm * 60.0f / 1000.0f;
+        }
+    }
+
+    public float Rpm
+    {
+        // Returns the rotations per minute of the wheels
+        get
+        {
+            return axleInfos[0].rightWheel.rpm;
+        }
+    }
+
+    // Methods
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -51,13 +120,58 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
-    public void FixedUpdate()
+    void ControlRpm(ref float motorTorque)
     {
-        // Get driving input
-        float motor = maxMotorTorque * Input.GetAxis(verticalAxisName);
-        float steering = maxSteeringAngle * Input.GetAxis(horizontalAxisName);
+        if (Rpm < idealRPM)
+        {
+            // Replace MAGIC number 10.0f
+            motorTorque = Mathf.Lerp(motorTorque / 10.0f, motorTorque, Rpm / idealRPM);
+        }
+        else
+        {
+            // Apply max torque at ideal rpm and zero torque at max rpm
+            motorTorque = Mathf.Lerp(motorTorque, 0.0f, (Rpm - idealRPM) / (maxRPM - idealRPM));
+        }
+    }
 
-        // Apply torque to each wheel
+    void Stabilize()
+    {
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            WheelCollider leftWheel = axleInfo.leftWheel;
+            WheelCollider rightWheel = axleInfo.rightWheel;
+            WheelHit wheelHit;
+            float leftTravel = 1.0f;
+            float rightTravel = 1.0f;
+
+            bool isGroundedLeft = leftWheel.GetGroundHit(out wheelHit);
+            if (isGroundedLeft)
+            {
+                leftTravel = (-leftWheel.transform.InverseTransformPoint(wheelHit.point).y - leftWheel.radius) / leftWheel.suspensionDistance;
+            }
+
+            bool isGroundedRight = rightWheel.GetGroundHit(out wheelHit);
+            if (isGroundedRight)
+            {
+                rightTravel = (-rightWheel.transform.InverseTransformPoint(wheelHit.point).y - rightWheel.radius) / rightWheel.suspensionDistance;
+            }
+
+            float antiRollForce = (leftTravel - rightTravel) * antiRollStrength;
+
+            if (isGroundedLeft)
+            {
+                rb.AddForceAtPosition(leftWheel.transform.up * -antiRollForce, leftWheel.transform.position);
+            }
+            if (isGroundedRight)
+            {
+                rb.AddForceAtPosition(rightWheel.transform.up * antiRollForce, rightWheel.transform.position);
+            }
+        }
+    }
+
+    // Apply torque to each wheel
+    void ApplyTorque(float motor, float steering)
+    {
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
@@ -74,6 +188,26 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
     }
+
+    void ApplyBrakes()
+    {
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            axleInfo.leftWheel.brakeTorque = brakeTorque;
+            axleInfo.rightWheel.brakeTorque = brakeTorque;
+        }
+    }
+
+    void ReleaseBrakes()
+    {
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            axleInfo.leftWheel.brakeTorque = 0.0f;
+            axleInfo.rightWheel.brakeTorque = 0.0f;
+        }
+    }
+
+    // Debug
 
     // Draw center of mass gizmo
     private void OnDrawGizmos()
