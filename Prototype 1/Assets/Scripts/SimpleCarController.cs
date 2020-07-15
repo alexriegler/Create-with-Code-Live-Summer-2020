@@ -16,11 +16,15 @@ public class SimpleCarController : MonoBehaviour
 {
     // Car wheels
     public List<AxleInfo> axleInfos;
+
+    public float idealRPM = 500f;
+    public float maxRPM = 1000f;
+
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float brakeTorque;
-    public float idealRPM = 500f;
-    public float maxRPM = 1000f;
+    public float brakeForce;
+    
     public float antiRollStrength = 20000.0f;
 
     private bool brakesApplied = false;
@@ -197,6 +201,7 @@ public class SimpleCarController : MonoBehaviour
             axleInfo.leftWheel.brakeTorque = brakeTorque;
             axleInfo.rightWheel.brakeTorque = brakeTorque;
         }
+        rb.AddForce(Vector3.back * brakeForce);
     }
 
     void ReleaseBrakes()

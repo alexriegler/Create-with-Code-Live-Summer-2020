@@ -1851,11 +1851,12 @@ MonoBehaviour:
     rightWheel: {fileID: 349530928}
     motor: 0
     steering: 0
+  idealRPM: 500
+  maxRPM: 1000
   maxMotorTorque: 400
   maxSteeringAngle: 30
   brakeTorque: 0
-  idealRPM: 500
-  maxRPM: 1000
+  brakeForce: 0
   antiRollStrength: 20000
   verticalAxisName: Vertical2
   horizontalAxisName: Horizontal2
@@ -6474,11 +6475,12 @@ MonoBehaviour:
     rightWheel: {fileID: 410025204}
     motor: 1
     steering: 0
+  idealRPM: 100
+  maxRPM: 1400
   maxMotorTorque: 2000
   maxSteeringAngle: 8
   brakeTorque: 1000
-  idealRPM: 100
-  maxRPM: 1400
+  brakeForce: 10000
   antiRollStrength: 20000
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
