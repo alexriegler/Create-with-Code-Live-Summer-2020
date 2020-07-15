@@ -53,9 +53,11 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        // Get driving input
         float motor = maxMotorTorque * Input.GetAxis(verticalAxisName);
         float steering = maxSteeringAngle * Input.GetAxis(horizontalAxisName);
 
+        // Apply torque to each wheel
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
