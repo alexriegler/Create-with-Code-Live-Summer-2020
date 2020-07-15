@@ -113,24 +113,6 @@ public class SimpleCarController : MonoBehaviour
         steeringTorque = maxSteeringAngle * hoziontalInput;
     }
 
-    // Apply transforms to corresponding visual wheels
-    public void ApplyLocalPositionToVisuals(WheelCollider collider)
-    {
-        if (collider.transform.childCount == 0)
-        {
-            return;
-        }
-
-        Transform visualWheel = collider.transform.GetChild(0);
-
-        Vector3 position;
-        Quaternion rotation;
-        collider.GetWorldPose(out position, out rotation);
-
-        visualWheel.transform.position = position;
-        visualWheel.transform.rotation = rotation;
-    }
-
     void ControlRpm(ref float motorTorque)
     {
         if (Rpm < idealRPM)
@@ -199,6 +181,24 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+    }
+
+    // Apply transforms to corresponding visual wheels
+    public void ApplyLocalPositionToVisuals(WheelCollider collider)
+    {
+        if (collider.transform.childCount == 0)
+        {
+            return;
+        }
+
+        Transform visualWheel = collider.transform.GetChild(0);
+
+        Vector3 position;
+        Quaternion rotation;
+        collider.GetWorldPose(out position, out rotation);
+
+        visualWheel.transform.position = position;
+        visualWheel.transform.rotation = rotation;
     }
 
     void ApplyBrakes()
