@@ -134,6 +134,7 @@ public class SimpleCarController : MonoBehaviour
         }
     }
 
+    // Apply force on the wheels to prevent tipping
     void Stabilize()
     {
         foreach (AxleInfo axleInfo in axleInfos)
