@@ -3714,7 +3714,7 @@ MonoBehaviour:
   maxSteeringAngle: 30
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
-  comOffset: {x: 0, y: 0.4, z: 0.95}
+  comOffset: {x: 0, y: 0.18, z: 0}
   rb: {fileID: 1601884162}
 --- !u!1001 &1624976186
 PrefabInstance:
