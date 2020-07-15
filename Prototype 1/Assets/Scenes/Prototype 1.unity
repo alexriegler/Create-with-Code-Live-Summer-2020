@@ -3710,7 +3710,7 @@ MonoBehaviour:
     rightWheel: {fileID: 410025204}
     motor: 0
     steering: 0
-  maxMotorTorque: 1000
+  maxMotorTorque: 400
   maxSteeringAngle: 30
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
