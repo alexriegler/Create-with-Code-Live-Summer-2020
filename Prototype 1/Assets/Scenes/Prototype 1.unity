@@ -1858,11 +1858,11 @@ MonoBehaviour:
   brakeTorque: 0
   brakeForce: 0
   antiRollStrength: 20000
+  comOffset: {x: 0, y: 0, z: 0}
+  rb: {fileID: 349530925}
   verticalAxisName: Vertical2
   horizontalAxisName: Horizontal2
   brakeButton: 
-  comOffset: {x: 0, y: 0, z: 0}
-  rb: {fileID: 349530925}
 --- !u!1001 &359255633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4351,7 +4351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1131075533
 Transform:
   m_ObjectHideFlags: 0
@@ -6482,11 +6482,11 @@ MonoBehaviour:
   brakeTorque: 1000
   brakeForce: 10000
   antiRollStrength: 20000
+  comOffset: {x: 0, y: 0.18, z: 0}
+  rb: {fileID: 1601884162}
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
   brakeButton: Jump
-  comOffset: {x: 0, y: 0.18, z: 0}
-  rb: {fileID: 1601884162}
 --- !u!1 &1617168641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d80c7433031fdee44bf3910c4b046ce7,

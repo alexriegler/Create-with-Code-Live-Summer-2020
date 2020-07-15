@@ -15,31 +15,35 @@ public class AxleInfo
 public class SimpleCarController : MonoBehaviour
 {
     // Car wheels
+    [Header("Wheel list")]
     public List<AxleInfo> axleInfos;
-
+    
+    [Header("RPM")]
     public float idealRPM = 500f;
     public float maxRPM = 1000f;
-
+    
+    [Header("Torque, Steering, & Braking")]
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float brakeTorque;
     public float brakeForce;
-    
-    public float antiRollStrength = 20000.0f;
 
     private bool brakesApplied = false;
 
-    // Input
+    [Header("Anti-Roll")]
+    public float antiRollStrength = 20000.0f;
+
+    [Header("Center of Mass")]
+    public Vector3 comOffset;
+    public Rigidbody rb;
+
+    [Header("Input")]
     public string verticalAxisName;
     public string horizontalAxisName;
     public string brakeButton;
     
     private float verticleInput;
     private float hoziontalInput;
-
-    // Center of mass
-    public Vector3 comOffset;
-    public Rigidbody rb;
 
     void Start()
     {
