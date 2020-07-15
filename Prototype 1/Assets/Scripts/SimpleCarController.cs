@@ -23,13 +23,13 @@ public class SimpleCarController : MonoBehaviour
     public string horizontalAxisName;
 
     // Center of mass
-    public Vector3 com;
+    public Vector3 comOffset;
     public Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = com;
+        rb.centerOfMass = comOffset;
     }
 
     // finds the corresponding visual wheel
@@ -49,6 +49,12 @@ public class SimpleCarController : MonoBehaviour
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position + transform.rotation * comOffset, 0.4f);
     }
 
     public void FixedUpdate()

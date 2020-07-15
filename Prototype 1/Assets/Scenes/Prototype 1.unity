@@ -1228,7 +1228,7 @@ MonoBehaviour:
   maxSteeringAngle: 30
   verticalAxisName: Vertical2
   horizontalAxisName: Horizontal2
-  com: {x: 0, y: -1, z: 0}
+  comOffset: {x: 0, y: 0, z: 0}
   rb: {fileID: 349530925}
 --- !u!146 &410025204 stripped
 WheelCollider:
@@ -3710,11 +3710,11 @@ MonoBehaviour:
     rightWheel: {fileID: 410025204}
     motor: 0
     steering: 0
-  maxMotorTorque: 400
+  maxMotorTorque: 1000
   maxSteeringAngle: 30
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
-  com: {x: 0, y: -1, z: 0}
+  comOffset: {x: 0, y: 0.4, z: 0.95}
   rb: {fileID: 1601884162}
 --- !u!1001 &1624976186
 PrefabInstance:
