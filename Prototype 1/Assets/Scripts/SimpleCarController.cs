@@ -51,12 +51,6 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position + transform.rotation * comOffset, 0.4f);
-    }
-
     public void FixedUpdate()
     {
         float motor = maxMotorTorque * Input.GetAxis(verticalAxisName);
@@ -77,5 +71,12 @@ public class SimpleCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+    }
+
+    // Draw center of mass gizmo
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position + transform.rotation * comOffset, 0.4f);
     }
 }
