@@ -63,9 +63,10 @@ public class SimpleCarController : MonoBehaviour
         // TODO: Remove debug print
         print("Speed: " + Speed.ToString("f0") + "km/h\t RPM: " + Rpm.ToString("f0"));
 
-        // Get driving input
-        float motorTorque = maxMotorTorque * verticleInput;
-        float steeringTorque = maxSteeringAngle * hoziontalInput;
+        float motorTorque;
+        float steeringTorque;
+
+        GetDrivingInput(out motorTorque, out steeringTorque);
 
         ControlRpm(ref motorTorque);
 
@@ -105,8 +106,14 @@ public class SimpleCarController : MonoBehaviour
 
     // Methods
 
-    // finds the corresponding visual wheel
-    // correctly applies the transform
+    // Get driving input
+    void GetDrivingInput(out float motorTorque, out float steeringTorque)
+    {
+        motorTorque = maxMotorTorque * verticleInput;
+        steeringTorque = maxSteeringAngle * hoziontalInput;
+    }
+
+    // Apply transforms to corresponding visual wheels
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
