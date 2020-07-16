@@ -65,7 +65,7 @@ public class SimpleCarController : MonoBehaviour
     void FixedUpdate()
     {
         // TODO: Remove debug print
-        print("Speed: " + Speed.ToString("f0") + "km/h\t RPM: " + Rpm.ToString("f0"));
+        print("Speed: " + GetSpeed().ToString("f0") + "km/h\t RPM: " + Rpm.ToString("f0"));
 
         float motorTorque;
         float steeringTorque;
@@ -90,15 +90,11 @@ public class SimpleCarController : MonoBehaviour
 
     // Properties
 
-    // TODO: Change to method
-    public float Speed
+    // Returns the wheel speed in km/h
+    public float GetSpeed()
     {
-        // Returns the wheel speed in km/h
-        get
-        {
-            WheelCollider wheel = axleInfos[0].rightWheel;
-            return wheel.radius * Mathf.PI * wheel.rpm * 60.0f / 1000.0f;
-        }
+        WheelCollider wheel = axleInfos[0].rightWheel;
+        return wheel.radius * Mathf.PI * wheel.rpm * 60.0f / 1000.0f;
     }
 
     // TODO: Change to method
