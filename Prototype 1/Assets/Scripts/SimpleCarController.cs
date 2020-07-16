@@ -50,11 +50,17 @@ public class SimpleCarController : MonoBehaviour
     private float verticleInput;
     private float hoziontalInput;
 
+    // Position
+    private Vector3 previousPosition;
+
     void Start()
     {
         // Set the center of mass of the car to the offset
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = comOffset;
+
+        // Set starting position
+        previousPosition = transform.position;
     }
 
     private void Update()
@@ -108,6 +114,14 @@ public class SimpleCarController : MonoBehaviour
     }
 
     // Methods
+
+    // Finds the current velocity of the vehicle based on its position & previous position
+    float GetVehicleVelocity()
+    {
+        float velocity = ((transform.position - previousPosition) / Time.deltaTime).magnitude;
+        previousPosition = transform.position;
+        return velocity;
+    }
 
     // Returns the wheel velocity in km/h
     public float GetWheelVelocity()
