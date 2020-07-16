@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Experimental.PlayerLoop;
+using System;
 
 [System.Serializable]
 public class AxleInfo
@@ -24,7 +25,11 @@ public class SimpleCarController : MonoBehaviour
     
     [Header("Torque, Steering, & Braking")]
     public float maxMotorTorque;
+    // TODO: Change to vector2d?
     public float maxSteeringAngle;
+    public float minSteeringAngle;
+    [SerializeField]
+    private float steeringAngle;
     public float brakeTorque;
     public float brakeForce;
 
@@ -69,6 +74,8 @@ public class SimpleCarController : MonoBehaviour
 
         float motorTorque;
         float steeringTorque;
+
+        AdjustSteering();
 
         GetDrivingInput(out motorTorque, out steeringTorque);
 
@@ -115,11 +122,17 @@ public class SimpleCarController : MonoBehaviour
         return axleInfos [0].rightWheel.rpm;
     }
 
+    // Linearly interpolates the steering angle from max to min based on speed
+    void AdjustSteering()
+    {
+        steeringAngle = Mathf.Lerp(maxSteeringAngle, minSteeringAngle, GetSpeed() / MaxSpeed);
+    }
+
     // Get driving input
     void GetDrivingInput(out float motorTorque, out float steeringTorque)
     {
         motorTorque = maxMotorTorque * verticleInput;
-        steeringTorque = maxSteeringAngle * hoziontalInput;
+        steeringTorque = steeringAngle * hoziontalInput;
     }
 
     void ControlRpm(ref float motorTorque)
