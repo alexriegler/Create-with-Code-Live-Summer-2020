@@ -6484,7 +6484,7 @@ MonoBehaviour:
   minSteeringAngle: 2
   steeringAngle: 0
   brakeTorque: 1000
-  brakeForce: 10000
+  brakeForce: 20000
   antiRollStrength: 20000
   comOffset: {x: 0, y: 0.18, z: 0}
   rb: {fileID: 1601884162}
