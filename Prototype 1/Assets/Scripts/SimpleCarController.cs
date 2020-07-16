@@ -248,12 +248,35 @@ public class SimpleCarController : MonoBehaviour
     // Applies brake torque to each wheel and applies a brake force to the car
     void ApplyBrakes()
     {
+        bool isGrounded = false;
+
         foreach (AxleInfo axleInfo in axleInfos)
         {
             axleInfo.leftWheel.brakeTorque = brakeTorque;
             axleInfo.rightWheel.brakeTorque = brakeTorque;
+
+            // Check if any of the wheels are on the ground
+            if (axleInfo.leftWheel.isGrounded || axleInfo.rightWheel.isGrounded)
+            {
+                isGrounded = true;
+            }
         }
-        rb.AddForce(Vector3.back * brakeForce);
+
+        // Check if the vehicle is grounded
+        if (isGrounded)
+        {
+            // Apply back force if moving forward
+            if (GetVehicleVelocity() >= 0)
+            {
+                print("Backward force");
+                rb.AddForce(Vector3.back * brakeForce);
+            }
+            if (GetVehicleVelocity() < 0)
+            {
+                print("Forward force");
+                rb.AddForce(Vector3.forward * brakeForce);
+            }
+        }
     }
 
     // Sets brake torque to zero
