@@ -234,6 +234,7 @@ public class SimpleCarController : MonoBehaviour
         rb.AddForce(Vector3.back * brakeForce);
     }
 
+    // Sets brake torque to zero
     void ReleaseBrakes()
     {
         foreach (AxleInfo axleInfo in axleInfos)
