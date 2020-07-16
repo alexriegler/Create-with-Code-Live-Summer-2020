@@ -115,10 +115,16 @@ public class SimpleCarController : MonoBehaviour
 
     // Methods
 
-    // Finds the current velocity of the vehicle based on its position & previous position
+    // Finds the velocity vector of the vehicle based on its position & previous position
+    Vector3 GetVehicleVelocityVector()
+    {
+        return (transform.position - previousPosition) / Time.deltaTime;
+    }
+
+    // Finds the velocity of the vehicle based on its position & previous position
     float GetVehicleVelocity()
     {
-        Vector3 velocityVector = ((transform.position - previousPosition) / Time.deltaTime);
+        Vector3 velocityVector = GetVehicleVelocityVector();
         float velocity = velocityVector.magnitude;
 
         // Check sign of the velocity
