@@ -271,17 +271,8 @@ public class SimpleCarController : MonoBehaviour
         // Check if the vehicle is grounded
         if (isGrounded)
         {
-            // Apply back force if moving forward
-            if (GetVehicleVelocity() >= 0)
-            {
-                print("Backward force");
-                rb.AddForce(Vector3.back * brakeForce);
-            }
-            if (GetVehicleVelocity() < 0)
-            {
-                print("Forward force");
-                rb.AddForce(Vector3.forward * brakeForce);
-            }
+            // Apply force in opposite direction of travel
+            rb.AddForce(GetVehicleVelocityVector().normalized * -brakeForce);
         }
     }
 
