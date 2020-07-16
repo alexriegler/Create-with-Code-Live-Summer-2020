@@ -70,7 +70,7 @@ public class SimpleCarController : MonoBehaviour
     void FixedUpdate()
     {
         // TODO: Remove debug print
-        print("Speed: " + GetSpeed().ToString("f0") + "km/h\t RPM: " + GetRpm().ToString("f0"));
+        print("Speed: " + GetSpeed().ToString("f0") + "km/h\t RPM: " + GetWheelRpm().ToString("f0"));
 
         float motorTorque;
         float steeringTorque;
@@ -117,7 +117,7 @@ public class SimpleCarController : MonoBehaviour
     }
 
     // Returns the rotations per minute of the wheels
-    public float GetRpm()
+    public float GetWheelRpm()
     {
         return axleInfos [0].rightWheel.rpm;
     }
@@ -137,15 +137,15 @@ public class SimpleCarController : MonoBehaviour
 
     void ControlRpm(ref float motorTorque)
     {
-        if (GetRpm() < idealRPM)
+        if (GetWheelRpm() < idealRPM)
         {
             // Replace MAGIC number 10.0f
-            motorTorque = Mathf.Lerp(motorTorque / 10.0f, motorTorque, GetRpm() / idealRPM);
+            motorTorque = Mathf.Lerp(motorTorque / 10.0f, motorTorque, GetWheelRpm() / idealRPM);
         }
         else
         {
             // Apply max torque at ideal rpm and zero torque at max rpm
-            motorTorque = Mathf.Lerp(motorTorque, 0.0f, (GetRpm() - idealRPM) / (maxRPM - idealRPM));
+            motorTorque = Mathf.Lerp(motorTorque, 0.0f, (GetWheelRpm() - idealRPM) / (maxRPM - idealRPM));
         }
     }
 
