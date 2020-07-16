@@ -76,7 +76,7 @@ public class SimpleCarController : MonoBehaviour
     void FixedUpdate()
     {
         // TODO: Remove debug print
-        print("Speed: " + GetWheelVelocity().ToString("f0") + "km/h\t RPM: " + GetWheelRpm().ToString("f0"));
+        print("Vw: " + GetWheelVelocity().ToString("f0") + "km/h   Vc: " + GetVehicleVelocity().ToString("f0") + "km/h   RPM: " + GetWheelRpm().ToString("f0"));
 
         float motorTorque;
         float steeringTorque;
