@@ -89,6 +89,8 @@ public class SimpleCarController : MonoBehaviour
     }
 
     // Properties
+
+    // TODO: Change to method
     public float Speed
     {
         // Returns the wheel speed in km/h
@@ -99,6 +101,7 @@ public class SimpleCarController : MonoBehaviour
         }
     }
 
+    // TODO: Change to method
     public float Rpm
     {
         // Returns the rotations per minute of the wheels
