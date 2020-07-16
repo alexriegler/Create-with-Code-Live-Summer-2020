@@ -223,6 +223,7 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
+    // Applies brake torque to each wheel and applies a brake force to the car
     void ApplyBrakes()
     {
         foreach (AxleInfo axleInfo in axleInfos)
