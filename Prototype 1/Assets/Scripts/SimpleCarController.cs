@@ -76,10 +76,12 @@ public class SimpleCarController : MonoBehaviour
     void FixedUpdate()
     {
         // TODO: Remove debug print
-        print("Vw: " + GetWheelVelocity().ToString("f0") + "km/h   Vc: " + GetVehicleVelocity().ToString("f0") + "km/h   RPM: " + GetWheelRpm().ToString("f0"));
+        //print("Vw: " + GetWheelVelocity().ToString("f0") + "km/h   Vc: " + GetVehicleVelocity().ToString("f0") + "km/h   RPM: " + GetWheelRpm().ToString("f0"));
 
         float motorTorque;
         float steeringTorque;
+
+        print("V: " + rb.velocity.ToString());
 
         AdjustSteering();
 
@@ -115,16 +117,10 @@ public class SimpleCarController : MonoBehaviour
 
     // Methods
 
-    // Finds the velocity vector of the vehicle based on its position & previous position
-    Vector3 GetVehicleVelocityVector()
-    {
-        return (transform.position - previousPosition) / Time.deltaTime;
-    }
-
     // Finds the velocity of the vehicle based on its position & previous position
     float GetVehicleVelocity()
     {
-        Vector3 velocityVector = GetVehicleVelocityVector();
+        Vector3 velocityVector = rb.velocity;
         float velocity = velocityVector.magnitude;
 
         // Check sign of the velocity
@@ -272,7 +268,7 @@ public class SimpleCarController : MonoBehaviour
         if (isGrounded)
         {
             // Apply force in opposite direction of travel
-            rb.AddForce(GetVehicleVelocityVector().normalized * -brakeForce);
+            rb.AddForce(rb.velocity.normalized * -brakeForce);
         }
     }
 
