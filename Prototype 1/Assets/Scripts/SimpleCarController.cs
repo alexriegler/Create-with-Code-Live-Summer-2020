@@ -70,7 +70,7 @@ public class SimpleCarController : MonoBehaviour
     void FixedUpdate()
     {
         // TODO: Remove debug print
-        print("Speed: " + GetSpeed().ToString("f0") + "km/h\t RPM: " + GetWheelRpm().ToString("f0"));
+        print("Speed: " + GetWheelVelocity().ToString("f0") + "km/h\t RPM: " + GetWheelRpm().ToString("f0"));
 
         float motorTorque;
         float steeringTorque;
@@ -109,8 +109,8 @@ public class SimpleCarController : MonoBehaviour
 
     // Methods
 
-    // Returns the wheel speed in km/h
-    public float GetSpeed()
+    // Returns the wheel velocity in km/h
+    public float GetWheelVelocity()
     {
         WheelCollider wheel = axleInfos[0].rightWheel;
         return wheel.radius * Mathf.PI * wheel.rpm * 60.0f / 1000.0f;
@@ -125,7 +125,7 @@ public class SimpleCarController : MonoBehaviour
     // Linearly interpolates the steering angle from max to min based on speed
     void AdjustSteering()
     {
-        steeringAngle = Mathf.Lerp(maxSteeringAngle, minSteeringAngle, GetSpeed() / MaxSpeed);
+        steeringAngle = Mathf.Lerp(maxSteeringAngle, minSteeringAngle, GetWheelVelocity() / MaxSpeed);
     }
 
     // Get driving input
