@@ -88,6 +88,18 @@ public class SimpleCarController : MonoBehaviour
         }
     }
 
+    // Properties
+
+    // Get the maximum speed of the vehicle
+    public float MaxSpeed
+    {
+        get
+        {
+            WheelCollider wheel = axleInfos[0].rightWheel;
+            return wheel.radius * Mathf.PI * maxRPM * 60.0f / 1000.0f;
+        }
+    }
+
     // Methods
 
     // Returns the wheel speed in km/h
