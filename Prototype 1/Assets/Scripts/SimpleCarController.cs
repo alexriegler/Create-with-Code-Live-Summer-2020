@@ -4,44 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.Experimental.PlayerLoop;
 using System;
 
-[System.Serializable]
-public class AxleInfo
-{
-    public WheelCollider leftWheel;
-    public WheelCollider rightWheel;
-    public bool motor;
-    public bool steering;
-}
-
 public class SimpleCarController : MonoBehaviour
 {
-    // Car wheels
-    [Header("Wheel list")]
-    public List<AxleInfo> axleInfos;
-    
-    [Header("RPM")]
-    public float idealRPM = 500f;
-    public float maxRPM = 1000f;
-    
-    [Header("Torque, Steering, & Braking")]
-    public float maxMotorTorque;
-    // TODO: Change to vector2d?
-    public float maxSteeringAngle;
-    public float minSteeringAngle;
-    [SerializeField]
-    private float steeringAngle;
-    public float brakeTorque;
-    public float brakeForce;
-
-    private bool brakesApplied = false;
-
-    [Header("Anti-Roll")]
-    public float antiRollStrength = 20000.0f;
-
-    [Header("Center of Mass")]
-    public Vector3 comOffset;
-    public Rigidbody rb;
-
     [Header("Input")]
     public string verticalAxisName;
     public string horizontalAxisName;
@@ -50,8 +14,9 @@ public class SimpleCarController : MonoBehaviour
     private float verticleInput;
     private float hoziontalInput;
 
-    // Position
-    private Vector3 previousPosition;
+    private bool brakesApplied = false;
+
+    public Vehicle car;
 
     void Start()
     {
