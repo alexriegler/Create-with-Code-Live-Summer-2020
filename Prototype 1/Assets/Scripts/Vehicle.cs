@@ -57,6 +57,12 @@ public class Vehicle : MonoBehaviour
 
     // Methods
 
+    // Set the center of mass of the vehicle to the offset location
+    public void SetCenterOfMass()
+    {
+        vehicle.centerOfMass = comOffset;
+    }
+
     // Finds the velocity of the vehicle based on its position & previous position
     float GetVehicleVelocity()
     {

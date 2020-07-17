@@ -20,12 +20,7 @@ public class SimpleCarController : MonoBehaviour
 
     void Start()
     {
-        // Set the center of mass of the car to the offset
-        rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = comOffset;
-
-        // Set starting position
-        previousPosition = transform.position;
+        car.SetCenterOfMass();
     }
 
     private void Update()
