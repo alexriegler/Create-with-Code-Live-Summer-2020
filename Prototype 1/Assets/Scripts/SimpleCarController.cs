@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Experimental.PlayerLoop;
-using System;
 
 public class SimpleCarController : MonoBehaviour
 {
