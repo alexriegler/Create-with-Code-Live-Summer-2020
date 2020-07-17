@@ -51,6 +51,25 @@ public class Vehicle : MonoBehaviour
     public Rigidbody vehicle;
 
     // Properties
+    public float SteeringTorque
+    {
+        get
+        {
+            return steeringTorque;
+        }
+        // Steering torque is set to a fraction of steering angle, value is [0,1]
+        set
+        {
+            if (value <= 1)
+            {
+                steeringTorque = steeringAngle * value;
+            }
+            else
+            {
+                steeringTorque = 0;
+            }
+        }
+    }
 
     // Get the maximum speed of the vehicle
     public float MaxSpeed
