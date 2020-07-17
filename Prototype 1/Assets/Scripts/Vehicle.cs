@@ -13,6 +13,7 @@ public class AxleInfo
     public bool steering;
 }
 
+[RequireComponent (typeof (Rigidbody))]
 public class Vehicle : MonoBehaviour
 {
     // Car wheels

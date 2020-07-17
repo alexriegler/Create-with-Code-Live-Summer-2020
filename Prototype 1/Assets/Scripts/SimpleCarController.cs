@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent (typeof (Vehicle))]
 public class SimpleCarController : MonoBehaviour
 {
     [Header("Input")]
