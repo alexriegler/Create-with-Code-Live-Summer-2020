@@ -51,6 +51,8 @@ public class Vehicle : MonoBehaviour
     public Rigidbody vehicle;
 
     // Properties
+
+    // Get & set the steering torque
     public float SteeringTorque
     {
         get
