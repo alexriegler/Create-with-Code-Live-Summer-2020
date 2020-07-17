@@ -30,7 +30,7 @@ public class SimpleCarController : MonoBehaviour
         hoziontalInput = Input.GetAxis(horizontalAxisName);
 
         // Check if brakes are being applied
-        brakesApplied = Input.GetButton(brakeButton) ? true : false;
+        brakesApplied = Input.GetButton(brakeButton);
     }
 
     void FixedUpdate()
