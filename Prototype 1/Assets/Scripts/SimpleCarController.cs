@@ -38,12 +38,9 @@ public class SimpleCarController : MonoBehaviour
         // TODO: Remove debug print
         print("Vw: " + car.GetWheelVelocity().ToString("f0") + "km/h   Vc: " + car.GetVehicleVelocity().ToString("f0") + "km/h   RPM: " + car.GetWheelRpm().ToString("f0"));
 
-        float motorTorque;
-        float steeringTorque;
-
         car.AdjustSteering();
 
-        GetDrivingInput(out motorTorque, out steeringTorque);
+        GetDrivingInput();
 
         car.ControlTorque();
 
@@ -64,7 +61,7 @@ public class SimpleCarController : MonoBehaviour
     // Methods
 
     // Get driving input
-    void GetDrivingInput(out float motorTorque, out float steeringTorque)
+    void GetDrivingInput()
     {
         motorTorque = maxMotorTorque * verticleInput;
         steeringTorque = steeringAngle * hoziontalInput;
