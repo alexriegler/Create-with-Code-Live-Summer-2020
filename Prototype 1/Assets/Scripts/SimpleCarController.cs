@@ -41,23 +41,23 @@ public class SimpleCarController : MonoBehaviour
         float motorTorque;
         float steeringTorque;
 
-        AdjustSteering();
+        car.AdjustSteering();
 
         GetDrivingInput(out motorTorque, out steeringTorque);
 
-        ControlRpm(ref motorTorque);
+        car.ControlTorque(ref motorTorque);
 
-        Stabilize();
+        car.Stabilize();
 
-        ApplyTorque(motorTorque, steeringTorque);
+        car.ApplyTorque(motorTorque, steeringTorque);
 
         if (brakesApplied)
         {
-            ApplyBrakes();
+            car.ApplyBrakes();
         }
         else
         {
-            ReleaseBrakes();
+            car.ReleaseBrakes();
         }
     }
 
