@@ -64,7 +64,7 @@ public class Vehicle : MonoBehaviour
     }
 
     // Finds the velocity of the vehicle based on its position & previous position
-    float GetVehicleVelocity()
+    public float GetVehicleVelocity()
     {
         Vector3 velocityVector = vehicle.velocity;
         float velocity = velocityVector.magnitude;
@@ -92,13 +92,13 @@ public class Vehicle : MonoBehaviour
     }
 
     // Linearly interpolates the steering angle from max to min based on speed
-    void AdjustSteering()
+    public void AdjustSteering()
     {
         steeringAngle = Mathf.Lerp(maxSteeringAngle, minSteeringAngle, GetWheelVelocity() / MaxSpeed);
     }
 
     // Controls the amount of torque applied to the wheels dependent upon the rpm
-    void ControlTorque(ref float motorTorque)
+    public void ControlTorque(ref float motorTorque)
     {
         if (GetWheelRpm() < idealRPM)
         {
@@ -113,7 +113,7 @@ public class Vehicle : MonoBehaviour
     }
 
     // Apply force on the wheels to prevent tipping
-    void Stabilize()
+    public void Stabilize()
     {
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -149,7 +149,7 @@ public class Vehicle : MonoBehaviour
     }
 
     // Apply torque to each wheel
-    void ApplyTorque(float motor, float steering)
+    public void ApplyTorque(float motor, float steering)
     {
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -187,7 +187,7 @@ public class Vehicle : MonoBehaviour
     }
 
     // Applies brake torque to each wheel and applies a brake force to the car
-    void ApplyBrakes()
+    public void ApplyBrakes()
     {
         bool isGrounded = false;
 
@@ -212,7 +212,7 @@ public class Vehicle : MonoBehaviour
     }
 
     // Sets brake torque to zero
-    void ReleaseBrakes()
+    public void ReleaseBrakes()
     {
         foreach (AxleInfo axleInfo in axleInfos)
         {
