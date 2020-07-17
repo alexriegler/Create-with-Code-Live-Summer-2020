@@ -244,6 +244,7 @@ public class Vehicle : MonoBehaviour
         // Check if the vehicle is grounded
         if (isGrounded)
         {
+            // TODO: Apply variable brake force dependent on speed
             // Apply force in opposite direction of travel
             vehicle.AddForce(vehicle.velocity.normalized * -brakeForce);
         }
