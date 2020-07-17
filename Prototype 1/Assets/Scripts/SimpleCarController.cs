@@ -23,8 +23,8 @@ public class SimpleCarController : MonoBehaviour
     private void Update()
     {
         // Get driving input
-        verticleInput = Input.GetAxis(verticalAxisName);
-        hoziontalInput = Input.GetAxis(horizontalAxisName);
+        verticleInput = Input.GetAxisRaw(verticalAxisName);
+        hoziontalInput = Input.GetAxisRaw(horizontalAxisName);
 
         // Check if brakes are being applied
         brakesApplied = Input.GetButton(brakeButton);
