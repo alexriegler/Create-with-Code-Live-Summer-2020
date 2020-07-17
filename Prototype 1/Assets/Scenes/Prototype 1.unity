@@ -1806,30 +1806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5da55215f118540b0371575f65d6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!146 &349530928 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 1017199638115779162, guid: 09082afec7b5e824ca611a0cc3264bcd,
-    type: 3}
-  m_PrefabInstance: {fileID: 349530923}
-  m_PrefabAsset: {fileID: 0}
---- !u!146 &349530929 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 8736846738330334846, guid: 09082afec7b5e824ca611a0cc3264bcd,
-    type: 3}
-  m_PrefabInstance: {fileID: 349530923}
-  m_PrefabAsset: {fileID: 0}
---- !u!146 &349530930 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 7436760813411477709, guid: 09082afec7b5e824ca611a0cc3264bcd,
-    type: 3}
-  m_PrefabInstance: {fileID: 349530923}
-  m_PrefabAsset: {fileID: 0}
---- !u!146 &349530932 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 1803138954459658391, guid: 09082afec7b5e824ca611a0cc3264bcd,
-    type: 3}
-  m_PrefabInstance: {fileID: 349530923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &349530933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,29 +1818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2037dc1f0c503444afa5e05cc10feff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axleInfos:
-  - leftWheel: {fileID: 349530932}
-    rightWheel: {fileID: 349530930}
-    motor: 1
-    steering: 1
-  - leftWheel: {fileID: 349530929}
-    rightWheel: {fileID: 349530928}
-    motor: 0
-    steering: 0
-  idealRPM: 500
-  maxRPM: 1000
-  maxMotorTorque: 400
-  maxSteeringAngle: 30
-  minSteeringAngle: 0
-  steeringAngle: 0
-  brakeTorque: 0
-  brakeForce: 0
-  antiRollStrength: 20000
-  comOffset: {x: 0, y: 0, z: 0}
-  rb: {fileID: 349530925}
   verticalAxisName: Vertical2
   horizontalAxisName: Horizontal2
   brakeButton: 
+  car: {fileID: 0}
 --- !u!1001 &359255633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6409,6 +6366,40 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1601884159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601884161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601884160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e504beaca86afb44afd9c7289c8e0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axleInfos:
+  - leftWheel: {fileID: 235304740}
+    rightWheel: {fileID: 339289712}
+    motor: 1
+    steering: 1
+  - leftWheel: {fileID: 1890028847}
+    rightWheel: {fileID: 410025204}
+    motor: 1
+    steering: 0
+  idealRPM: 100
+  maxRPM: 1400
+  maxMotorTorque: 2000
+  minMotorTorqueRatio: 0.1
+  maxSteeringAngle: 10
+  minSteeringAngle: 2
+  steeringAngle: 0
+  steeringTorque: 0
+  brakeTorque: 1000
+  brakeForce: 20000
+  antiRollStrength: 20000
+  comOffset: {x: 0, y: 0.18, z: 0}
+  vehicle: {fileID: 1601884162}
 --- !u!54 &1601884162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6468,29 +6459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2037dc1f0c503444afa5e05cc10feff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axleInfos:
-  - leftWheel: {fileID: 235304740}
-    rightWheel: {fileID: 339289712}
-    motor: 1
-    steering: 1
-  - leftWheel: {fileID: 1890028847}
-    rightWheel: {fileID: 410025204}
-    motor: 1
-    steering: 0
-  idealRPM: 100
-  maxRPM: 1400
-  maxMotorTorque: 2000
-  maxSteeringAngle: 10
-  minSteeringAngle: 2
-  steeringAngle: 0
-  brakeTorque: 1000
-  brakeForce: 20000
-  antiRollStrength: 20000
-  comOffset: {x: 0, y: 0.18, z: 0}
-  rb: {fileID: 1601884162}
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
   brakeButton: Jump
+  car: {fileID: 1601884161}
 --- !u!1 &1617168641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d80c7433031fdee44bf3910c4b046ce7,
