@@ -63,7 +63,7 @@ public class SimpleCarController : MonoBehaviour
     // Get driving input
     void GetDrivingInput()
     {
-        motorTorque = maxMotorTorque * verticleInput;
-        steeringTorque = steeringAngle * hoziontalInput;
+        car.MotorTorque = verticleInput;
+        car.SteeringTorque = hoziontalInput;
     }
 }
