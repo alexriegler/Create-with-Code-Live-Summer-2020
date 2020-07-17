@@ -23,14 +23,18 @@ public class Vehicle : MonoBehaviour
     public float idealRPM = 100f;
     public float maxRPM = 1400f;
 
-    [Header("Torque, Steering, & Braking")]
+    [Header("Motor")]
     public float maxMotorTorque = 2000f;
     public float minMotorTorqueRatio = 0.1f;
     // TODO: Change to vector2d?
+
+    [Header("Steering")]
     public float maxSteeringAngle = 10f;
     public float minSteeringAngle = 2f;
     [SerializeField]
     private float steeringAngle;
+
+    [Header("Braking")]
     public float brakeTorque = 1000f;
     public float brakeForce = 20000f;
 
