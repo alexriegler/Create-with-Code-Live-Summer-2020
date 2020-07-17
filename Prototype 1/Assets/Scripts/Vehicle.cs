@@ -62,7 +62,7 @@ public class Vehicle : MonoBehaviour
         // Motor torque is set to a fraction of max motor torque, value is [0,1]
         set
         {
-            if (value <= 1)
+            if ((value >= 0) && (value <= 1))
             {
                 motorTorque = maxMotorTorque * value;
             }
@@ -83,7 +83,7 @@ public class Vehicle : MonoBehaviour
         // Steering torque is set to a fraction of steering angle, value is [0,1]
         set
         {
-            if (value <= 1)
+            if ((value >= 0) && (value <= 1))
             {
                 steeringTorque = steeringAngle * value;
             }
