@@ -53,6 +53,27 @@ public class Vehicle : MonoBehaviour
     // Properties
 
     // Get & set the steering torque
+    public float MotorTorque
+    {
+        get
+        {
+            return motorTorque;
+        }
+        // Motor torque is set to a fraction of max motor torque, value is [0,1]
+        set
+        {
+            if (value <= 1)
+            {
+                motorTorque = maxMotorTorque * value;
+            }
+            else
+            {
+                motorTorque = 0;
+            }
+        }
+    }
+
+    // Get & set the steering torque
     public float SteeringTorque
     {
         get
