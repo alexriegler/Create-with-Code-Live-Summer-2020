@@ -213,6 +213,10 @@ public class Vehicle : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+
+        // TODO: need?
+        steeringTorque = 0f;
+        motorTorque = 0f;
     }
 
     // Apply transforms to corresponding visual wheels
