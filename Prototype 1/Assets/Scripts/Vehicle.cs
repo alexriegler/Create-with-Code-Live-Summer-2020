@@ -41,8 +41,6 @@ public class Vehicle : MonoBehaviour
     public float brakeTorque = 1000f;
     public float brakeForce = 20000f;
 
-    private bool brakesApplied = false;
-
     [Header("Anti-Roll")]
     public float antiRollStrength = 20000.0f;
 
