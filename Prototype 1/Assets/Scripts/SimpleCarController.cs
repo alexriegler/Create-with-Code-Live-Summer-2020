@@ -45,11 +45,11 @@ public class SimpleCarController : MonoBehaviour
 
         GetDrivingInput(out motorTorque, out steeringTorque);
 
-        car.ControlTorque(ref motorTorque);
+        car.ControlTorque();
 
         car.Stabilize();
 
-        car.ApplyTorque(motorTorque, steeringTorque);
+        car.ApplyTorque();
 
         if (brakesApplied)
         {

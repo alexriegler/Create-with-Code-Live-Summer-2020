@@ -105,7 +105,7 @@ public class Vehicle : MonoBehaviour
     }
 
     // Controls the amount of torque applied to the wheels dependent upon the rpm
-    public void ControlTorque(ref float motorTorque)
+    public void ControlTorque()
     {
         if (GetWheelRpm() < idealRPM)
         {
@@ -156,19 +156,19 @@ public class Vehicle : MonoBehaviour
     }
 
     // Apply torque to each wheel
-    public void ApplyTorque(float motor, float steering)
+    public void ApplyTorque()
     {
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
             {
-                axleInfo.leftWheel.steerAngle = steering;
-                axleInfo.rightWheel.steerAngle = steering;
+                axleInfo.leftWheel.steerAngle = steeringTorque;
+                axleInfo.rightWheel.steerAngle = steeringTorque;
             }
             if (axleInfo.motor)
             {
-                axleInfo.leftWheel.motorTorque = motor;
-                axleInfo.rightWheel.motorTorque = motor;
+                axleInfo.leftWheel.motorTorque = motorTorque;
+                axleInfo.rightWheel.motorTorque = motorTorque;
             }
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
