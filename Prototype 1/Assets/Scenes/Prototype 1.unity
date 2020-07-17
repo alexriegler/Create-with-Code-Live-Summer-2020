@@ -6733,7 +6733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalAxisName: Vertical1
   horizontalAxisName: Horizontal1
-  brakeButton: Jump
+  brakeButton: Jump1
   car: {fileID: 1601884161}
 --- !u!1 &1617168641 stripped
 GameObject:
