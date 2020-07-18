@@ -1,18 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject[] players;
+    public GameObject[] playerTexts;
+    
     bool gameHasEnded = false;
 
     public float restartDelay = 1f;
 
-    public GameObject player1LevelCompleteUI;
-    public GameObject player2LevelCompleteUI;
+    public const string WinningText = "You won!";
+    public const string LosingText = "You lost";
 
-    public void CompleteLevel()
+    public void CompleteLevel(GameObject winningPlayer)
     {
-        // completeLevelUI.SetActive(true);
+        for (int i = 0; i < players.Length; i++)
+        {
+            playerTexts[i].SetActive(true);
+
+            if (players[i].Equals(winningPlayer))
+            {    
+                playerTexts[i].GetComponent<Text>().text = WinningText;
+            }
+            else
+            {
+                playerTexts[i].GetComponent<Text>().text = LosingText;
+            }
+        }
         print("Level Complete!");
     }
 

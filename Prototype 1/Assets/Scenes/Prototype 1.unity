@@ -5450,7 +5450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1141666992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8193,8 +8193,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1314877ca251242bf9e49437425e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players:
+  - {fileID: 1601884160}
+  - {fileID: 349530924}
+  playerTexts:
+  - {fileID: 1141666991}
+  - {fileID: 1710311583}
   restartDelay: 1
-  completeLevelUI: {fileID: 0}
 --- !u!1001 &1674268196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8695,7 +8700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1710311584
 RectTransform:
   m_ObjectHideFlags: 0

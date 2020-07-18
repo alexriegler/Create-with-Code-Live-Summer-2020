@@ -11,7 +11,7 @@ public class EndTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerCelebration>().Celebrate();
-            gameManager.CompleteLevel();
+            gameManager.CompleteLevel(other.gameObject);
         }
     }
 }
