@@ -25,6 +25,7 @@ public class PlayerCelebration : MonoBehaviour
         car.isKinematic = true;
         car.GetComponent<MeshCollider>().enabled = false;
         car.GetComponent<PlayerCarController>().enabled = false;
+        car.transform.eulerAngles = Vector3.forward;
         GetComponent<Animator>().enabled = true;
     }
 }
