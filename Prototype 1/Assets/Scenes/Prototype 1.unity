@@ -438,7 +438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ee7fbf74ee79f418c7f8896294133a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 1233267967}
+  respawnPointArray:
+  - {fileID: 1233267967}
+  - {fileID: 228152322}
 --- !u!1001 &71617869
 PrefabInstance:
   m_ObjectHideFlags: 0
