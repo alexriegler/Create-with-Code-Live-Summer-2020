@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCelebration : MonoBehaviour
 {
+    [SerializeField]
+    private Rigidbody car;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,7 @@ public class PlayerCelebration : MonoBehaviour
     public void Celebrate()
     {
         print(gameObject.name + " Celebrates!");
-
-        // GetComponent<Animator>().enabled = true;
+        car.isKinematic = true;
+        GetComponent<Animator>().enabled = true;
     }
 }
