@@ -9047,6 +9047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 1601884161}
+  speedText: {fileID: 1903106805}
 --- !u!1 &1903687807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d80c7433031fdee44bf3910c4b046ce7,
