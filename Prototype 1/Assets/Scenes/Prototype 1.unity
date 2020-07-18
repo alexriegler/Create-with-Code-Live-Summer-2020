@@ -2166,7 +2166,7 @@ MonoBehaviour:
   antiRollStrength: 20000
   comOffset: {x: 0, y: 0.18, z: 0}
   vehicle: {fileID: 349530925}
---- !u!114 &349530933
+--- !u!114 &349530934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2175,7 +2175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 349530924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2037dc1f0c503444afa5e05cc10feff, type: 3}
+  m_Script: {fileID: 11500000, guid: 1247dc615b2e474489985eb0605097eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   verticalAxisName: Vertical2
@@ -7001,7 +7001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5da55215f118540b0371575f65d6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1601884169
+--- !u!114 &1601884170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7010,7 +7010,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1601884160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2037dc1f0c503444afa5e05cc10feff, type: 3}
+  m_Script: {fileID: 11500000, guid: 1247dc615b2e474489985eb0605097eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   verticalAxisName: Vertical1
