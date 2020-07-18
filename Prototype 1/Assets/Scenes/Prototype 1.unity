@@ -12346,6 +12346,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarrelPyramid
       objectReference: {fileID: 0}
+    - target: {fileID: 7315729793053657397, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729793199830677, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729793256980800, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729793286330360, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729794525910817, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729794616233518, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729794777349459, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729794808834890, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729794944287159, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315729794981278006, guid: 0885ad1ce3f35e04f83eaf9f74085204,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0885ad1ce3f35e04f83eaf9f74085204, type: 3}
 --- !u!1001 &7317731328434472850
