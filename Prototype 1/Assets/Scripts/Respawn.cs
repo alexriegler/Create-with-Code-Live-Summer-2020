@@ -22,6 +22,8 @@ public class Respawn : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            IncrementRespawnIndex();
+
             // Check if respawn point is being used
             bool spawnInUse = respawnInUseArray[respawnPointIndex];
             Transform respawnPoint;
