@@ -46,7 +46,8 @@ public class Vehicle : MonoBehaviour
 
     [Header("Center of Mass")]
     public Vector3 comOffset;
-    public Rigidbody vehicle;
+    [SerializeField]
+    private Rigidbody vehicle;
 
     // Properties
 
