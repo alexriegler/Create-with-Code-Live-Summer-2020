@@ -28,7 +28,6 @@ public class Vehicle : MonoBehaviour
     public float maxMotorTorque = 2000f;
     public float minMotorTorqueRatio = 0.1f;
     private float motorTorque;
-    // TODO: Change to vector2d?
 
     [Header("Steering")]
     public float maxSteeringAngle = 10f;
