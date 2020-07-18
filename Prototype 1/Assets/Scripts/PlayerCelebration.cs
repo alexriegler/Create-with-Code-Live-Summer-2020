@@ -24,6 +24,7 @@ public class PlayerCelebration : MonoBehaviour
         print(gameObject.name + " Celebrates!");
         car.isKinematic = true;
         car.GetComponent<MeshCollider>().enabled = false;
+        car.GetComponent<PlayerCarController>().enabled = false;
         GetComponent<Animator>().enabled = true;
     }
 }
