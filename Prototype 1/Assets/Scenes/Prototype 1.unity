@@ -916,7 +916,7 @@ GameObject:
   m_Layer: 0
   m_Name: End_Goal
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4961,8 +4961,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 112.93, y: 27.736954}
-  m_SizeDelta: {x: 225.85352, y: 55.473907}
+  m_AnchoredPosition: {x: 96.5, y: 27.5}
+  m_SizeDelta: {x: 193, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197957519
 MonoBehaviour:
@@ -5009,7 +5009,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 km/h
+  m_Text: 100 mph
 --- !u!222 &1197957521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9084,8 +9084,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 113.3, y: 27.700012}
-  m_SizeDelta: {x: 225.85355, y: 55.473907}
+  m_AnchoredPosition: {x: 97.16, y: 27.700012}
+  m_SizeDelta: {x: 193, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1903106805
 MonoBehaviour:
@@ -9118,7 +9118,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 km/h
+  m_Text: 100 mph
 --- !u!222 &1903106806
 CanvasRenderer:
   m_ObjectHideFlags: 0
