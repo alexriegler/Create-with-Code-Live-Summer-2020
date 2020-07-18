@@ -32,9 +32,6 @@ public class SimpleCarController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // TODO: Remove debug print
-        //print("Vw: " + car.GetWheelVelocity().ToString("f0") + "km/h   Vc: " + car.GetVehicleVelocity().ToString("f0") + "km/h   RPM: " + car.GetWheelRpm().ToString("f0"));
-
         car.AdjustSteering();
 
         GetDrivingInput();
