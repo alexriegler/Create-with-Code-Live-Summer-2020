@@ -17,7 +17,7 @@ public class AICarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        car.SetCenterOfMass();
     }
 
     // Update is called once per frame
