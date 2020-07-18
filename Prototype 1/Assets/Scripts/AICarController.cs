@@ -13,6 +13,7 @@ public class AICarController : MonoBehaviour
 
     public AIBehavior behavior;
     public Vehicle car;
+    public float maxSpeed = 25f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class AICarController : MonoBehaviour
     {
         if (behavior == AIBehavior.DriveForward)
         {
-            if (car.GetVehicleVelocity() < 25f)
+            if (car.GetVehicleVelocity() < maxSpeed)
             {
                 car.AdjustSteering();
 
