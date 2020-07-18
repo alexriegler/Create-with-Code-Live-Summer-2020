@@ -7399,12 +7399,70 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!146 &1686896448 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 2513322005272577374, guid: da59e5a3713884d4f9e9667c2befa1a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686896445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &1686896449 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 1892602702063861113, guid: da59e5a3713884d4f9e9667c2befa1a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686896445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &1686896450 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 3408298293414311121, guid: da59e5a3713884d4f9e9667c2befa1a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686896445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1686896451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 466222, guid: da59e5a3713884d4f9e9667c2befa1a4,
     type: 3}
   m_PrefabInstance: {fileID: 1686896445}
   m_PrefabAsset: {fileID: 0}
+--- !u!146 &1686896452 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 3353318947453492336, guid: da59e5a3713884d4f9e9667c2befa1a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686896445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1686896453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686896446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e504beaca86afb44afd9c7289c8e0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axleInfos:
+  - leftWheel: {fileID: 1686896452}
+    rightWheel: {fileID: 1686896450}
+    motor: 1
+    steering: 1
+  - leftWheel: {fileID: 1686896449}
+    rightWheel: {fileID: 1686896448}
+    motor: 1
+    steering: 0
+  idealRPM: 100
+  maxRPM: 1400
+  maxMotorTorque: 2000
+  minMotorTorqueRatio: 0.1
+  maxSteeringAngle: 10
+  minSteeringAngle: 2
+  steeringAngle: 0
+  steeringTorque: 0
+  brakeTorque: 1000
+  brakeForce: 20000
+  antiRollStrength: 20000
+  comOffset: {x: 0, y: 0.18, z: 0}
+  vehicle: {fileID: 1686896447}
 --- !u!146 &1691193507 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 7436760813411477709, guid: 09082afec7b5e824ca611a0cc3264bcd,
