@@ -20,6 +20,6 @@ public class PlayerCelebration : MonoBehaviour
     {
         print(gameObject.name + " Celebrates!");
 
-        GetComponent<Animator>().enabled = true;
+        // GetComponent<Animator>().enabled = true;
     }
 }
