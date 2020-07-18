@@ -5,11 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Vehicle))]
 public class AICarController : MonoBehaviour
 {
-    enum AIBehavior
+    public enum AIBehavior
     {
         DriveForward,
         Stop
     }
+
+    public AIBehavior behavior;
 
     // Start is called before the first frame update
     void Start()
