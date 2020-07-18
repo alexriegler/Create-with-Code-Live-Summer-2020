@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 59756979}
   - component: {fileID: 59756978}
   - component: {fileID: 59756977}
+  - component: {fileID: 59756981}
   m_Layer: 0
   m_Name: Out_of_Bounds1
   m_TagString: Untagged
@@ -425,6 +426,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &59756981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59756976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ee7fbf74ee79f418c7f8896294133a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1601884164}
+  respawnPoint: {fileID: 1233267967}
 --- !u!1001 &71617869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7110,6 +7125,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &1601884164 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 436868, guid: 70bf34f6c25c948458f254e87188b00b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1601884159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1601884168
 MonoBehaviour:
   m_ObjectHideFlags: 0
