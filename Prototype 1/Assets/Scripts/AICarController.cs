@@ -24,15 +24,18 @@ public class AICarController : MonoBehaviour
     {
         if (behavior == AIBehavior.DriveForward)
         {
-            car.AdjustSteering();
+            if (car.GetVehicleVelocity() < 25f)
+            {
+                car.AdjustSteering();
 
-            car.MotorTorque = 1f;
+                car.MotorTorque = 1f;
 
-            car.ControlTorque();
+                car.ControlTorque();
 
-            car.Stabilize();
+                car.Stabilize();
 
-            car.ApplyTorque();
+                car.ApplyTorque();
+            }
         }
     }
 }
