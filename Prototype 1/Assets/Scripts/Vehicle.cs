@@ -88,6 +88,15 @@ public class Vehicle : MonoBehaviour
         }
     }
 
+    // Get the vehicle position
+    public Vector3 Position
+    {
+        get
+        {
+            return vehicle.position;
+        }
+    }
+
     // Methods
 
     // Set the center of mass of the vehicle to the offset location
