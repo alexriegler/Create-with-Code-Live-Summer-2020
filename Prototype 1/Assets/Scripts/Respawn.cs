@@ -18,6 +18,7 @@ public class Respawn : MonoBehaviour
     {
         player.transform.position = respawnPoint.transform.position;
         player.GetComponent<Rigidbody>().isKinematic = true;
+        player.transform.eulerAngles = Vector3.forward;
         yield return new WaitForSeconds(1);
         player.GetComponent<Rigidbody>().isKinematic = false;
     }
