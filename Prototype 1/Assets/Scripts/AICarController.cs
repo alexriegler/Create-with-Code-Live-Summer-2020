@@ -12,6 +12,7 @@ public class AICarController : MonoBehaviour
     }
 
     public AIBehavior behavior;
+    public Vehicle car;
 
     // Start is called before the first frame update
     void Start()
