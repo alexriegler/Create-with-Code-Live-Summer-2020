@@ -20,9 +20,19 @@ public class AICarController : MonoBehaviour
         car.SetCenterOfMass();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (behavior == AIBehavior.DriveForward)
+        {
+            car.AdjustSteering();
+
+            car.MotorTorque = 1f;
+
+            car.ControlTorque();
+
+            car.Stabilize();
+
+            car.ApplyTorque();
+        }
     }
 }
