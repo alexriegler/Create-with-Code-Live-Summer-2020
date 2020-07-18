@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
@@ -9,7 +10,15 @@ public class Respawn : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.transform.position = respawnPoint.transform.position;
+            StartCoroutine(RespawnPlayer(other.gameObject));
         }
+    }
+
+    IEnumerator RespawnPlayer(GameObject player)
+    {
+        player.transform.position = respawnPoint.transform.position;
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        yield return new WaitForSeconds(1);
+        player.GetComponent<Rigidbody>().isKinematic = false;
     }
 }
