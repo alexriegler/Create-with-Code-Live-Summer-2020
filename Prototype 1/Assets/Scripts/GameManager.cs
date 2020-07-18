@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                players[i].GetComponent<PlayerCarController>().enabled = false;
                 playerTexts[i].GetComponent<Text>().text = LosingText;
             }
         }
