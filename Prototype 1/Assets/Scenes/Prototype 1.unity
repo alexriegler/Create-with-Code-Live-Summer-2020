@@ -2465,7 +2465,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ef67e3506ee539646905ff6769eb70ae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2483,6 +2483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5da55215f118540b0371575f65d6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 349530925}
 --- !u!114 &349530928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7553,7 +7554,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 10f95ad5194a3be4d81f0c65c1119505, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -7571,6 +7572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5da55215f118540b0371575f65d6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 1601884162}
 --- !u!114 &1601884170
 MonoBehaviour:
   m_ObjectHideFlags: 0
