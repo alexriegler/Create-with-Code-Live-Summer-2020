@@ -9046,6 +9046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628dfdd8a22471a4ab4fd9d7a16fbbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 1601884161}
 --- !u!1 &1903687807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d80c7433031fdee44bf3910c4b046ce7,
