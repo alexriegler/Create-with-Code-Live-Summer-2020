@@ -46,7 +46,8 @@ public class Vehicle : MonoBehaviour
 
     [Header("Center of Mass")]
     public Vector3 comOffset;
-    public Rigidbody vehicle;
+    [SerializeField]
+    private Rigidbody vehicle;
 
     // Properties
 
@@ -85,6 +86,15 @@ public class Vehicle : MonoBehaviour
         {
             WheelCollider wheel = axleInfos[0].rightWheel;
             return wheel.radius * Mathf.PI * maxRPM * 60.0f / 1000.0f;
+        }
+    }
+
+    // Get the vehicle position
+    public Vector3 Position
+    {
+        get
+        {
+            return vehicle.position;
         }
     }
 

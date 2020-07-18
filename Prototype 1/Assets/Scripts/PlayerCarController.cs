@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-[RequireComponent (typeof (Vehicle))]
-public class SimpleCarController : MonoBehaviour
+[RequireComponent(typeof(Vehicle))]
+public class PlayerCarController : MonoBehaviour
 {
     [Header("Input")]
     public string verticalAxisName;
     public string horizontalAxisName;
     public string brakeButton;
-    
+
     private float verticleInput;
     private float hoziontalInput;
 
