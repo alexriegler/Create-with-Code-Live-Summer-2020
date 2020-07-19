@@ -4429,7 +4429,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7072235567452049439}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7072235567452049440}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa1314877ca251242bf9e49437425e31, type: 3}
@@ -6544,6 +6544,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 818215759}
     m_Modifications:
+    - target: {fileID: 1154353595900497344, guid: 9b37e970033b2cd4b816f79aa73840ba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1154353595900687655, guid: 9b37e970033b2cd4b816f79aa73840ba,
         type: 3}
       propertyPath: m_Name
@@ -7540,6 +7545,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 188a26a43d6d5c044a400a27c9e1ce2e, type: 3}
+--- !u!1 &7072235567452049440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7072235568001765281, guid: 188a26a43d6d5c044a400a27c9e1ce2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7072235567452049439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7072235567452049441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072235567452049440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253435b4cb8eece43a11d4c2d63145e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTime: 3
+  countdownText: {fileID: 1862962646}
+  gameManager: {fileID: 1669078976}
 --- !u!1001 &7315729793301559535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7744,6 +7770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068837697517490159, guid: c3cdb0f0288dd524491953abd829fb48,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9068837697517599390, guid: c3cdb0f0288dd524491953abd829fb48,
         type: 3}

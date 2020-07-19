@@ -5,15 +5,34 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int countdownTime;
+    public Text countdownText;
+    public GameManager gameManager;
+
+    private string goString = "GO!";
+
+    private void Start()
     {
-        
+        StartCoroutine(CountdownToStart());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CountdownToStart()
     {
-        
+        while(countdownTime > 0)
+        {
+            countdownText.text = countdownTime.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            countdownTime--;
+        }
+
+        countdownText.text = goString;
+
+        gameManager.StartGame();
+
+        yield return new WaitForSeconds(1f);
+
+        countdownText.gameObject.SetActive(false);
     }
 }
