@@ -5672,6 +5672,7 @@ GameObject:
   - component: {fileID: 1862962645}
   - component: {fileID: 1862962647}
   - component: {fileID: 1862962646}
+  - component: {fileID: 1862962648}
   m_Layer: 0
   m_Name: CountdownText
   m_TagString: Untagged
@@ -5726,8 +5727,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 3
 --- !u!222 &1862962647
@@ -5738,6 +5739,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862962644}
   m_CullTransparentMesh: 0
+--- !u!114 &1862962648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862962644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!4 &1881056057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3421885941140268148, guid: c2b2ba3c0724ea04bb093452bd867368,
