@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
     public GameObject[] playerTexts;
+
+    public float sceneLoadDelay = 10f;
 
     public const string WinningText = "You won!";
     public const string LosingText = "You lost";
@@ -26,6 +29,15 @@ public class GameManager : MonoBehaviour
                 playerTexts[i].GetComponent<Text>().text = LosingText;
             }
         }
+        
         print("Level Complete!");
+
+        StartCoroutine(LoadNextScene());
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(sceneLoadDelay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -7340,6 +7340,11 @@ PrefabInstance:
       propertyPath: playerTexts.Array.data[1]
       value: 
       objectReference: {fileID: 1710311583}
+    - target: {fileID: 7072235568001765343, guid: 188a26a43d6d5c044a400a27c9e1ce2e,
+        type: 3}
+      propertyPath: sceneLoadDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 188a26a43d6d5c044a400a27c9e1ce2e, type: 3}
 --- !u!1001 &7315729793301559535
