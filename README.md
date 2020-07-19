@@ -4,7 +4,7 @@
 ## Table of Contents
 * [General info](#general-info)
   * [Prototypes](#prototypes)
-
+* [Technologies](#technologies)
 
 ## General Info
 As I neared my final year in college, I needed to choose a path for after I graduate. So, I started this course to learn about game development. I specifcally chose Unity since it is commonly used in the professional industry and the skills learned with it could be applied elsewhere. Within this repository, you will find the prototypes from each week of the four-week course.
