@@ -6,6 +6,7 @@
   * [Prototypes](#prototypes)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Status](#status)
 
 ## General Info
 As I neared my final year in college, I needed to choose a path for after I graduate. So, I started this course to learn about game development. I specifcally chose Unity since it is commonly used in the professional industry and the skills learned with it could be applied elsewhere. Within this repository, you will find the prototypes from each week of the four-week course.
@@ -31,3 +32,6 @@ The repository should then be downloaded to your computer. From there you can na
 `/Create-with-Code-Live-Summer-2020/Prototype #`
 
 Where `#` is replaced with the prototype number, e.g., `1` or `2`. These are the Unity project folders. You are free to do whatever you want with them, with proper attribution.
+
+## Status
+Course is: _in progress_
