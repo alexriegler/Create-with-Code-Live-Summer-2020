@@ -7,6 +7,7 @@ public class Countdown : MonoBehaviour
 {
     public int countdownTime;
     public Text countdownText;
+    public Text[] controlsTexts;
     public GameManager gameManager;
 
     private string goString = "GO!";
@@ -34,5 +35,11 @@ public class Countdown : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         countdownText.gameObject.SetActive(false);
+
+        // Disable controls display
+        for (int i = 0; i < controlsTexts.Length; i++)
+        {
+            controlsTexts[i].gameObject.SetActive(false);
+        }
     }
 }

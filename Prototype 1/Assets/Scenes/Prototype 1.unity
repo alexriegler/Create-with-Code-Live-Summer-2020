@@ -7780,6 +7780,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownTime: 3
   countdownText: {fileID: 1862962646}
+  controlsTexts:
+  - {fileID: 1742402889}
+  - {fileID: 2089474026}
   gameManager: {fileID: 1669078976}
 --- !u!1001 &7315729793301559535
 PrefabInstance:
