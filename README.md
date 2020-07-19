@@ -5,6 +5,7 @@
 * [General info](#general-info)
   * [Prototypes](#prototypes)
 * [Technologies](#technologies)
+* [Setup](#setup)
 
 ## General Info
 As I neared my final year in college, I needed to choose a path for after I graduate. So, I started this course to learn about game development. I specifcally chose Unity since it is commonly used in the professional industry and the skills learned with it could be applied elsewhere. Within this repository, you will find the prototypes from each week of the four-week course.
@@ -15,3 +16,18 @@ As I neared my final year in college, I needed to choose a path for after I grad
 ## Technologies
 * [Unity 2018.4.24f1](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity")
 * C# 4.0
+
+## Setup
+### How to play
+To play the games, web links are provided in their respective folders for convenience. PC and Mac installations are also provided as alternatives.
+
+### How to work with the Unity projects
+To work with the source code, you must first have Unity installed. For best results, you should have [Unity 2018.4](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity") installed. You may use other versions of Unity but you may encounter errors with the assets or code. After installing Unity, use your terminal to navigate to the folder on your computer where you want to download the repository to. Then, use the following git command,
+
+`$ git clone https://github.com/alexriegler/Create-with-Code-Live-Summer-2020.git`
+
+The repository should then be downloaded to your computer. From there you can navigate to each of the prototypes within the repository. The prototypes can be found in their respective folders following the naming scheme below,
+
+`/Create-with-Code-Live-Summer-2020/Prototype #`
+
+Where `#` is replaced with the prototype number, e.g., `1` or `2`. These are the Unity project folders. You are free to do whatever you want with them, with proper attribution.
