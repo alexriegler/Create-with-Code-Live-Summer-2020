@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,10 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
     public GameObject[] playerTexts;
-    
-    bool gameHasEnded = false;
 
-    public float restartDelay = 1f;
+    public float sceneLoadDelay = 10f;
 
     public const string WinningText = "You won!";
     public const string LosingText = "You lost";
@@ -30,21 +29,15 @@ public class GameManager : MonoBehaviour
                 playerTexts[i].GetComponent<Text>().text = LosingText;
             }
         }
+        
         print("Level Complete!");
+
+        StartCoroutine(LoadNextScene());
     }
 
-    public void EndGame()
+    IEnumerator LoadNextScene()
     {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("GAME OVER");
-            Invoke("Restart", restartDelay);
-        }
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return new WaitForSeconds(sceneLoadDelay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
