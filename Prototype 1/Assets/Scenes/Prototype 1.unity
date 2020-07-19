@@ -7251,6 +7251,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 349672401}
+    - target: {fileID: 6257554243574277254, guid: e9be52c1e92d5844ca9996427f331002,
+        type: 3}
+      propertyPath: cycleCameraButton
+      value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257554243574277254, guid: e9be52c1e92d5844ca9996427f331002,
+        type: 3}
+      propertyPath: rearViewButton
+      value: 258
+      objectReference: {fileID: 0}
     - target: {fileID: 6257554243574277255, guid: e9be52c1e92d5844ca9996427f331002,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7389,6 +7399,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1601730605}
+    - target: {fileID: 6843441245561379692, guid: 9f11da624476aa44e8a0fc40a2dd2935,
+        type: 3}
+      propertyPath: cycleCameraButton
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843441245561379692, guid: 9f11da624476aa44e8a0fc40a2dd2935,
+        type: 3}
+      propertyPath: rearViewButton
+      value: 114
+      objectReference: {fileID: 0}
     - target: {fileID: 6843441245561379695, guid: 9f11da624476aa44e8a0fc40a2dd2935,
         type: 3}
       propertyPath: m_LocalPosition.x
