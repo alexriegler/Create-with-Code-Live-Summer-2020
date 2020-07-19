@@ -6,7 +6,7 @@
   * [Prototypes](#prototypes)
 * [Technologies](#technologies)
 * [Setup](#setup)
-  * [How to play](#how-to-play)
+  * [How to play the games](#how-to-play-the-games)
   * [How to work with the Unity projects](#how-to-work-with-the-unity-projects)
 * [Status](#status)
 * [Contact](#contact)
@@ -25,7 +25,7 @@ I started this course to learn about game development. I specifcally chose Unity
 * C# 4.0
 
 ## Setup
-### How to play
+### How to play the games
 To play the games, web links are provided in their respective folders for convenience. PC and Mac installations are also provided as alternatives.
 
 ### How to work with the Unity projects
