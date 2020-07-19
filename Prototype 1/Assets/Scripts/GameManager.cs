@@ -6,10 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
     public GameObject[] playerTexts;
-    
-    bool gameHasEnded = false;
-
-    public float restartDelay = 1f;
 
     public const string WinningText = "You won!";
     public const string LosingText = "You lost";
@@ -31,20 +27,5 @@ public class GameManager : MonoBehaviour
             }
         }
         print("Level Complete!");
-    }
-
-    public void EndGame()
-    {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("GAME OVER");
-            Invoke("Restart", restartDelay);
-        }
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
