@@ -6,6 +6,8 @@
   * [Prototypes](#prototypes)
 * [Technologies](#technologies)
 * [Setup](#setup)
+  * [How to play](#how-to-play)
+  * [How to work with the Unity projects](#how-to-work-with-the-unity-projects)
 * [Status](#status)
 * [Contact](#contact)
 
