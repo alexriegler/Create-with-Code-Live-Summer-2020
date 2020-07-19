@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < players.Length; i++)
         {
-            players[i].GetComponent<PlayerCarController>().enabled = true;
+            players[i].GetComponent<PlayerCarController>().AllowInput = true;
         }
     }
 

@@ -10,6 +10,7 @@ public class PlayerCarController : MonoBehaviour
 
     private float verticleInput;
     private float hoziontalInput;
+    private bool allowInput = false;
 
     private bool brakesApplied = false;
 
@@ -54,10 +55,31 @@ public class PlayerCarController : MonoBehaviour
 
     // Methods
 
+    // Get and set whether to allow driving input
+    public bool AllowInput
+    {
+        get
+        {
+            return allowInput;
+        }
+        set
+        {
+            allowInput = value;
+        }
+    }
+
     // Get driving input
     void GetDrivingInput()
     {
-        car.MotorTorque = verticleInput;
-        car.SteeringTorque = hoziontalInput;
+        if (allowInput)
+        {
+            car.MotorTorque = verticleInput;
+            car.SteeringTorque = hoziontalInput;
+        }
+        else
+        {
+            car.MotorTorque = 0f;
+            car.SteeringTorque = 0f;
+        }
     }
 }
