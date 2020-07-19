@@ -13,6 +13,14 @@ public class GameManager : MonoBehaviour
     public const string WinningText = "You won!";
     public const string LosingText = "You lost";
 
+    public void StartGame()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<PlayerCarController>().AllowInput = true;
+        }
+    }
+
     public void CompleteLevel(GameObject winningPlayer)
     {
         for (int i = 0; i < players.Length; i++)

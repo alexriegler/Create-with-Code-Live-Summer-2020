@@ -7,6 +7,9 @@ public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
 
+    public KeyCode cycleCameraButton;
+    public KeyCode rearViewButton;
+
     private Vector3 rearView = new Vector3(0, 5, 12);
     private Vector3 close = new Vector3(0, 5, -7);
     private Vector3 medium = new Vector3(0, 5, -9);
@@ -32,7 +35,7 @@ public class FollowPlayer : MonoBehaviour
         // Cycle through views with C key
         if (!isRearView)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(cycleCameraButton))
             {
                 offsetIndex = (offsetIndex + 1) % 3;
             }
@@ -40,14 +43,14 @@ public class FollowPlayer : MonoBehaviour
         }
 
         // While the R key is held, rear view
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(rearViewButton))
         {
             isRearView = true;
             offset = rearView;
             transform.Rotate(Vector3.up, 180.0f, Space.World);
         }
 
-        if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(rearViewButton))
         {
             isRearView = false;
             transform.Rotate(Vector3.up, 180.0f, Space.World);
