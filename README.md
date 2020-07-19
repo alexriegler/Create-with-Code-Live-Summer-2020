@@ -2,7 +2,7 @@
 > This repository contains my prototypes from [Unity's Create with Code Live](https://learn.unity.com/course/create-with-code-live-summer-2020 "Create with Code Live - Summer 2020 - Unity Learn") course.
 
 ## Table of Contents
-* [General info](#general-info)
+* [General Info](#general-info)
   * [Prototypes](#prototypes)
 * [Technologies](#technologies)
 * [Setup](#setup)
