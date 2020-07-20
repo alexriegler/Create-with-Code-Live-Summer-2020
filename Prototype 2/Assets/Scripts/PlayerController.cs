@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Input")]
     [SerializeField]
-    private string horizontalAxisName;
+    private string horizontalAxisName = "Horizontal";
     [SerializeField]
     private float horizontalInput;
 
