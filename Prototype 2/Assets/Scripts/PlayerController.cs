@@ -26,13 +26,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetMouseInput();
+
+        // Check boundaries
+        if (transform.position.x < -10f)
+        {
+            transform.position = new Vector3(-10f, transform.position.y, transform.position.z);
+        }
+
+        // Move player
+        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
+    }
+
+    void GetMouseInput()
+    {
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            print("Hit");
-
             // If mouse pointer is to the left of player, move left
             if (transform.position.x > hitInfo.point.x)
             {
@@ -47,17 +59,5 @@ public class PlayerController : MonoBehaviour
                 horizontalInput = 0;
             }
         }
-
-        // Check boundaries
-        if (transform.position.x < -10f)
-        {
-            transform.position = new Vector3(-10f, transform.position.y, transform.position.z);
-        }
-        
-        // TODO: Use mouse for movement
-        // horizontalInput = Input.GetAxisRaw(horizontalAxisName);
-
-        // Move player
-        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
     }
 }
