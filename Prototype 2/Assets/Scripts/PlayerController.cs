@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement")]
+    [SerializeField]
+    private float speed = 10.0f;
+
+    [Header("Input")]
     [SerializeField]
     private string horizontalAxisName;
     [SerializeField]
@@ -19,5 +24,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis(horizontalAxisName);
+
+        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
     }
 }

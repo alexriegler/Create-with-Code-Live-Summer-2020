@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3c5d6b601a17c4a9cfca82d64b0d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   horizontalAxisName: Horizontal
   horizontalInput: 0
 --- !u!1001 &2004723659
