@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float horizontalInput;
 
+    [SerializeField]
+    private Camera gameCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            print("Hit");
+
+            // If mouse pointer is to the left of player, move left
+            if (transform.position.x > hitInfo.point.x)
+            {
+                horizontalInput = -1f;
+            }
+            else if (transform.position.x < hitInfo.point.x)
+            {
+                horizontalInput = 1f;
+            }
+            else
+            {
+                horizontalInput = 0;
+            }
+        }
+
         // Check boundaries
         if (transform.position.x < -10f)
         {
@@ -30,7 +55,7 @@ public class PlayerController : MonoBehaviour
         }
         
         // TODO: Use mouse for movement
-        horizontalInput = Input.GetAxisRaw(horizontalAxisName);
+        // horizontalInput = Input.GetAxisRaw(horizontalAxisName);
 
         // Move player
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
