@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField]
-    private float speed = 10.0f;
-
-    [Header("Input")]
-    [SerializeField]
-    private string horizontalAxisName = "Horizontal";
-    [SerializeField]
-    private float horizontalInput;
-
     [SerializeField]
     private Camera gameCamera;
 
