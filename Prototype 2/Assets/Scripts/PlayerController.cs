@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Camera gameCamera;
 
+    private float screenHalfWidthInWorldUnits = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +21,13 @@ public class PlayerController : MonoBehaviour
         GetMouseInput();
 
         // Check boundaries
-        if (transform.position.x < -10f)
+        if (transform.position.x < -screenHalfWidthInWorldUnits)
         {
-            transform.position = new Vector3(-10f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-screenHalfWidthInWorldUnits, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > screenHalfWidthInWorldUnits)
+        {
+            transform.position = new Vector3(screenHalfWidthInWorldUnits, transform.position.y, transform.position.z);
         }
     }
 
