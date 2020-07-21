@@ -674,3 +674,5 @@ MonoBehaviour:
   - {fileID: 2542001605315347454, guid: c335617a317e07e4284d467ac2b73350, type: 3}
   - {fileID: 6457714712380513949, guid: ef437bb59fcb8fb4cb68ad3bb27eba8b, type: 3}
   - {fileID: 8149431050422331022, guid: 918219ef6554596448a4302e1127b598, type: 3}
+  screenOffset: 0
+  spawnKey: 115
