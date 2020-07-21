@@ -6,15 +6,24 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private Camera gameCamera;
+
     [SerializeField]
-    private float screenHalfWidthInWorldUnits;
+    private float leftScreenBorder;
+    [SerializeField]
+    private float rightScreenBorder;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Get width of the player character
         float playerWidth = transform.localScale.x;
+
         // Get the aproximate width of the screen
-        screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - playerWidth;
+        float screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize;
+
+        // Find left and right screen borders
+        leftScreenBorder = -(screenHalfWidthInWorldUnits - playerWidth);
+        rightScreenBorder = screenHalfWidthInWorldUnits - playerWidth;
     }
 
     // Update is called once per frame
@@ -23,13 +32,13 @@ public class PlayerController : MonoBehaviour
         GetMouseInput();
 
         // Check boundaries
-        if (transform.position.x < -screenHalfWidthInWorldUnits)
+        if (transform.position.x < leftScreenBorder)
         {
-            transform.position = new Vector3(-screenHalfWidthInWorldUnits, transform.position.y, transform.position.z);
+            transform.position = new Vector3(leftScreenBorder, transform.position.y, transform.position.z);
         }
-        if (transform.position.x > screenHalfWidthInWorldUnits)
+        if (transform.position.x > rightScreenBorder)
         {
-            transform.position = new Vector3(screenHalfWidthInWorldUnits, transform.position.y, transform.position.z);
+            transform.position = new Vector3(rightScreenBorder, transform.position.y, transform.position.z);
         }
     }
 
