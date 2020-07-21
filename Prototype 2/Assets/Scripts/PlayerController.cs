@@ -12,9 +12,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float halfPlayerWidth = transform.localScale.x;
+        float playerWidth = transform.localScale.x;
         // Get the aproximate width of the screen
-        screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPlayerWidth;
+        screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - playerWidth;
     }
 
     // Update is called once per frame
