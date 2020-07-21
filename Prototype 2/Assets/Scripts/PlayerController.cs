@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Hide cursor
+        Cursor.visible = false;
+
         // Get width of the player character
         float playerWidth = transform.localScale.x;
 
