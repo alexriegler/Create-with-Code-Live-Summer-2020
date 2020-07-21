@@ -18,17 +18,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField]
-    private float leftScreenBorder;
-    [SerializeField]
-    private float rightScreenBorder;
+    private float viewportPadding = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
         // Hide cursor
         Cursor.visible = false;
-
-        FindScreenBorders();
     }
 
     // Update is called once per frame
@@ -43,20 +39,6 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
-    }
-
-    // Calculates the location of the screen borders
-    void FindScreenBorders()
-    {
-        // Get width of the player character
-        float playerWidth = transform.localScale.x;
-
-        // Get the aproximate width of the screen
-        float screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize;
-
-        // Find left and right screen borders
-        leftScreenBorder = -(screenHalfWidthInWorldUnits - playerWidth);
-        rightScreenBorder = screenHalfWidthInWorldUnits - playerWidth;
     }
 
     // Uses a ray to point at the location on the screen where the player should move to
@@ -74,13 +56,17 @@ public class PlayerController : MonoBehaviour
     // Restricts the player's movement within the boundaries
     void CheckBoundaries()
     {
-        if (transform.position.x < leftScreenBorder)
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        float leftViewportBorder = 0f + viewportPadding;
+        float rightViewportBorder = 1f - viewportPadding;
+
+        if (viewPos.x < leftViewportBorder)
         {
-            transform.position = new Vector3(leftScreenBorder, transform.position.y, transform.position.z);
+            transform.position = new Vector3(Camera.main.ViewportToWorldPoint(new Vector3(leftViewportBorder, viewPos.y, viewPos.z)).x, transform.position.y, transform.position.z);
         }
-        if (transform.position.x > rightScreenBorder)
+        if (viewPos.x > rightViewportBorder)
         {
-            transform.position = new Vector3(rightScreenBorder, transform.position.y, transform.position.z);
+            transform.position = new Vector3(Camera.main.ViewportToWorldPoint(new Vector3(rightViewportBorder, viewPos.y, viewPos.z)).x, transform.position.y, transform.position.z);
         }
     }
 }
