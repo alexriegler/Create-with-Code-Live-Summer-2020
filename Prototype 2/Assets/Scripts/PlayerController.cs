@@ -40,8 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(projectileFireButton))
         {
-            print("Space bar pressed!");
-            // TODO: Launch a projectile from the player
+            Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
     }
 
