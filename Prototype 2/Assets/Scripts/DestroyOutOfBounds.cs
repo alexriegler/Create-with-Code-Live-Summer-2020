@@ -5,6 +5,19 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Should the object be destroyed when crossing the left border of the viewport.")]
+    private bool leftBorder = true;
+    [SerializeField]
+    [Tooltip("Should the object be destroyed when crossing the right border of the viewport.")]
+    private bool rightBorder = true;
+    [SerializeField]
+    [Tooltip("Should the object be destroyed when crossing the top border of the viewport.")]
+    private bool topBorder = true;
+    [SerializeField]
+    [Tooltip("Should the object be destroyed when crossing the bottom border of the viewport.")]
+    private bool bottomBorder = true;
+
+    [SerializeField]
     [Tooltip("The amount of time in seconds to pass after exiting the viewport and before destroying.")]
     private float destroyDelay = 0.5f;
     [SerializeField]
@@ -23,7 +36,10 @@ public class DestroyOutOfBounds : MonoBehaviour
         viewPos = Camera.main.WorldToViewportPoint(transform.position);
 
         // If object leaves viewport space, destroy
-        if (viewPos.x < 0f || viewPos.x > 1f || viewPos.y > 1f || viewPos.y < 0f)
+        if ((leftBorder && viewPos.x < 0f) 
+            || (rightBorder && viewPos.x > 1f) 
+            || (topBorder && viewPos.y > 1f) 
+            || (bottomBorder && viewPos.y < 0f))
         {
             Destroy(gameObject, destroyDelay);
         }

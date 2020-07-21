@@ -488,6 +488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243482a9d55abe54e95606f7110813c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftBorder: 0
+  rightBorder: 0
+  topBorder: 0
+  bottomBorder: 1
+  destroyDelay: 0.5
   viewPos: {x: 0, y: 0, z: 0}
 --- !u!1 &2542001605315359544
 GameObject:
