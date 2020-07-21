@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
         CheckBoundaries();
 
+        // Fire a projectile
         if (Input.GetKeyDown(projectileFireButton))
         {
             Instantiate(projectile, transform.position, projectile.transform.rotation);
