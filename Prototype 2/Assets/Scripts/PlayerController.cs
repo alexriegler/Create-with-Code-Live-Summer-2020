@@ -6,13 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private Camera gameCamera;
-
-    private float screenHalfWidthInWorldUnits = 10f;
+    [SerializeField]
+    private float screenHalfWidthInWorldUnits;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        float halfPlayerWidth = transform.localScale.x;
+        // Get the aproximate width of the screen
+        screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPlayerWidth;
     }
 
     // Update is called once per frame
