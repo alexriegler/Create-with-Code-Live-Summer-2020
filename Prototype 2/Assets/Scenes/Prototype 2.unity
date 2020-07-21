@@ -675,5 +675,7 @@ MonoBehaviour:
   - {fileID: 6457714712380513949, guid: ef437bb59fcb8fb4cb68ad3bb27eba8b, type: 3}
   - {fileID: 8149431050422331022, guid: 918219ef6554596448a4302e1127b598, type: 3}
   animalIndex: 0
+  startDelay: 2
+  spawnInterval: 1.5
   screenOffset: 0
   spawnKey: 115
