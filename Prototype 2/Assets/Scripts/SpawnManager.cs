@@ -27,14 +27,19 @@ public class SpawnManager : MonoBehaviour
     {
         if (Input.GetKeyDown(spawnKey))
         {
-            animalIndex = Random.Range(0, animals.Length);
-
-            Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-            float screenTop = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
-            screenOffset = animals[animalIndex].transform.localScale.z;
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0f, screenTop + screenOffset);
-
-            Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
+            SpawnRandomAnimal();
         }
+    }
+
+    void SpawnRandomAnimal()
+    {
+        animalIndex = Random.Range(0, animals.Length);
+
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        float screenTop = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
+        screenOffset = animals[animalIndex].transform.localScale.z;
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0f, screenTop + screenOffset);
+
+        Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
     }
 }
