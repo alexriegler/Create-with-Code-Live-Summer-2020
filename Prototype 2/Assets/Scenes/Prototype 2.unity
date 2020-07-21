@@ -524,7 +524,7 @@ Transform:
   - {fileID: 1590138455}
   - {fileID: 425805627}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1130971385
 PrefabInstance:
@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458270, guid: 02eca77e7e6a2ec41ba4c68f20e26098, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 458270, guid: 02eca77e7e6a2ec41ba4c68f20e26098, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -853,8 +853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3c5d6b601a17c4a9cfca82d64b0d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 534669904}
   projectile: {fileID: 7547206009908374100, guid: b251af37c7717ac4d838b7d076e14442,
     type: 3}
-  gameCamera: {fileID: 534669904}
+  projectileFireButton: 32
   leftScreenBorder: 0
   rightScreenBorder: 0

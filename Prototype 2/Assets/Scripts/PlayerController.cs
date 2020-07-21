@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject projectile;
-
+    [Header("Camera")]
     [SerializeField]
     private Camera gameCamera;
 
+    [Header("Player")]
+    [SerializeField]
+    private GameObject projectile;
+
+    [Header("Player")]
+    [SerializeField]
+    private KeyCode projectileFireButton = KeyCode.Space;
+
+    [Header("Debug")]
     [SerializeField]
     private float leftScreenBorder;
     [SerializeField]
@@ -30,6 +37,12 @@ public class PlayerController : MonoBehaviour
         GetMouseInput();
 
         CheckBoundaries();
+
+        if (Input.GetKeyDown(projectileFireButton))
+        {
+            print("Space bar pressed!");
+            // TODO: Launch a projectile from the player
+        }
     }
 
     // Calculates the location of the screen borders
