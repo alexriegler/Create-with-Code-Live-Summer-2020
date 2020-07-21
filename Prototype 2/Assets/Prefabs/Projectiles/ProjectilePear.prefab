@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7547206009910641124}
   - component: {fileID: 7547206010478486532}
   - component: {fileID: 7883486145675296243}
+  - component: {fileID: 5761549160332240167}
   m_Layer: 0
   m_Name: ProjectilePear
   m_TagString: Untagged
@@ -111,3 +112,16 @@ MonoBehaviour:
   bottomBorder: 0
   destroyDelay: 0.5
   viewPos: {x: 0, y: 0, z: 0}
+--- !u!135 &5761549160332240167
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547206009908374100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.28686297
+  m_Center: {x: 0, y: 0.20705059, z: -2.35945e-14}
