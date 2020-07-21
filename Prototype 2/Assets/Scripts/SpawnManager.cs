@@ -8,9 +8,14 @@ public class SpawnManager : MonoBehaviour
     private GameObject[] animals;
     [SerializeField]
     private int animalIndex;
+    [SerializeField]
+    private float startDelay = 2f;
+    [SerializeField]
+    private float spawnInterval = 1.5f;
 
     [SerializeField]
     private float screenOffset;
+
     private float spawnRangeX = 20f;
 
     [SerializeField]
@@ -19,16 +24,13 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(spawnKey))
-        {
-            SpawnRandomAnimal();
-        }
+
     }
 
     void SpawnRandomAnimal()
