@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    private GameObject projectile;
+
+    [SerializeField]
     private Camera gameCamera;
 
     [SerializeField]
