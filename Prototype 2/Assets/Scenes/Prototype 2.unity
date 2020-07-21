@@ -669,3 +669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1263e064a5df2a140b43f489a575c27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animals:
+  - {fileID: 1920905784209715289, guid: 076789629be4e4e4d9ed842285c3d73a, type: 3}
+  - {fileID: 2542001605315347454, guid: c335617a317e07e4284d467ac2b73350, type: 3}
+  - {fileID: 6457714712380513949, guid: ef437bb59fcb8fb4cb68ad3bb27eba8b, type: 3}
+  - {fileID: 8149431050422331022, guid: 918219ef6554596448a4302e1127b598, type: 3}
