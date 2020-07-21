@@ -29,10 +29,10 @@ public class SpawnManager : MonoBehaviour
             animalIndex = Random.Range(0, animals.Length);
 
             Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-            float z = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
+            float screenTop = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
             screenOffset = animals[animalIndex].transform.localScale.z;
 
-            Instantiate(animals[animalIndex], new Vector3(0f, 0f, z + screenOffset), animals[animalIndex].transform.rotation);
+            Instantiate(animals[animalIndex], new Vector3(0f, 0f, screenTop + screenOffset), animals[animalIndex].transform.rotation);
         }
     }
 }
