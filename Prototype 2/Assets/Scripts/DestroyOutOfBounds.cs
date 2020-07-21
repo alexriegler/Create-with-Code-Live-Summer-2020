@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("Positional coordinates of the object in viewport space. The bottom-left of the camera is (0,0); the top-right is (1,1).")]
+    private Vector3 viewPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,12 @@ public class DestroyOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        viewPos = Camera.main.WorldToViewportPoint(transform.position);
+
+        // If object leaves viewport space, destroy
+        if (viewPos.x < 0f || viewPos.x > 1f || viewPos.y > 1f || viewPos.y < 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

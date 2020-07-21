@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6434325179759641619}
   - component: {fileID: 6434325179760673537}
   - component: {fileID: 6434325180651131760}
+  - component: {fileID: 114190171128249246}
   m_Layer: 0
   m_Name: ProjectileGreenApple
   m_TagString: Untagged
@@ -91,3 +92,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  direction: {x: 0, y: 0, z: 1}
+--- !u!114 &114190171128249246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434325179758685145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243482a9d55abe54e95606f7110813c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewPos: {x: 0, y: 0, z: 0}
