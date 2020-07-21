@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] animals;
+    [SerializeField]
+    private int animalIndex;
 
     [SerializeField]
     private float screenOffset;
@@ -26,9 +28,9 @@ public class SpawnManager : MonoBehaviour
         {
             Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
             float z = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
-            screenOffset = animals[0].transform.localScale.z;
+            screenOffset = animals[animalIndex].transform.localScale.z;
 
-            Instantiate(animals[0], new Vector3(0f, 0f, z + screenOffset), animals[0].transform.rotation);
+            Instantiate(animals[animalIndex], new Vector3(0f, 0f, z + screenOffset), animals[animalIndex].transform.rotation);
         }
     }
 }
