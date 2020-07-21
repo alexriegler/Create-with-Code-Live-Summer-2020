@@ -322,7 +322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc90d48240dd64916900ac98e11b3e5f, type: 2}
+  - {fileID: 2100000, guid: 42b224efc5a8c4863a87e224a72bb1ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -625,5 +625,4 @@ MonoBehaviour:
   projectile: {fileID: 7547206009908374100, guid: b251af37c7717ac4d838b7d076e14442,
     type: 3}
   projectileFireButton: 32
-  leftScreenBorder: 0
-  rightScreenBorder: 0
+  viewportPadding: 0.1
