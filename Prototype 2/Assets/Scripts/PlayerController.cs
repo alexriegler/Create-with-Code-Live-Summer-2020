@@ -31,15 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         GetMouseInput();
 
-        // Check boundaries
-        if (transform.position.x < leftScreenBorder)
-        {
-            transform.position = new Vector3(leftScreenBorder, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x > rightScreenBorder)
-        {
-            transform.position = new Vector3(rightScreenBorder, transform.position.y, transform.position.z);
-        }
+        CheckBoundaries();
     }
 
     // Uses a ray to point at the location on the screen where the player should move to
@@ -51,6 +43,19 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo))
         {
             transform.position = new Vector3(hitInfo.point.x, transform.position.y, transform.position.z);
+        }
+    }
+
+    // Restricts the player's movement within the boundaries
+    void CheckBoundaries()
+    {
+        if (transform.position.x < leftScreenBorder)
+        {
+            transform.position = new Vector3(leftScreenBorder, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > rightScreenBorder)
+        {
+            transform.position = new Vector3(rightScreenBorder, transform.position.y, transform.position.z);
         }
     }
 }
