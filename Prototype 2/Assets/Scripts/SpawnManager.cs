@@ -31,8 +31,9 @@ public class SpawnManager : MonoBehaviour
             Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
             float screenTop = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
             screenOffset = animals[animalIndex].transform.localScale.z;
+            Vector3 spawnPos = new Vector3(Random.Range(-20, 20), 0f, screenTop + screenOffset);
 
-            Instantiate(animals[animalIndex], new Vector3(Random.Range(-20, 20), 0f, screenTop + screenOffset), animals[animalIndex].transform.rotation);
+            Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
         }
     }
 }
