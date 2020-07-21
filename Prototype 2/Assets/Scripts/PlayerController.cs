@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Uses a ray to point at the location on the screen where the player should move to
     void GetMouseInput()
     {
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
