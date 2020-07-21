@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField]
     private float screenOffset;
+    private float spawnRangeX = 20f;
 
     [SerializeField]
     private KeyCode spawnKey = KeyCode.S;
@@ -31,7 +32,7 @@ public class SpawnManager : MonoBehaviour
             Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
             float screenTop = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
             screenOffset = animals[animalIndex].transform.localScale.z;
-            Vector3 spawnPos = new Vector3(Random.Range(-20, 20), 0f, screenTop + screenOffset);
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0f, screenTop + screenOffset);
 
             Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
         }
