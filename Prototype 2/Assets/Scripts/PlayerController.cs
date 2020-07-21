@@ -18,6 +18,20 @@ public class PlayerController : MonoBehaviour
         // Hide cursor
         Cursor.visible = false;
 
+        FindScreenBorders();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        GetMouseInput();
+
+        CheckBoundaries();
+    }
+
+    // Calculates the location of the screen borders
+    void FindScreenBorders()
+    {
         // Get width of the player character
         float playerWidth = transform.localScale.x;
 
@@ -27,14 +41,6 @@ public class PlayerController : MonoBehaviour
         // Find left and right screen borders
         leftScreenBorder = -(screenHalfWidthInWorldUnits - playerWidth);
         rightScreenBorder = screenHalfWidthInWorldUnits - playerWidth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        GetMouseInput();
-
-        CheckBoundaries();
     }
 
     // Uses a ray to point at the location on the screen where the player should move to
