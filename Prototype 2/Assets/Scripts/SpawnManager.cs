@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject[] animals;
+
     // Start is called before the first frame update
     void Start()
     {
