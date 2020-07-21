@@ -7,6 +7,8 @@ public class MoveForward : MonoBehaviour
 
     [SerializeField]
     private float speed = 40.0f;
+    [SerializeField]
+    private Vector3 direction = Vector3.forward;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,6 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 }
