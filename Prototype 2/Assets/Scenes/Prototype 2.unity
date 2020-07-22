@@ -626,6 +626,7 @@ MonoBehaviour:
     type: 3}
   projectileFireButton: 32
   viewportPadding: 0.1
+  vpManager: {fileID: 1995139689}
 --- !u!1 &1878460941
 GameObject:
   m_ObjectHideFlags: 0
