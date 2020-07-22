@@ -10,7 +10,7 @@ public class ViewportManager : MonoBehaviour
 
     [Header("Viewport")]
     [SerializeField]
-    private float vpPadding = 0.1f;
+    private float vpSidePadding = 0.1f;
     [SerializeField]
     private float vpLeftBorderX;
     [SerializeField]
@@ -22,8 +22,8 @@ public class ViewportManager : MonoBehaviour
     void Start()
     {
         gameCamera = Camera.main;
-        vpLeftBorderX = 0f + vpPadding;
-        vpRightBorderX = 1f - vpPadding;
+        vpLeftBorderX = 0f + vpSidePadding;
+        vpRightBorderX = 1f - vpSidePadding;
 
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
@@ -37,11 +37,11 @@ public class ViewportManager : MonoBehaviour
     // Properties
 
     // Get the amount of padding within the viewport
-    public float VpPadding
+    public float VpSidePadding
     {
         get
         {
-            return vpPadding;
+            return vpSidePadding;
         }
     }
 
