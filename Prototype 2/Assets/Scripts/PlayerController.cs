@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Camera")]
     [SerializeField]
     private Camera gameCamera;
+    private ViewportManager vpManager;
 
     [Header("Player")]
     [SerializeField]
@@ -16,15 +17,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private KeyCode projectileFireButton = KeyCode.Space;
 
-    [Header("Debug")]
-    [SerializeField]
-    private float viewportPadding = 0.1f;
-
     // Start is called before the first frame update
     void Start()
     {
         // Hide cursor
         Cursor.visible = false;
+
+        // Get viewport manager
+        vpManager = gameCamera.GetComponent<ViewportManager>();
     }
 
     // Update is called once per frame
@@ -45,9 +45,8 @@ public class PlayerController : MonoBehaviour
     void GetMouseInput()
     {
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo))
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
             transform.position = new Vector3(hitInfo.point.x, transform.position.y, transform.position.z);
         }
@@ -56,17 +55,17 @@ public class PlayerController : MonoBehaviour
     // Restricts the player's movement within the boundaries
     void CheckBoundaries()
     {
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        float leftViewportBorder = 0f + viewportPadding;
-        float rightViewportBorder = 1f - viewportPadding;
+        Vector3 vpPos = gameCamera.WorldToViewportPoint(transform.position);
 
-        if (viewPos.x < leftViewportBorder)
+        if (vpPos.x < vpManager.VpLeftBorderX)
         {
-            transform.position = new Vector3(Camera.main.ViewportToWorldPoint(new Vector3(leftViewportBorder, viewPos.y, viewPos.z)).x, transform.position.y, transform.position.z);
+            float xPos = vpManager.WLeftBorderX;
+            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
         }
-        if (viewPos.x > rightViewportBorder)
+        else if (vpPos.x > vpManager.VpRightBorderX)
         {
-            transform.position = new Vector3(Camera.main.ViewportToWorldPoint(new Vector3(rightViewportBorder, viewPos.y, viewPos.z)).x, transform.position.y, transform.position.z);
+            float xPos = vpManager.WRightBorderX;
+            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
         }
     }
 }

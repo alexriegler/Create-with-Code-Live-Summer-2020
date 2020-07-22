@@ -412,9 +412,11 @@ GameObject:
   - component: {fileID: 2542001605324614008}
   - component: {fileID: 2542001605377278081}
   - component: {fileID: 114651480213914008}
+  - component: {fileID: 4877454733391521392}
+  - component: {fileID: 114109133814276594}
   m_Layer: 0
   m_Name: MediumAnimalStag
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,6 +496,31 @@ MonoBehaviour:
   bottomBorder: 1
   destroyDelay: 0.5
   viewPos: {x: 0, y: 0, z: 0}
+--- !u!65 &4877454733391521392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542001605315347454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1891538, y: 0.49598894, z: 0.4372686}
+  m_Center: {x: 2.8858487e-14, y: 0.23487929, z: 0.041593466}
+--- !u!114 &114109133814276594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542001605315347454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8919e52e20f2aa14a9ebaf16a0040ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2542001605315359544
 GameObject:
   m_ObjectHideFlags: 0

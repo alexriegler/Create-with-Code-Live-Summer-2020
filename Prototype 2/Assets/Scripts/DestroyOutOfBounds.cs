@@ -41,6 +41,10 @@ public class DestroyOutOfBounds : MonoBehaviour
             || (topBorder && viewPos.y > 1f) 
             || (bottomBorder && viewPos.y < 0f))
         {
+            if (gameObject.CompareTag("Enemy"))
+            {
+                print("Game Over!");
+            }
             Destroy(gameObject, destroyDelay);
         }
     }
