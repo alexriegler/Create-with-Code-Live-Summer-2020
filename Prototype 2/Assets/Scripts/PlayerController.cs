@@ -62,7 +62,9 @@ public class PlayerController : MonoBehaviour
 
         if (viewPos.x < leftViewportBorder)
         {
-            transform.position = new Vector3(Camera.main.ViewportToWorldPoint(new Vector3(leftViewportBorder, viewPos.y, viewPos.z)).x, transform.position.y, transform.position.z);
+            Vector3 vpLeftBorderPoint = new Vector3(leftViewportBorder, viewPos.y, viewPos.z);
+            float xPos = Camera.main.ViewportToWorldPoint(vpLeftBorderPoint).x;
+            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
         }
         if (viewPos.x > rightViewportBorder)
         {
