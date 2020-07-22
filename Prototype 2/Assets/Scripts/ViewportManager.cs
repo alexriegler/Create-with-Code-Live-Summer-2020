@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * The ViewportManager class.
+ * Contains methods to manage and access viewport information.
+ */
+/// <summary>
+/// The <c>ViewportManager</c> class.
+/// Contains methods to manage and access viewport information.
+/// </summary>
 public class ViewportManager : MonoBehaviour
 {
     [Header("Camera")]
@@ -36,7 +44,10 @@ public class ViewportManager : MonoBehaviour
 
     // Properties
 
-    // Get the amount of padding within the viewport
+    // Gets the amount of padding within the viewport.
+    /// <summary>
+    /// Gets the amount of padding within the viewport.
+    /// </summary>
     public float VpSidePadding
     {
         get
@@ -45,7 +56,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x component of the left border position in viewport space
+    // Gets the x component of the left border position in viewport space.
+    /// <summary>
+    /// Gets the x component of the left border position in viewport space.
+    /// </summary>
     public float VpLeftBorderX
     {
         get
@@ -54,7 +68,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x component of the left border position in world space
+    // Gets the x component of the left border position in world space.
+    /// <summary>
+    /// Gets the x component of the left border position in world space.
+    /// </summary>
     public float WLeftBorderX
     {
         get
@@ -64,7 +81,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x component of the right border position in viewport space
+    // Gets the x component of the right border position in viewport space.
+    /// <summary>
+    /// Gets the x component of the right border position in viewport space.
+    /// </summary>
     public float VpRightBorderX
     {
         get
@@ -73,7 +93,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x component of the right border position in world space
+    // Gets the x component of the right border position in world space.
+    /// <summary>
+    /// Gets the x component of the right border position in world space.
+    /// </summary>
     public float WRightBorderX
     {
         get
@@ -83,7 +106,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the coordinates of the world origin in viewport space coordinates
+    // Gets the coordinates of the world origin in viewport space coordinates.
+    /// <summary>
+    /// Gets the coordinates of the world origin in viewport space coordinates.
+    /// </summary>
     public Vector3 VpOrigin
     {
         get
@@ -92,7 +118,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x component of the viewport space coordinates of the world origin
+    // Gets the x component of the viewport space coordinates of the world origin.
+    /// <summary>
+    /// Gets the x component of the viewport space coordinates of the world origin.
+    /// </summary>
     public float VpOriginX
     {
         get
@@ -101,7 +130,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the y component of the viewport space coordinates of the world origin
+    // Gets the y component of the viewport space coordinates of the world origin.
+    /// <summary>
+    /// Gets the y component of the viewport space coordinates of the world origin.
+    /// </summary>
     public float VpOriginY
     {
         get
@@ -110,7 +142,10 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the z component of the viewport space coordinates of the world origin
+    // Gets the z component of the viewport space coordinates of the world origin.
+    /// <summary>
+    /// Gets the z component of the viewport space coordinates of the world origin.
+    /// </summary>
     public float VpOriginZ
     {
         get
