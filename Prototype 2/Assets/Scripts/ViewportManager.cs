@@ -36,7 +36,7 @@ public class ViewportManager : MonoBehaviour
 
     // Properties
 
-    // Get the amount of padding inside the viewport
+    // Get the amount of padding within the viewport
     public float VpPadding
     {
         get
@@ -45,7 +45,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x value of the left border position in viewport space
+    // Get the x component of the left border position in viewport space
     public float VpLeftBorderX
     {
         get
@@ -54,7 +54,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x value of the left border position in world space
+    // Get the x component of the left border position in world space
     public float WLeftBorderX
     {
         get
@@ -64,7 +64,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x value of the right border position in viewport space
+    // Get the x component of the right border position in viewport space
     public float VpRightBorderX
     {
         get
@@ -73,7 +73,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x value of the right border position in world space
+    // Get the x component of the right border position in world space
     public float WRightBorderX
     {
         get
@@ -83,7 +83,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the coordinates of the world origin in viewport coordinates
+    // Get the coordinates of the world origin in viewport space coordinates
     public Vector3 VpOrigin
     {
         get
@@ -92,7 +92,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x component of the viewport coordinates of the world origin
+    // Get the x component of the viewport space coordinates of the world origin
     public float VpOriginX
     {
         get
@@ -101,7 +101,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the y component of the viewport coordinates of the world origin
+    // Get the y component of the viewport space coordinates of the world origin
     public float VpOriginY
     {
         get
@@ -110,7 +110,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the z component of the viewport coordinates of the world origin
+    // Get the z component of the viewport space coordinates of the world origin
     public float VpOriginZ
     {
         get
