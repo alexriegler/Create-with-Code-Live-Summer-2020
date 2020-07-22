@@ -36,12 +36,12 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomAnimal()
     {
-        animalIndex = Random.Range(0, animals.Length);
-
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        float screenTop = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 1f, viewPos.z)).z;
-        screenOffset = animals[animalIndex].transform.localScale.z;
+        float screenTop = vpManager.WTopBorderZ;
         float randomXPos = Random.Range(vpManager.WLeftBorderX, vpManager.WRightBorderX);
+
+        animalIndex = Random.Range(0, animals.Length);
+        screenOffset = animals[animalIndex].transform.localScale.z;
+
         Vector3 spawnPos = new Vector3(randomXPos, 0f, screenTop + screenOffset);
 
         Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);

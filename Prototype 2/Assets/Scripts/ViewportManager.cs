@@ -113,16 +113,16 @@ public class ViewportManager : MonoBehaviour
     /// </summary>
     public float VpTopBorderY { get => vpTopBorderY; }
 
-    // The y component of the top border position in world space.
+    // The z component of the top border position in world space.
     /// <summary>
-    /// The y component of the top border position in world space.
+    /// The z component of the top border position in world space.
     /// </summary>
-    public float WTopBorderY
+    public float WTopBorderZ
     {
         get
         {
             Vector3 vpTopBorderPos = new Vector3(VpOriginX, VpTopBorderY, VpOriginZ);
-            return gameCamera.ViewportToWorldPoint(vpTopBorderPos).y;
+            return gameCamera.ViewportToWorldPoint(vpTopBorderPos).z;
         }
     }
 
