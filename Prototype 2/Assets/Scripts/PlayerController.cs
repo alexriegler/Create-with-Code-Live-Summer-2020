@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [Header("Camera")]
     [SerializeField]
     private Camera gameCamera;
+    [SerializeField]
+    private ViewportManager vpManager;
 
     [Header("Player")]
     [SerializeField]
@@ -15,9 +17,6 @@ public class PlayerController : MonoBehaviour
     [Header("Player")]
     [SerializeField]
     private KeyCode projectileFireButton = KeyCode.Space;
-
-    [SerializeField]
-    private ViewportManager vpManager;
 
     // Start is called before the first frame update
     void Start()
