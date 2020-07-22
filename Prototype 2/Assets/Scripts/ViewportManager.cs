@@ -11,13 +11,9 @@ public class ViewportManager : MonoBehaviour
     [Header("Viewport")]
     [SerializeField]
     private float vpSidePadding = 0.1f;
-    [SerializeField]
     private float vpLeftBorderX = 0f;
-    [SerializeField]
     private float vpRightBorderX = 1f;
-    [SerializeField]
     private float vpBottomBorderY = 0f;
-    [SerializeField]
     private float vpTopBorderY = 1f;
 
     private Vector3 vpOrigin;
@@ -26,8 +22,8 @@ public class ViewportManager : MonoBehaviour
     void Start()
     {
         gameCamera = Camera.main;
-        vpLeftBorderX += vpSidePadding;
-        vpRightBorderX -= vpSidePadding;
+        vpLeftBorderX = vpLeftBorderX + vpSidePadding;
+        vpRightBorderX = vpRightBorderX - vpSidePadding;
 
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
