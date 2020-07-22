@@ -16,12 +16,16 @@ public class ViewportManager : MonoBehaviour
     [SerializeField]
     private float rightViewportBorder;
 
+    private Vector3 vpOrigin;
+
     // Start is called before the first frame update
     void Start()
     {
         gameCamera = Camera.main;
         leftViewportBorder = 0f + viewportPadding;
         rightViewportBorder = 1f - viewportPadding;
+
+        vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
 
     // Update is called once per frame
@@ -59,5 +63,39 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
+    // Get the coordinates of the world origin in viewport coordinates
+    public Vector3 VpOrigin
+    {
+        get
+        {
+            return vpOrigin;
+        }
+    }
 
+    // Get the x component of the viewport coordinates of the world origin
+    public float VpOriginX
+    {
+        get
+        {
+            return vpOrigin.x;
+        }
+    }
+
+    // Get the y component of the viewport coordinates of the world origin
+    public float VpOriginY
+    {
+        get
+        {
+            return vpOrigin.y;
+        }
+    }
+
+    // Get the z component of the viewport coordinates of the world origin
+    public float VpOriginZ
+    {
+        get
+        {
+            return vpOrigin.z;
+        }
+    }
 }
