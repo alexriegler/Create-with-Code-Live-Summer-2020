@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     [Header("Camera")]
     [SerializeField]
     private Camera gameCamera;
-    [SerializeField]
     private ViewportManager vpManager;
 
     [Header("Player")]
@@ -23,6 +22,9 @@ public class PlayerController : MonoBehaviour
     {
         // Hide cursor
         Cursor.visible = false;
+
+        // Get viewport manager
+        vpManager = gameCamera.GetComponent<ViewportManager>();
     }
 
     // Update is called once per frame
