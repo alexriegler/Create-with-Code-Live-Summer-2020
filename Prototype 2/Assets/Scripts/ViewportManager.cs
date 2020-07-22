@@ -45,7 +45,7 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x value of the left border location in viewport space
+    // Get the x value of the left border position in viewport space
     public float VpLeftBorderX
     {
         get
@@ -54,12 +54,32 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Get the x value of the right border location in viewport space
+    // Get the x value of the left border position in world space
+    public float WLeftBorderX
+    {
+        get
+        {
+            Vector3 vpLeftBorderPos = new Vector3(VpLeftBorderX, VpOriginY, VpOriginZ);
+            return gameCamera.ViewportToWorldPoint(vpLeftBorderPos).x;
+        }
+    }
+
+    // Get the x value of the right border position in viewport space
     public float VpRightBorderX
     {
         get
         {
             return vpRightBorderX;
+        }
+    }
+
+    // Get the x value of the right border position in world space
+    public float WRightBorderX
+    {
+        get
+        {
+            Vector3 vpRightBorderPos = new Vector3(VpRightBorderX, VpOriginY, VpOriginZ);
+            return gameCamera.ViewportToWorldPoint(vpRightBorderPos).x;
         }
     }
 
