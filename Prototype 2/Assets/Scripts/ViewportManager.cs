@@ -44,21 +44,21 @@ public class ViewportManager : MonoBehaviour
 
     // Properties
 
-    // Gets the amount of padding within the viewport.
+    // The amount of padding within the viewport.
     /// <summary>
-    /// Gets the amount of padding within the viewport.
+    /// The amount of padding within the viewport.
     /// </summary>
     public float VpSidePadding { get => vpSidePadding; }
 
-    // Gets the x component of the left border position in viewport space.
+    // The x component of the left border position in viewport space.
     /// <summary>
-    /// Gets the x component of the left border position in viewport space.
+    /// The x component of the left border position in viewport space.
     /// </summary>
     public float VpLeftBorderX { get => vpLeftBorderX; }
 
-    // Gets the x component of the left border position in world space.
+    // The x component of the left border position in world space.
     /// <summary>
-    /// Gets the x component of the left border position in world space.
+    /// The x component of the left border position in world space.
     /// </summary>
     public float WLeftBorderX
     {
@@ -69,15 +69,15 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Gets the x component of the right border position in viewport space.
+    // The x component of the right border position in viewport space.
     /// <summary>
-    /// Gets the x component of the right border position in viewport space.
+    /// The x component of the right border position in viewport space.
     /// </summary>
     public float VpRightBorderX { get => vpRightBorderX; }
 
-    // Gets the x component of the right border position in world space.
+    // The x component of the right border position in world space.
     /// <summary>
-    /// Gets the x component of the right border position in world space.
+    /// The x component of the right border position in world space.
     /// </summary>
     public float WRightBorderX
     {
@@ -88,27 +88,27 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
-    // Gets the coordinates of the world origin in viewport space coordinates.
+    // The coordinates of the world origin in viewport space coordinates.
     /// <summary>
-    /// Gets the coordinates of the world origin in viewport space coordinates.
+    /// The coordinates of the world origin in viewport space coordinates.
     /// </summary>
     public Vector3 VpOrigin { get => vpOrigin; }
 
-    // Gets the x component of the viewport space coordinates of the world origin.
+    // The x component of the viewport space coordinates of the world origin.
     /// <summary>
-    /// Gets the x component of the viewport space coordinates of the world origin.
+    /// The x component of the viewport space coordinates of the world origin.
     /// </summary>
     public float VpOriginX { get => vpOrigin.x; }
 
-    // Gets the y component of the viewport space coordinates of the world origin.
+    // The y component of the viewport space coordinates of the world origin.
     /// <summary>
-    /// Gets the y component of the viewport space coordinates of the world origin.
+    /// The y component of the viewport space coordinates of the world origin.
     /// </summary>
     public float VpOriginY { get => vpOrigin.y; }
 
-    // Gets the z component of the viewport space coordinates of the world origin.
+    // The z component of the viewport space coordinates of the world origin.
     /// <summary>
-    /// Gets the z component of the viewport space coordinates of the world origin.
+    /// The z component of the viewport space coordinates of the world origin.
     /// </summary>
     public float VpOriginZ { get => vpOrigin.z; }
 }
