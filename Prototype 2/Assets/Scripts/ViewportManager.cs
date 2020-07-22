@@ -12,9 +12,9 @@ public class ViewportManager : MonoBehaviour
     [SerializeField]
     private float vpSidePadding = 0.1f;
     [SerializeField]
-    private float vpLeftBorderX;
+    private float vpLeftBorderX = 0f;
     [SerializeField]
-    private float vpRightBorderX;
+    private float vpRightBorderX = 1f;
 
     private Vector3 vpOrigin;
 
