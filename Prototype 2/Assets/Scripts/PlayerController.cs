@@ -44,9 +44,8 @@ public class PlayerController : MonoBehaviour
     void GetMouseInput()
     {
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo))
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
             transform.position = new Vector3(hitInfo.point.x, transform.position.y, transform.position.z);
         }
