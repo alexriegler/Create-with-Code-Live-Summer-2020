@@ -48,25 +48,13 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// Gets the amount of padding within the viewport.
     /// </summary>
-    public float VpSidePadding
-    {
-        get
-        {
-            return vpSidePadding;
-        }
-    }
+    public float VpSidePadding { get => vpSidePadding; }
 
     // Gets the x component of the left border position in viewport space.
     /// <summary>
     /// Gets the x component of the left border position in viewport space.
     /// </summary>
-    public float VpLeftBorderX
-    {
-        get
-        {
-            return vpLeftBorderX;
-        }
-    }
+    public float VpLeftBorderX { get => vpLeftBorderX; }
 
     // Gets the x component of the left border position in world space.
     /// <summary>
@@ -85,13 +73,7 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// Gets the x component of the right border position in viewport space.
     /// </summary>
-    public float VpRightBorderX
-    {
-        get
-        {
-            return vpRightBorderX;
-        }
-    }
+    public float VpRightBorderX { get => vpRightBorderX; }
 
     // Gets the x component of the right border position in world space.
     /// <summary>
@@ -110,47 +92,23 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// Gets the coordinates of the world origin in viewport space coordinates.
     /// </summary>
-    public Vector3 VpOrigin
-    {
-        get
-        {
-            return vpOrigin;
-        }
-    }
+    public Vector3 VpOrigin { get => vpOrigin; }
 
     // Gets the x component of the viewport space coordinates of the world origin.
     /// <summary>
     /// Gets the x component of the viewport space coordinates of the world origin.
     /// </summary>
-    public float VpOriginX
-    {
-        get
-        {
-            return vpOrigin.x;
-        }
-    }
+    public float VpOriginX { get => vpOrigin.x; }
 
     // Gets the y component of the viewport space coordinates of the world origin.
     /// <summary>
     /// Gets the y component of the viewport space coordinates of the world origin.
     /// </summary>
-    public float VpOriginY
-    {
-        get
-        {
-            return vpOrigin.y;
-        }
-    }
+    public float VpOriginY { get => vpOrigin.y; }
 
     // Gets the z component of the viewport space coordinates of the world origin.
     /// <summary>
     /// Gets the z component of the viewport space coordinates of the world origin.
     /// </summary>
-    public float VpOriginZ
-    {
-        get
-        {
-            return vpOrigin.z;
-        }
-    }
+    public float VpOriginZ { get => vpOrigin.z; }
 }
