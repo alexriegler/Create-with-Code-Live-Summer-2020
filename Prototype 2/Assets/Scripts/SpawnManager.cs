@@ -5,6 +5,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
+    private ViewportManager viewportManager;
+
+    [SerializeField]
     private GameObject[] animals;
     [SerializeField]
     private int animalIndex;

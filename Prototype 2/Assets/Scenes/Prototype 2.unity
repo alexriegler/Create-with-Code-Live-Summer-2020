@@ -685,6 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1263e064a5df2a140b43f489a575c27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewportManager: {fileID: 534669906}
   animals:
   - {fileID: 1920905784209715289, guid: 076789629be4e4e4d9ed842285c3d73a, type: 3}
   - {fileID: 2542001605315347454, guid: c335617a317e07e4284d467ac2b73350, type: 3}
