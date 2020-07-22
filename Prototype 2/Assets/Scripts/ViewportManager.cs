@@ -88,6 +88,27 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
+    // The y component of the bottom border position in viewport space.
+    /// <summary>
+    /// The y component of the bottom border position in viewport space.
+    /// </summary>
+    public float VpBottomBorderY { get => vpBottomBorderY; }
+
+    // The y component of the bottom border position in world space.
+    /// <summary>
+    /// The y component of the bottom border position in world space.
+    /// </summary>
+    public float WBottomBorderY
+    {
+        get
+        {
+            Vector3 vpBottomBorderPos = new Vector3(VpOriginX, VpBottomBorderY, VpOriginZ);
+            return gameCamera.ViewportToWorldPoint(vpBottomBorderPos).y;
+        }
+    }
+
+
+
     // The coordinates of the world origin in viewport space coordinates.
     /// <summary>
     /// The coordinates of the world origin in viewport space coordinates.
