@@ -26,8 +26,8 @@ public class ViewportManager : MonoBehaviour
     void Start()
     {
         gameCamera = Camera.main;
-        vpLeftBorderX = 0f + vpSidePadding;
-        vpRightBorderX = 1f - vpSidePadding;
+        vpLeftBorderX += vpSidePadding;
+        vpRightBorderX -= vpSidePadding;
 
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
