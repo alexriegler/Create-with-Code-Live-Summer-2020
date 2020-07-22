@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     // Restricts the player's movement within the boundaries
     void CheckBoundaries()
     {
-        Vector3 vpPos = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 vpPos = gameCamera.WorldToViewportPoint(transform.position);
 
         if (vpPos.x < vpManager.VpLeftBorderX)
         {
