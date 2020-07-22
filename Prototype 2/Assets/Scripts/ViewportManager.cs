@@ -107,7 +107,24 @@ public class ViewportManager : MonoBehaviour
         }
     }
 
+    // The y component of the top border position in viewport space.
+    /// <summary>
+    /// The y component of the top border position in viewport space.
+    /// </summary>
+    public float VpTopBorderY { get => vpTopBorderY; }
 
+    // The y component of the top border position in world space.
+    /// <summary>
+    /// The y component of the top border position in world space.
+    /// </summary>
+    public float WTopBorderY
+    {
+        get
+        {
+            Vector3 vpTopBorderPos = new Vector3(VpOriginX, VpTopBorderY, VpOriginZ);
+            return gameCamera.ViewportToWorldPoint(vpTopBorderPos).y;
+        }
+    }
 
     // The coordinates of the world origin in viewport space coordinates.
     /// <summary>
