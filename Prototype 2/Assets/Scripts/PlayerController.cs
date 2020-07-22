@@ -16,10 +16,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private KeyCode projectileFireButton = KeyCode.Space;
 
-    [Header("Debug")]
-    [SerializeField]
-    private float viewportPadding = 0.1f;
-
     [SerializeField]
     private ViewportManager vpManager;
 
