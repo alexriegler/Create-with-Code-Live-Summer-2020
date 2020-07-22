@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float viewportPadding = 0.1f;
 
     [SerializeField]
-    private GameObject vpManager;
+    private ViewportManager vpManager;
 
     // Start is called before the first frame update
     void Start()
