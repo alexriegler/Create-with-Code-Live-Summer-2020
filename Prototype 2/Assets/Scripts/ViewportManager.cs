@@ -30,6 +30,8 @@ public class ViewportManager : MonoBehaviour
         
     }
 
+    // Properties
+
     // Get the amount of padding inside the viewport
     public float ViewportPadding
     {
@@ -56,4 +58,6 @@ public class ViewportManager : MonoBehaviour
             return rightViewportBorder;
         }
     }
+
+
 }
