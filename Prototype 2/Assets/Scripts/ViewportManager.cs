@@ -15,6 +15,10 @@ public class ViewportManager : MonoBehaviour
     private float vpLeftBorderX = 0f;
     [SerializeField]
     private float vpRightBorderX = 1f;
+    [SerializeField]
+    private float vpBottomBorderY = 0f;
+    [SerializeField]
+    private float vpTopBorderY = 1f;
 
     private Vector3 vpOrigin;
 
