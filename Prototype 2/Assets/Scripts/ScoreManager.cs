@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour
     public int Score { get; private set; } = 0;
 
     private int feedPoints = 10;
+    private int missPenalty = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,15 @@ public class ScoreManager : MonoBehaviour
         
     }
 
+    // Increases the score by points
+    void AddPoints(int points) => Score += points;
+
+    // Decreases the score by penalty
+    void SubtractPoints(int penalty) => Score -= penalty;
+
     // Increases the score by feed points
-    void AddFeedPoints() => Score += feedPoints;
+    void AddFeedPoints() => AddPoints(feedPoints);
+
+    // Decreases the score by miss penalty
+    void SubtractMissPenalty() => SubtractPoints(missPenalty);
 }
