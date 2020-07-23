@@ -19,9 +19,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float screenOffset;
 
-    [SerializeField]
-    private KeyCode spawnKey = KeyCode.S;
-
     // Start is called before the first frame update
     void Start()
     {        
