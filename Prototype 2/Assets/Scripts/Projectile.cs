@@ -4,7 +4,7 @@ public class Projectile : MonoBehaviour
 {
     public LayerMask collisionMask;
     public float Speed { get; set; } = 10f;
-    public int FeedPower { get; set; } = 1;
+    public int Damage { get; set; } = 1;
 
     // Update is called once per frame
     void Update()
@@ -26,8 +26,8 @@ public class Projectile : MonoBehaviour
 
     void OnHitObject(RaycastHit hit)
     {
-        IFeedable feedableObject = hit.collider.GetComponent<IFeedable>();
-        feedableObject?.Feed(FeedPower, hit);
+        IDamageable damageableObject = hit.collider.GetComponent<IDamageable>();
+        damageableObject?.TakeHit(Damage, hit);
         Destroy(gameObject);
     }
 }
