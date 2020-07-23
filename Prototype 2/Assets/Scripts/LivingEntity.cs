@@ -6,7 +6,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     protected int health;
     protected bool dead;
 
-    public virtual void Start()
+    protected virtual void Start()
     {
         health = startingHealth;
     }
@@ -31,7 +31,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         }
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
         dead = true;
         Destroy(gameObject);

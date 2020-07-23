@@ -9,7 +9,7 @@ public class Player : LivingEntity
     public event Action OnPlayerDeath;
 
     // Start is called before the first frame update
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
 
@@ -31,7 +31,7 @@ public class Player : LivingEntity
         }
     }
 
-    public override void Die()
+    protected override void Die()
     {
         OnPlayerDeath?.Invoke();
         base.Die();
