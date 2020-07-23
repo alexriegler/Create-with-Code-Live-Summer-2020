@@ -3,7 +3,7 @@
 public class Projectile : MonoBehaviour
 {
     public LayerMask collisionMask;
-    public float Speed { get; set; } = 10f;
+    public float Speed { get; set; } = 40f;
     public int Damage { get; set; } = 1;
 
     // Update is called once per frame
