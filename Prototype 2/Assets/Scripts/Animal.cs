@@ -18,6 +18,13 @@ public class Animal : LivingEntity
         
     }
 
+    // Called when the animal is fed
+    public override void TakeHit(int damage)
+    {
+        OnFeed?.Invoke();
+        base.TakeHit(damage);
+    }
+
     // Called when the animal's hunger is satiated
     protected override void Die()
     {
