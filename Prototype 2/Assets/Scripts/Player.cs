@@ -5,13 +5,14 @@ public class Player : MonoBehaviour
 {
     public int Lives { get; private set; } = 3;
 
-    public event Action OnTakeDamage;
+    public event Action OnPlayerHit;
     public event Action OnPlayerDeath;
 
     // Start is called before the first frame update
     void Start()
     {
-        OnTakeDamage += TakeDamage;
+        // Takes one life from the player when hit
+        OnPlayerHit += () => Lives--;
     }
 
     // Update is called once per frame
@@ -29,13 +30,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            OnTakeDamage?.Invoke();
+            OnPlayerHit?.Invoke();
         }
-    }
-
-    // Takes one life from the player
-    void TakeDamage()
-    {
-        Lives--;
     }
 }
