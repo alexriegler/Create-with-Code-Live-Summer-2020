@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         // Destroy the player on falling to 0 lives
         if (lives < 1)
         {
-            OnPlayerDeath();
+            OnPlayerDeath?.Invoke();
             Destroy(gameObject);
         }
     }
