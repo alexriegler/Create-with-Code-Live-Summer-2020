@@ -17,4 +17,11 @@ public class Animal : LivingEntity
     {
         
     }
+
+    // Called when the animal's hunger is satiated
+    protected override void Die()
+    {
+        OnFullFeed?.Invoke();
+        base.Die();
+    }
 }
