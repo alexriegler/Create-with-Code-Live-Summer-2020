@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int lives = 3;
+    public int Lives { get; private set; } = 3;
+
     public event Action OnTakeDamage;
     public event Action OnPlayerDeath;
 
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Destroy the player on falling to 0 lives
-        if (lives < 1)
+        if (Lives < 1)
         {
             OnPlayerDeath?.Invoke();
             Destroy(gameObject);
@@ -35,6 +36,6 @@ public class Player : MonoBehaviour
     // Takes one life from the player
     void TakeDamage()
     {
-        lives--;
+        Lives--;
     }
 }
