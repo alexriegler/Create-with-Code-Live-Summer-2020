@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Player : LivingEntity
 {
+    private int hitDamage = 1;
+
     public event Action OnPlayerHit;
     public event Action OnPlayerDeath;
 
@@ -12,7 +14,7 @@ public class Player : LivingEntity
         base.Start();
 
         // Takes one life from the player when hit action occurs
-        OnPlayerHit += () => TakeHit(1);
+        OnPlayerHit += () => TakeHit(hitDamage);
     }
 
     // Update is called once per frame
