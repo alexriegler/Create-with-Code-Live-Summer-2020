@@ -447,8 +447,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 534669904}
   vpPadding: 0.1
-  vpLeftBorderX: 0
-  vpRightBorderX: 0
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 534669904}
-  projectile: {fileID: 7547206009908374100, guid: b251af37c7717ac4d838b7d076e14442,
+  projectile: {fileID: 211153199292171840, guid: 113c41053715d5245b406f6bf0494cd9,
     type: 3}
   projectileFireButton: 32
 --- !u!1 &1878460941
