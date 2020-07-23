@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnTakeDamage += TakeDamage;
     }
 
     // Update is called once per frame
@@ -22,5 +22,11 @@ public class Player : MonoBehaviour
             OnPlayerDeath?.Invoke();
             Destroy(gameObject);
         }
+    }
+
+    // Takes one life from the player
+    void TakeDamage()
+    {
+        lives--;
     }
 }
