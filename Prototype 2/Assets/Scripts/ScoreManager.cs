@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.OnPlayerHit += SubtractHitPenalty;
+        player.OnPlayerHit += () => SubtractPoints(hitPenalty);
     }
 
     // Update is called once per frame
