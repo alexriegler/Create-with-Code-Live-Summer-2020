@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public int Score { get; private set; } = 0;
 
     private int feedPoints = 10;
-    private int fullFeedPoints = 100;
+    private int fullFeedPoints = 40;
 
     // Start is called before the first frame update
     void Start()
