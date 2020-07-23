@@ -69,12 +69,12 @@ public class SpawnManager : MonoBehaviour
         if (randomSide == 0)
         {
             spawnPos = new Vector3(screenLeft - screenOffset, 0f, randomZPos);
-            rotation = animals[animalIndex].transform.rotation;
+            rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
         }
         else
         {
             spawnPos = new Vector3(screenRight + screenOffset, 0f, randomZPos);
-            rotation = animals[animalIndex].transform.rotation;
+            rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
         }
 
         Instantiate(animals[animalIndex], spawnPos, rotation);
