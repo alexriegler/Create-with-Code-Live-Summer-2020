@@ -1,29 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : LivingEntity
 {
-    public int Lives { get; private set; } = 3;
-
     public event Action OnPlayerHit;
     public event Action OnPlayerDeath;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        // Takes one life from the player when hit
-        OnPlayerHit += () => Lives--;
+        base.Start();
+
+        // Takes one life from the player when hit action occurs
+        OnPlayerHit += () => health--;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Destroy the player on falling to 0 lives
-        if (Lives < 1)
-        {
-            OnPlayerDeath?.Invoke();
-            Destroy(gameObject);
-        }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,5 +27,11 @@ public class Player : MonoBehaviour
         {
             OnPlayerHit?.Invoke();
         }
+    }
+
+    public override void Die()
+    {
+        OnPlayerDeath?.Invoke();
+        base.Die();
     }
 }
