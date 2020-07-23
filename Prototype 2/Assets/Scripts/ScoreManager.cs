@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Decreases the score by hit penalty
         player.OnPlayerHit += () => SubtractPoints(hitPenalty);
     }
 
@@ -34,7 +35,4 @@ public class ScoreManager : MonoBehaviour
 
     // Decreases the score by miss penalty
     void SubtractMissPenalty() => SubtractPoints(missPenalty);
-
-    // Decreases the score by hit penalty
-    void SubtractHitPenalty() => SubtractPoints(hitPenalty);
 }
