@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            print("Hit!");
+            OnTakeDamage?.Invoke();
         }
     }
 
