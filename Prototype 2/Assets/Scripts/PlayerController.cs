@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
-            transform.position = new Vector3(hitInfo.point.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(hitInfo.point.x, transform.position.y, hitInfo.point.z);
         }
     }
 
