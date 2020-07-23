@@ -22,6 +22,12 @@ public class ScoreManager : MonoBehaviour
         
     }
 
+    public void AddAnimal(Animal animal)
+    {
+        animal.OnFeed += () => AddPoints(feedPoints);
+        animal.OnFullFeed += () => AddPoints(fullFeedPoints);
+    }
+
     // Increases the score by points
     void AddPoints(int points) => Score += points;
 

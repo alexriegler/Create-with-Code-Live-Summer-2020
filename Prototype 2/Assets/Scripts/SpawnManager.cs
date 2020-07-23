@@ -4,6 +4,8 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private ViewportManager vpManager;
+    [SerializeField]
+    private ScoreManager scoreManager;
 
     [SerializeField]
     private GameObject[] animals;
@@ -41,7 +43,9 @@ public class SpawnManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(randomXPos, 0f, screenTop + screenOffset);
 
-        Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
+        GameObject spawnedAnimal = Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
+
+        scoreManager.AddAnimal(spawnedAnimal.GetComponent<Animal>());
     }
 
     // Spawns a random animal from one of the sides of the screen
@@ -72,6 +76,8 @@ public class SpawnManager : MonoBehaviour
             rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
         }
 
-        Instantiate(animals[animalIndex], spawnPos, rotation);
+        GameObject spawnedAnimal = Instantiate(animals[animalIndex], spawnPos, rotation);
+
+        scoreManager.AddAnimal(spawnedAnimal.GetComponent<Animal>());
     }
 }
