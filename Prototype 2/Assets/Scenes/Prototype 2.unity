@@ -640,6 +640,19 @@ MonoBehaviour:
   projectile: {fileID: 211153199292171840, guid: 113c41053715d5245b406f6bf0494cd9,
     type: 3}
   projectileFireButton: 32
+--- !u!65 &1840749218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840749216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.1027346, z: 1.1874151}
+  m_Center: {x: 0, y: 1.5496101, z: 0.016536623}
 --- !u!1 &1878460941
 GameObject:
   m_ObjectHideFlags: 0
