@@ -8,14 +8,12 @@ public class ScoreManager : MonoBehaviour
     public int Score { get; private set; } = 0;
 
     private int feedPoints = 10;
-    private int missPenalty = 15;
-    private int hitPenalty = 20;
+    private int fullFeedPoints = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Decreases the score by hit penalty
-        player.OnPlayerHit += () => SubtractPoints(hitPenalty);
+        
     }
 
     // Update is called once per frame
@@ -29,10 +27,4 @@ public class ScoreManager : MonoBehaviour
 
     // Decreases the score by penalty
     void SubtractPoints(int penalty) => Score -= penalty;
-
-    // Increases the score by feed points
-    void AddFeedPoints() => AddPoints(feedPoints);
-
-    // Decreases the score by miss penalty
-    void SubtractMissPenalty() => SubtractPoints(missPenalty);
 }
