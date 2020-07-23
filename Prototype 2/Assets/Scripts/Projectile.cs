@@ -2,32 +2,22 @@
 
 public class Projectile : MonoBehaviour
 {
-    public LayerMask collisionMask;
     public float Speed { get; set; } = 40f;
     public int Damage { get; set; } = 1;
 
     // Update is called once per frame
     void Update()
     {
-        float moveDistance = Speed * Time.deltaTime;
-        CheckCollisions(moveDistance);
-        transform.Translate(Vector3.forward * moveDistance);
+        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
     }
 
-    void CheckCollisions(float moveDistance)
+    void OnTriggerEnter(Collider other)
     {
-        Ray ray = new Ray(transform.position, transform.forward);
-        
-        if (Physics.Raycast(ray, out RaycastHit hit, moveDistance, collisionMask, QueryTriggerInteraction.Collide))
+        if (other.CompareTag("Enemy"))
         {
-            OnHitObject(hit);
+            IDamageable damageableObject = other.GetComponent<IDamageable>();
+            damageableObject?.TakeHit(Damage);
+            Destroy(gameObject);
         }
-    }
-
-    void OnHitObject(RaycastHit hit)
-    {
-        IDamageable damageableObject = hit.collider.GetComponent<IDamageable>();
-        damageableObject?.TakeHit(Damage, hit);
-        Destroy(gameObject);
     }
 }
