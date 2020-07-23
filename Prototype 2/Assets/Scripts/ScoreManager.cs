@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 
     private int feedPoints = 10;
     private int missPenalty = 15;
+    private int hitPenalty = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -30,4 +31,7 @@ public class ScoreManager : MonoBehaviour
 
     // Decreases the score by miss penalty
     void SubtractMissPenalty() => SubtractPoints(missPenalty);
+
+    // Decreases the score by hit penalty
+    void SubtractHitPenalty() => SubtractPoints(hitPenalty);
 }
