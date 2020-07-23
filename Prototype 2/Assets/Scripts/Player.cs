@@ -12,7 +12,7 @@ public class Player : LivingEntity
         base.Start();
 
         // Takes one life from the player when hit action occurs
-        OnPlayerHit += () => health--;
+        OnPlayerHit += () => TakeHit(1);
     }
 
     // Update is called once per frame
