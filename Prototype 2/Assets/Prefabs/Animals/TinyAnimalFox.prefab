@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 8149431049640897390}
   - component: {fileID: 114489793780133164}
   - component: {fileID: 7920447341790498320}
+  - component: {fileID: 114561851024386916}
   m_Layer: 0
   m_Name: TinyAnimalFox
   m_TagString: Enemy
@@ -909,6 +910,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10150905, y: 0.229291, z: 0.34110337}
   m_Center: {x: 5.3786245e-15, y: 0.10182946, z: 0.009983683}
+--- !u!114 &114561851024386916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8149431050422331022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c656ef424c41ad54b925265124aa9b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
 --- !u!1 &8149431050422332596
 GameObject:
   m_ObjectHideFlags: 0
