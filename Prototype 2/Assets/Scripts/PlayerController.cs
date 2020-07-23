@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 vpPos = gameCamera.WorldToViewportPoint(transform.position);
 
+        // Check left and right borders
         if (vpPos.x < vpManager.VpLeftBorderX)
         {
             float xPos = vpManager.WLeftBorderX;
@@ -66,6 +67,18 @@ public class PlayerController : MonoBehaviour
         {
             float xPos = vpManager.WRightBorderX;
             transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+        }
+        
+        // Check bottom and top borders
+        if (vpPos.y < vpManager.VpBottomBorderY)
+        {
+            float zPos = vpManager.WBottomBorderZ;
+            transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
+        }
+        else if (vpPos.y > vpManager.VpTopBorderY)
+        {
+            float zPos = vpManager.WTopBorderZ;
+            transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         }
     }
 }
