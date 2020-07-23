@@ -4,13 +4,7 @@ public class Projectile : MonoBehaviour
 {
     public LayerMask collisionMask;
     public float Speed { get; set; } = 10f;
-    public float Damage { get; set; } = 1f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int FeedPower { get; set; } = 1;
 
     // Update is called once per frame
     void Update()
@@ -32,7 +26,8 @@ public class Projectile : MonoBehaviour
 
     void OnHitObject(RaycastHit hit)
     {
-        GameObject hitObject = hit.collider.gameObject;
+        IFeedable feedableObject = hit.collider.GetComponent<IFeedable>();
+        feedableObject?.Feed(FeedPower, hit);
         Destroy(gameObject);
     }
 }
