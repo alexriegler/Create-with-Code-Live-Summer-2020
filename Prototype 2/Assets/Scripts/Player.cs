@@ -24,6 +24,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            print("Hit!");
+        }
+    }
+
     // Takes one life from the player
     void TakeDamage()
     {
