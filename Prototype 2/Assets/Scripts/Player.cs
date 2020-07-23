@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Destroy the player on falling to 0 lives
+        if (lives < 1)
+        {
+            OnPlayerDeath();
+            Destroy(gameObject);
+        }
     }
 }
