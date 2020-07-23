@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,17 +11,7 @@ public class ScoreManager : MonoBehaviour
     private int feedPoints = 10;
     private int fullFeedPoints = 40;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public event Action OnScoreChange;
 
     public void AddAnimal(Animal animal)
     {
@@ -29,8 +20,16 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Increases the score by points
-    void AddPoints(int points) => Score += points;
+    void AddPoints(int points)
+    {
+        Score += points;
+        OnScoreChange?.Invoke();
+    }
 
     // Decreases the score by penalty
-    void SubtractPoints(int penalty) => Score -= penalty;
+    void SubtractPoints(int penalty)
+    {
+        Score -= penalty;
+        OnScoreChange?.Invoke();
+    }
 }
