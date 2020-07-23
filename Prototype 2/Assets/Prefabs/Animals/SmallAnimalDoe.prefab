@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 6457714712317106877}
   - component: {fileID: 114333812134620386}
   - component: {fileID: 2347868696574563210}
-  - component: {fileID: 114187760240927966}
   m_Layer: 0
   m_Name: SmallAnimalDoe
   m_TagString: Enemy
@@ -157,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  direction: {x: 0, y: 0, z: -1}
 --- !u!114 &114333812134620386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,18 +187,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16278233, y: 0.4009095, z: 0.42933303}
   m_Center: {x: 2.0662684e-14, y: 0.18803553, z: 0.0426363}
---- !u!114 &114187760240927966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6457714712380513949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8919e52e20f2aa14a9ebaf16a0040ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6457714712380541045
 GameObject:
   m_ObjectHideFlags: 0

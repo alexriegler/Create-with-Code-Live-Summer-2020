@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1920905785336902896}
   - component: {fileID: 114750901687743028}
   - component: {fileID: 692581648277649915}
-  - component: {fileID: 114970103139124082}
   m_Layer: 0
   m_Name: LargeAnimalMoose
   m_TagString: Enemy
@@ -77,7 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  direction: {x: 0, y: 0, z: -1}
 --- !u!114 &114750901687743028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,18 +107,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23595685, y: 0.5201317, z: 0.45483997}
   m_Center: {x: 9.432718e-15, y: 0.23993537, z: 0.056215823}
---- !u!114 &114970103139124082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920905784209715289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8919e52e20f2aa14a9ebaf16a0040ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1920905784209722565
 GameObject:
   m_ObjectHideFlags: 0
