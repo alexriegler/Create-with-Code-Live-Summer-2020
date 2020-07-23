@@ -2,6 +2,9 @@
 
 public class ScoreManager : MonoBehaviour
 {
+    [SerializeField]
+    private Player player;
+    
     public int Score { get; private set; } = 0;
 
     private int feedPoints = 10;
