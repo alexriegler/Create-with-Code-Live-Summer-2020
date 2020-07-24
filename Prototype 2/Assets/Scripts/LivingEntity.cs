@@ -3,19 +3,19 @@
 public class LivingEntity : MonoBehaviour, IDamageable
 {
     public int startingHealth;
-    protected int health;
+    public int Health { get; protected set; }
     protected bool dead;
 
     protected virtual void Start()
     {
-        health = startingHealth;
+        Health = startingHealth;
     }
 
     public virtual void TakeHit(int damage, RaycastHit hit)
     {
-        health -= damage;
+        Health -= damage;
 
-        if (health <= 0 && !dead)
+        if (Health <= 0 && !dead)
         {
             Die();
         }
@@ -23,9 +23,9 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public virtual void TakeHit(int damage)
     {
-        health -= damage;
+        Health -= damage;
 
-        if (health <= 0 && !dead)
+        if (Health <= 0 && !dead)
         {
             Die();
         }

@@ -12,9 +12,6 @@ public class Player : LivingEntity
     protected override void Start()
     {
         base.Start();
-
-        // Takes one life from the player when hit action occurs
-        OnPlayerHit += () => TakeHit(hitDamage);
     }
 
     // Update is called once per frame
@@ -27,6 +24,7 @@ public class Player : LivingEntity
     {
         if (other.CompareTag("Enemy"))
         {
+            TakeHit(hitDamage);
             OnPlayerHit?.Invoke();
         }
     }
