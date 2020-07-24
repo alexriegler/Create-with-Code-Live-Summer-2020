@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        // Show cursor
         Cursor.visible = true;
 
         if (!gameHasEnded)
