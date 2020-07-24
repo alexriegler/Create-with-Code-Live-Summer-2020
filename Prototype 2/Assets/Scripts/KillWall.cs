@@ -2,8 +2,7 @@
 
 public class KillWall : MonoBehaviour
 {
-    [SerializeField]
-    private Player player;
+    public Player player;
     [SerializeField]
     private bool damagePlayer = false;
     private int playerDamage = 1;

@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField]
-    private Player player;
+    public Player player;
     
     public int Score { get; private set; } = 0;
 

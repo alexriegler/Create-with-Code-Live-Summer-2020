@@ -11,8 +11,7 @@
 public class ViewportManager : MonoBehaviour
 {
     [Header("Camera")]
-    [SerializeField]
-    private Camera gameCamera;
+    public Camera gameCamera;
 
     [Header("Viewport")]
     [SerializeField]

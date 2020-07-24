@@ -2,10 +2,8 @@
 
 public class GameUI : MonoBehaviour
 {
-    [SerializeField]
-    private Player player;
-    [SerializeField]
-    private ScoreManager scoreManager;
+    public Player player;
+    public ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()

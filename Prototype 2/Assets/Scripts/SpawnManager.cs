@@ -2,13 +2,10 @@
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField]
-    private ViewportManager vpManager;
-    [SerializeField]
-    private ScoreManager scoreManager;
+    public ViewportManager vpManager;
+    public ScoreManager scoreManager;
 
-    [SerializeField]
-    private GameObject[] animals;
+    public GameObject[] animals;
     [SerializeField]
     private int animalIndex;
     [SerializeField]

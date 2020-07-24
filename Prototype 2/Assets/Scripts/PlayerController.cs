@@ -3,13 +3,11 @@
 public class PlayerController : MonoBehaviour
 {
     [Header("Camera")]
-    [SerializeField]
-    private Camera gameCamera;
+    public Camera gameCamera;
     private ViewportManager vpManager;
 
     [Header("Player")]
-    [SerializeField]
-    private GameObject projectile;
+    public GameObject projectile;
 
     [Header("Player")]
     [SerializeField]
