@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField]
-    private ViewportManager vpManager;
+    public ViewportManager vpManager;
+    public ScoreManager scoreManager;
 
-    [SerializeField]
-    private GameObject[] animals;
+    public GameObject[] animals;
     [SerializeField]
     private int animalIndex;
     [SerializeField]
@@ -22,14 +19,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {        
-        InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
-        InvokeRepeating("SpawnRandomSideAnimal", startDelay, spawnInterval);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        InvokeRepeating(nameof(SpawnRandomAnimal), startDelay, spawnInterval);
+        InvokeRepeating(nameof(SpawnRandomSideAnimal), startDelay, spawnInterval);
     }
 
     // Spawns a random animal from the top of the screen
@@ -43,7 +34,9 @@ public class SpawnManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(randomXPos, 0f, screenTop + screenOffset);
 
-        Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
+        GameObject spawnedAnimal = Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
+
+        scoreManager.AddAnimal(spawnedAnimal.GetComponent<Animal>());
     }
 
     // Spawns a random animal from one of the sides of the screen
@@ -74,6 +67,8 @@ public class SpawnManager : MonoBehaviour
             rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
         }
 
-        Instantiate(animals[animalIndex], spawnPos, rotation);
+        GameObject spawnedAnimal = Instantiate(animals[animalIndex], spawnPos, rotation);
+
+        scoreManager.AddAnimal(spawnedAnimal.GetComponent<Animal>());
     }
 }
