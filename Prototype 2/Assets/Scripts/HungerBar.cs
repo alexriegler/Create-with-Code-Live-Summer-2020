@@ -12,6 +12,8 @@ public class HungerBar : MonoBehaviour
         hungerBar = GetComponent<Slider>();
         animal = GetComponentInParent<Animal>();
 
+        hungerBar.transform.localScale = new Vector3(hungerBar.transform.localScale.x * animal.startingHealth, hungerBar.transform.localScale.y, hungerBar.transform.localScale.z);
+
         hungerBar.maxValue = animal.startingHealth;
         hungerBar.value = animal.startingHealth;
 
