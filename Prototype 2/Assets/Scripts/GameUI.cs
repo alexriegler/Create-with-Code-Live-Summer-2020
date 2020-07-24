@@ -17,12 +17,6 @@ public class GameUI : MonoBehaviour
         scoreManager.OnScoreChange += DrawScore;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void DrawPlayerHealth(int health)
     {
         print($"Lives = {health}");
