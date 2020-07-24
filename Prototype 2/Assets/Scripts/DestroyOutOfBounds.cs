@@ -18,6 +18,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     [Tooltip("Should the object be destroyed when crossing the bottom border of the viewport.")]
     private bool bottomBorder = false;
 
+    [Header("Destroy Properties")]
     [SerializeField]
     [Tooltip("The amount of time in seconds to pass after exiting the viewport and before destroying.")]
     private float destroyDelay = 0.5f;
