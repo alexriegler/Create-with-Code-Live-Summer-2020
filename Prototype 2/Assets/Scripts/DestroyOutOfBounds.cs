@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
+    [Header("Borders")]
     [SerializeField]
     [Tooltip("Should the object be destroyed when crossing the left border of the viewport.")]
     private bool leftBorder = false;
