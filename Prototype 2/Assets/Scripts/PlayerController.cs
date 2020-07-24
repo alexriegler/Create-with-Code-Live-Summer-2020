@@ -16,9 +16,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Hide cursor
-        Cursor.visible = false;
-
         // Get viewport manager
         vpManager = gameCamera.GetComponent<ViewportManager>();
     }
