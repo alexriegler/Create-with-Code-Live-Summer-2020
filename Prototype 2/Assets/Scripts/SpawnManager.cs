@@ -4,7 +4,7 @@ public class SpawnManager : MonoBehaviour
 {
     public ViewportManager vpManager;
     public ScoreManager scoreManager;
-    public GameObject[] animals;
+    public GameObject[] animalPrefabs;
 
     [SerializeField]
     private int animalIndex;
@@ -29,12 +29,12 @@ public class SpawnManager : MonoBehaviour
         float screenTop = vpManager.WTopBorderZ;
         float randomXPos = Random.Range(vpManager.WLeftBorderX, vpManager.WRightBorderX);
 
-        animalIndex = Random.Range(0, animals.Length);
-        screenOffset = animals[animalIndex].transform.localScale.z;
+        animalIndex = Random.Range(0, animalPrefabs.Length);
+        screenOffset = animalPrefabs[animalIndex].transform.localScale.z;
 
         Vector3 spawnPos = new Vector3(randomXPos, 0f, screenTop + screenOffset);
 
-        GameObject spawnedAnimal = Instantiate(animals[animalIndex], spawnPos, animals[animalIndex].transform.rotation);
+        GameObject spawnedAnimal = Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
 
         scoreManager.AddAnimal(spawnedAnimal.GetComponent<Animal>());
     }
@@ -49,8 +49,8 @@ public class SpawnManager : MonoBehaviour
         float screenRight = vpManager.WRightBorderX;
         float randomZPos = Random.Range(vpManager.WBottomBorderZ, vpManager.WTopBorderZ);
 
-        animalIndex = Random.Range(0, animals.Length);
-        screenOffset = animals[animalIndex].transform.localScale.x;
+        animalIndex = Random.Range(0, animalPrefabs.Length);
+        screenOffset = animalPrefabs[animalIndex].transform.localScale.x;
 
         // TODO: Change to enum or something
         int randomSide = Random.Range(0, 2);
@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour
             rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
         }
 
-        GameObject spawnedAnimal = Instantiate(animals[animalIndex], spawnPos, rotation);
+        GameObject spawnedAnimal = Instantiate(animalPrefabs[animalIndex], spawnPos, rotation);
 
         scoreManager.AddAnimal(spawnedAnimal.GetComponent<Animal>());
     }
