@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     [Header("Player")]
     public GameObject projectile;
 
+    [SerializeField]
+    private float fireRate = 0.1f;
+
     [Header("Player")]
     [SerializeField]
     private KeyCode projectileFireButton = KeyCode.Space;
