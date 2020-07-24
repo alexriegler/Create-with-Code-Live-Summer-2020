@@ -24,12 +24,6 @@ public class DestroyOutOfBounds : MonoBehaviour
     [Tooltip("Positional coordinates of the object in viewport space. The bottom-left of the camera is (0,0); the top-right is (1,1).")]
     private Vector3 viewPos;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
