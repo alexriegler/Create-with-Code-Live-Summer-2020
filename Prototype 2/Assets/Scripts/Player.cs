@@ -8,18 +8,7 @@ public class Player : LivingEntity
     public event Action OnPlayerHit;
     public event Action OnPlayerDeath;
 
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // When another collider triggers the player, the player takes damage
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -29,6 +18,7 @@ public class Player : LivingEntity
         }
     }
 
+    // Invokes the OnPlayerDeath action before calling the base Die method
     protected override void Die()
     {
         OnPlayerDeath?.Invoke();
