@@ -39,6 +39,8 @@ public class ViewportManager : MonoBehaviour
     /// </summary>
     public float VpSidePadding { get => vpPadding; }
 
+    #region Viewport Border properties
+    #region Viewport Left Border
     // The x component of the left border position in viewport space.
     /// <summary>
     /// The x component of the left border position in viewport space.
@@ -57,7 +59,9 @@ public class ViewportManager : MonoBehaviour
             return gameCamera.ViewportToWorldPoint(vpLeftBorderPos).x;
         }
     }
+    #endregion
 
+    #region Viewport Right Border
     // The x component of the right border position in viewport space.
     /// <summary>
     /// The x component of the right border position in viewport space.
@@ -76,7 +80,9 @@ public class ViewportManager : MonoBehaviour
             return gameCamera.ViewportToWorldPoint(vpRightBorderPos).x;
         }
     }
+    #endregion
 
+    #region Viewport Bottom Border
     // The y component of the bottom border position in viewport space.
     /// <summary>
     /// The y component of the bottom border position in viewport space.
@@ -95,7 +101,9 @@ public class ViewportManager : MonoBehaviour
             return gameCamera.ViewportToWorldPoint(vpBottomBorderPos).z;
         }
     }
+    #endregion
 
+    #region Viewport Top Border
     // The y component of the top border position in viewport space.
     /// <summary>
     /// The y component of the top border position in viewport space.
@@ -114,7 +122,10 @@ public class ViewportManager : MonoBehaviour
             return gameCamera.ViewportToWorldPoint(vpTopBorderPos).z;
         }
     }
+    #endregion
+    #endregion
 
+    #region Viewport Origin properties
     // The coordinates of the world origin in viewport space coordinates.
     /// <summary>
     /// The coordinates of the world origin in viewport space coordinates.
@@ -138,4 +149,5 @@ public class ViewportManager : MonoBehaviour
     /// The z component of the viewport space coordinates of the world origin.
     /// </summary>
     public float VpOriginZ { get => vpOrigin.z; }
+    #endregion
 }
