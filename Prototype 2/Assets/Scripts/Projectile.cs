@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward * Speed * Time.deltaTime);
     }
 
+    // When another collider triggers the projectile, if it's an Enemy, they take damage
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
