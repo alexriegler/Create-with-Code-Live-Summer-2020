@@ -11,4 +11,9 @@ public class GameManager : MonoBehaviour
             print("Game Over");
         }
     }
+
+    private void Restart()
+    {
+        print("Restart");
+    }
 }
