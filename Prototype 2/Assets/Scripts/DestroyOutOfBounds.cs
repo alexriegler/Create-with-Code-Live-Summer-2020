@@ -22,8 +22,8 @@ public class DestroyOutOfBounds : MonoBehaviour
     [SerializeField]
     [Tooltip("The amount of time in seconds to pass after exiting the viewport and before destroying.")]
     private float destroyDelay = 0.5f;
-    [SerializeField]
-    [Tooltip("Positional coordinates of the object in viewport space. The bottom-left of the camera is (0,0); the top-right is (1,1).")]
+    
+    // Positional coordinates of the object in viewport space. The bottom-left of the camera is (0,0); the top-right is (1,1).
     private Vector3 viewPos;
 
     // Update is called once per frame
