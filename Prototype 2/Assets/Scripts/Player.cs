@@ -19,8 +19,12 @@ public class Player : LivingEntity
 
     public override void TakeHit(int damage)
     {
+        bool wasAlive = !dead;
         base.TakeHit(damage);
-        OnPlayerHit?.Invoke();
+        if (wasAlive)
+        {
+            OnPlayerHit?.Invoke();
+        }
     }
 
     // Invokes the OnPlayerDeath action before calling the base Die method
