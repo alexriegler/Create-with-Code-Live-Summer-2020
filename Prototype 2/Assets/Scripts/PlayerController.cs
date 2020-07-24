@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     [Header("Player")]
     public GameObject projectile;
 
+    [SerializeField]
+    private float fireRate = 0.25f;
+    private float nextShotTime;
+
     [Header("Player")]
     [SerializeField]
     private KeyCode projectileFireButton = KeyCode.Space;
@@ -28,8 +32,9 @@ public class PlayerController : MonoBehaviour
         CheckBoundaries();
 
         // Fire a projectile
-        if (Input.GetKeyDown(projectileFireButton))
+        if ((Input.GetKey(projectileFireButton) && (Time.time > nextShotTime)) || Input.GetKeyDown(projectileFireButton))
         {
+            nextShotTime = Time.time + fireRate;
             Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
     }
