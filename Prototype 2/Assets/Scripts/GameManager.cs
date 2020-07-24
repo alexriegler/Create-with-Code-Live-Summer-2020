@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 
     private bool gameHasEnded = false;
 
+    void Start()
+    {
+        player.OnPlayerDeath += EndGame;
+    }
+
     public void EndGame()
     {
         if (!gameHasEnded)
