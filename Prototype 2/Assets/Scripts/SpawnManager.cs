@@ -26,12 +26,6 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating(nameof(SpawnRandomSideAnimal), startDelay, spawnInterval);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // Spawns a random animal from the top of the screen
     void SpawnRandomAnimal()
     {
