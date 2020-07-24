@@ -14,8 +14,13 @@ public class Player : LivingEntity
         if (other.CompareTag("Enemy"))
         {
             TakeHit(hitDamage);
-            OnPlayerHit?.Invoke();
         }
+    }
+
+    public override void TakeHit(int damage)
+    {
+        base.TakeHit(damage);
+        OnPlayerHit?.Invoke();
     }
 
     // Invokes the OnPlayerDeath action before calling the base Die method
