@@ -2,15 +2,13 @@
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool gameHasEnded = false;
 
-    // Update is called once per frame
-    void Update()
+    public void EndGame()
     {
-        
+        if (!gameHasEnded)
+        {
+            print("Game Over");
+        }
     }
 }
