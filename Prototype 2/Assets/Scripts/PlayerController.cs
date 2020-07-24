@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         CheckBoundaries();
 
         // Fire a projectile
-        if ((Input.GetKey(projectileFireButton)) && (Time.time > nextShotTime))
+        if ((Input.GetKey(projectileFireButton) && (Time.time > nextShotTime)) || Input.GetKeyDown(projectileFireButton))
         {
             nextShotTime = Time.time + fireRate;
             Instantiate(projectile, transform.position, projectile.transform.rotation);
