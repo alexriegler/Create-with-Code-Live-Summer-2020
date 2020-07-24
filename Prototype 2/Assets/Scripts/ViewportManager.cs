@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
  * The ViewportManager class.
@@ -19,21 +17,16 @@ public class ViewportManager : MonoBehaviour
     [Header("Viewport")]
     [SerializeField]
     private float vpPadding = 0.1f;
-    private float vpLeftBorderX = 0f;
-    private float vpRightBorderX = 1f;
-    private float vpBottomBorderY = 0f;
-    private float vpTopBorderY = 1f;
-
     private Vector3 vpOrigin;
 
     // Start is called before the first frame update
     void Start()
     {
         gameCamera = Camera.main;
-        vpLeftBorderX = vpLeftBorderX + vpPadding;
-        vpRightBorderX = vpRightBorderX - vpPadding;
-        vpBottomBorderY = vpBottomBorderY + vpPadding;
-        vpTopBorderY = vpTopBorderY - vpPadding;
+        VpLeftBorderX = VpLeftBorderX + vpPadding;
+        VpRightBorderX = VpRightBorderX - vpPadding;
+        VpBottomBorderY = VpBottomBorderY + vpPadding;
+        VpTopBorderY = VpTopBorderY - vpPadding;
 
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
@@ -56,7 +49,7 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// The x component of the left border position in viewport space.
     /// </summary>
-    public float VpLeftBorderX { get => vpLeftBorderX; }
+    public float VpLeftBorderX { get; private set; } = 0f;
 
     // The x component of the left border position in world space.
     /// <summary>
@@ -75,7 +68,7 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// The x component of the right border position in viewport space.
     /// </summary>
-    public float VpRightBorderX { get => vpRightBorderX; }
+    public float VpRightBorderX { get; private set; } = 1f;
 
     // The x component of the right border position in world space.
     /// <summary>
@@ -94,7 +87,7 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// The y component of the bottom border position in viewport space.
     /// </summary>
-    public float VpBottomBorderY { get => vpBottomBorderY; }
+    public float VpBottomBorderY { get; private set; } = 0f;
 
     // The z component of the bottom border position in world space.
     /// <summary>
@@ -113,7 +106,7 @@ public class ViewportManager : MonoBehaviour
     /// <summary>
     /// The y component of the top border position in viewport space.
     /// </summary>
-    public float VpTopBorderY { get => vpTopBorderY; }
+    public float VpTopBorderY { get; private set; } = 1f;
 
     // The z component of the top border position in world space.
     /// <summary>
