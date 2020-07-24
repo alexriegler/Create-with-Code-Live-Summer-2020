@@ -1,16 +1,6 @@
 ﻿using UnityEngine;
 
-public class Difficulty : MonoBehaviour
+public static class Difficulty
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
