@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     private int animalIndex;
     private float screenOffset;
 
+    private enum SpawnLocation { Top, Side, Both }
+
     // Start is called before the first frame update
     void Start()
     {        
@@ -25,8 +27,25 @@ public class SpawnManager : MonoBehaviour
             float secondsBetweenSpawns = Mathf.Lerp(secondsBetweenSpawnsMinMax.y, secondsBetweenSpawnsMinMax.x, Difficulty.GetDifficultyPercent());
             nextSpawnTime = Time.time + secondsBetweenSpawns;
 
-            SpawnRandomAnimal();
-            SpawnRandomSideAnimal();
+            SpawnLocation location = (SpawnLocation) (Random.Range(0, 3));
+
+            switch (location)
+            {
+                case SpawnLocation.Top:
+                    SpawnRandomAnimal();
+                    break;
+                case SpawnLocation.Side:
+                    SpawnRandomSideAnimal();
+                    break;
+                case SpawnLocation.Both:
+                    SpawnRandomAnimal();
+                    SpawnRandomSideAnimal();
+                    break;
+                default:
+                    SpawnRandomAnimal();
+                    SpawnRandomSideAnimal();
+                    break;
+            }
         }
     }
 
