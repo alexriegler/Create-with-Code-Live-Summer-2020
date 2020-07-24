@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        Cursor.visible = true;
+
         if (!gameHasEnded)
         {
             print("Game Over");
