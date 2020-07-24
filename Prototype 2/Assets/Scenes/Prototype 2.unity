@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 1059718545}
   - component: {fileID: 1059718544}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HungerBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 1121929427}
   - component: {fileID: 1121929428}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HungerBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
