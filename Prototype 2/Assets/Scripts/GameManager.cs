@@ -2,6 +2,8 @@
 
 public class GameManager : MonoBehaviour
 {
+    public Player player;
+
     private bool gameHasEnded = false;
 
     public void EndGame()
