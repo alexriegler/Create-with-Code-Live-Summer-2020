@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Hide cursor
+        Cursor.visible = false;
+
         player.OnPlayerDeath += EndGame;
     }
 
