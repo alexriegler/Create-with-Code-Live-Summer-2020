@@ -32,13 +32,6 @@ public class ViewportManager : MonoBehaviour
     }
 
     // Properties
-
-    // The amount of padding within the viewport.
-    /// <summary>
-    /// The amount of padding within the viewport.
-    /// </summary>
-    public float VpSidePadding { get => vpPadding; }
-
     #region Viewport Border properties
     #region Viewport Left Border
     // The x component of the left border position in viewport space.
