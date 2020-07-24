@@ -4,8 +4,8 @@ public class SpawnManager : MonoBehaviour
 {
     public ViewportManager vpManager;
     public ScoreManager scoreManager;
-
     public GameObject[] animals;
+
     [SerializeField]
     private int animalIndex;
     [SerializeField]
