@@ -31,10 +31,16 @@ public class DestroyOutOfBounds : MonoBehaviour
     {
         viewPos = Camera.main.WorldToViewportPoint(transform.position);
 
+        CheckViewportBoundaries();
+    }
+
+    // Checks if the position of this object is within the viewport and destroys it if not
+    void CheckViewportBoundaries()
+    {
         // If object leaves viewport space, destroy
-        if ((leftBorder && viewPos.x < 0f) 
-            || (rightBorder && viewPos.x > 1f) 
-            || (topBorder && viewPos.y > 1f) 
+        if ((leftBorder && viewPos.x < 0f)
+            || (rightBorder && viewPos.x > 1f)
+            || (topBorder && viewPos.y > 1f)
             || (bottomBorder && viewPos.y < 0f))
         {
             if (gameObject.CompareTag("Enemy"))
