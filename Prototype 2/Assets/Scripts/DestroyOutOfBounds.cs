@@ -6,16 +6,16 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Should the object be destroyed when crossing the left border of the viewport.")]
-    private bool leftBorder = true;
+    private bool leftBorder = false;
     [SerializeField]
     [Tooltip("Should the object be destroyed when crossing the right border of the viewport.")]
-    private bool rightBorder = true;
+    private bool rightBorder = false;
     [SerializeField]
     [Tooltip("Should the object be destroyed when crossing the top border of the viewport.")]
-    private bool topBorder = true;
+    private bool topBorder = false;
     [SerializeField]
     [Tooltip("Should the object be destroyed when crossing the bottom border of the viewport.")]
-    private bool bottomBorder = true;
+    private bool bottomBorder = false;
 
     [SerializeField]
     [Tooltip("The amount of time in seconds to pass after exiting the viewport and before destroying.")]
