@@ -23,11 +23,14 @@ public class ViewportManager : MonoBehaviour
     void Start()
     {
         gameCamera = Camera.main;
+
+        // Add padding to viewport border coordinates
         VpLeftBorderX += vpPadding;
         VpRightBorderX -= vpPadding;
         VpBottomBorderY += vpPadding;
         VpTopBorderY -= vpPadding;
 
+        // Get the origin position in viewport coordinates
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
 
