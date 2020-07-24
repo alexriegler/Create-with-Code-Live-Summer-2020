@@ -31,12 +31,6 @@ public class ViewportManager : MonoBehaviour
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Properties
 
     // The amount of padding within the viewport.
