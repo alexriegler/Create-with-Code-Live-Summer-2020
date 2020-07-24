@@ -19,7 +19,10 @@ public class LivingEntity : MonoBehaviour, IDamageable
     /// <param name="damage">The amount of health to take away from the living entity.</param>
     public virtual void TakeHit(int damage)
     {
-        Health -= damage;
+        if (Health > 0)
+        {
+            Health -= damage;
+        }
 
         if (Health <= 0 && !dead)
         {
