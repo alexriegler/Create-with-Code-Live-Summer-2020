@@ -1,21 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Animal : LivingEntity
 {
     [SerializeField]
     private float speed = 40.0f;
 
-    private int foodFed = 0;
-
     public event Action OnFeed;
     public event Action OnFullFeed;
-
-    protected override void Start()
-    {
-        OnFeed += () => foodFed++;
-        base.Start();
-    }
 
     // Moves the animals forward
     void Update()
