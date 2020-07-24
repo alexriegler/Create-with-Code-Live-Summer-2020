@@ -23,10 +23,10 @@ public class ViewportManager : MonoBehaviour
     void Start()
     {
         gameCamera = Camera.main;
-        VpLeftBorderX = VpLeftBorderX + vpPadding;
-        VpRightBorderX = VpRightBorderX - vpPadding;
-        VpBottomBorderY = VpBottomBorderY + vpPadding;
-        VpTopBorderY = VpTopBorderY - vpPadding;
+        VpLeftBorderX += vpPadding;
+        VpRightBorderX -= vpPadding;
+        VpBottomBorderY += vpPadding;
+        VpTopBorderY -= vpPadding;
 
         vpOrigin = gameCamera.WorldToViewportPoint(Vector3.zero);
     }
