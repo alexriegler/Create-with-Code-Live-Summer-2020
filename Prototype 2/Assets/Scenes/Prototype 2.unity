@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1840749220}
+  damagePlayer: 1
 --- !u!1 &1590138454
 GameObject:
   m_ObjectHideFlags: 0
