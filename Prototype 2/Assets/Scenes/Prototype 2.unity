@@ -1255,6 +1255,7 @@ MonoBehaviour:
   gameCamera: {fileID: 534669904}
   projectile: {fileID: 211153199292171840, guid: 113c41053715d5245b406f6bf0494cd9,
     type: 3}
+  fireRate: 0.25
   projectileFireButton: 32
 --- !u!65 &1840749218
 BoxCollider:
@@ -1343,15 +1344,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vpManager: {fileID: 534669906}
   scoreManager: {fileID: 657084455}
-  animals:
+  animalPrefabs:
   - {fileID: 1920905784209715289, guid: 076789629be4e4e4d9ed842285c3d73a, type: 3}
   - {fileID: 2542001605315347454, guid: c335617a317e07e4284d467ac2b73350, type: 3}
   - {fileID: 6457714712380513949, guid: ef437bb59fcb8fb4cb68ad3bb27eba8b, type: 3}
   - {fileID: 8149431050422331022, guid: 918219ef6554596448a4302e1127b598, type: 3}
-  animalIndex: 0
-  startDelay: 2
-  spawnInterval: 1.5
-  screenOffset: 0
+  secondsBetweenSpawnsMinMax: {x: 0.7, y: 3}
 --- !u!1 &2123839959
 GameObject:
   m_ObjectHideFlags: 0

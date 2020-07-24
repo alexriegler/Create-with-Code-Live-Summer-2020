@@ -6,21 +6,28 @@ public class SpawnManager : MonoBehaviour
     public ScoreManager scoreManager;
     public GameObject[] animalPrefabs;
 
-    [SerializeField]
-    private int animalIndex;
-    [SerializeField]
-    private float startDelay = 2f;
-    [SerializeField]
-    private float spawnInterval = 1.5f;
+    public Vector2 secondsBetweenSpawnsMinMax;
+    private float nextSpawnTime;
 
-    [SerializeField]
+    private int animalIndex;
     private float screenOffset;
 
     // Start is called before the first frame update
     void Start()
     {        
-        InvokeRepeating(nameof(SpawnRandomAnimal), startDelay, spawnInterval);
-        InvokeRepeating(nameof(SpawnRandomSideAnimal), startDelay, spawnInterval);
+        
+    }
+
+    void Update()
+    {
+        if (Time.time > nextSpawnTime)
+        {
+            float secondsBetweenSpawns = Mathf.Lerp(secondsBetweenSpawnsMinMax.y, secondsBetweenSpawnsMinMax.x, Difficulty.GetDifficultyPercent());
+            nextSpawnTime = Time.time + secondsBetweenSpawns;
+
+            SpawnRandomAnimal();
+            SpawnRandomSideAnimal();
+        }
     }
 
     // Spawns a random animal from the top of the screen
