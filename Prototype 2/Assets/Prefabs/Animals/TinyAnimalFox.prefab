@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 1
-  speed: 5
+  speed: 15
 --- !u!1 &8149431050422332596
 GameObject:
   m_ObjectHideFlags: 0
