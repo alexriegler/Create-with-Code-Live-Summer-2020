@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 54714792228005454}
   - component: {fileID: 692581648277649915}
   - component: {fileID: 114830079073496310}
-  - component: {fileID: 1920905785336902896}
   m_Layer: 9
   m_Name: LargeAnimalMoose
   m_TagString: Enemy
@@ -106,18 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 2
---- !u!114 &1920905785336902896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920905784209715289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45b80fa4e6539be44a5bc65a90f88ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   speed: 11
 --- !u!1 &1920905784209722565
 GameObject:
