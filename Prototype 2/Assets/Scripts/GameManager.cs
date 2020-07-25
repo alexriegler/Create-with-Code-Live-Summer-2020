@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Restart()
+    public void Restart()
     {
         print("Restart");
     }
