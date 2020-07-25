@@ -1,7 +1,7 @@
 # If You Feed a Fox a Fruit (Prototype 2)
 > A bullet hell feeding frenzy game where the player must feed and avoid incoming animals.
 
-![Main menu](./Screenshots/menu.PNG)
+![Game Start](./Screenshots/gameStart00.PNG)
 
 ## Table of contents
 * [General Info](#general-info)
