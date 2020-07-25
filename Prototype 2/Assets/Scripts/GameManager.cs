@@ -18,15 +18,13 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        gameCanvas.SetActive(false);
-        gameOverCanvas.SetActive(true);
-
-        // Show cursor
-        Cursor.visible = true;
-
         if (!gameHasEnded)
         {
-            print("Game Over");
+            gameCanvas.SetActive(false);
+            gameOverCanvas.SetActive(true);
+
+            // Show cursor
+            Cursor.visible = true;
         }
     }
 
