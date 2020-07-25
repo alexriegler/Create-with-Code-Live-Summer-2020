@@ -1777,6 +1777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5f864671547d147acbb4faf4b3f619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1840749220}
   hearts:
   - {fileID: 1097933465}
   - {fileID: 1813376370}
