@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Player player;
     public Toggle[] hearts;
 
     private Stack<Toggle> heartStack;
@@ -18,12 +17,10 @@ public class PlayerHealth : MonoBehaviour
         {
             heartStack.Push(heart);
         }
-
-        player.OnPlayerHit += UpdateHealth;
     }
 
     // Updates the health visual
-    void UpdateHealth()
+    public void UpdateHealth()
     {
         if (heartStack.Peek() != null)
         {

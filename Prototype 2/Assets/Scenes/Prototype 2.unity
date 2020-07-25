@@ -1158,6 +1158,7 @@ GameObject:
   - component: {fileID: 594464458}
   - component: {fileID: 594464457}
   - component: {fileID: 594464461}
+  - component: {fileID: 594464462}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -1265,6 +1266,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &594464462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594464456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8edf0cd228b2b334aaa78a478245fc11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1840749220}
+  playerHealth: {fileID: 1856442146}
+  scoreManager: {fileID: 535177734}
 --- !u!1 &605045549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,7 +2571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5f864671547d147acbb4faf4b3f619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1840749220}
   hearts:
   - {fileID: 1097933465}
   - {fileID: 1813376370}
@@ -2632,7 +2647,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2123839961}
-  - component: {fileID: 2123839960}
   m_Layer: 0
   m_Name: GameUI
   m_TagString: Untagged
@@ -2640,20 +2654,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2123839960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123839959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8edf0cd228b2b334aaa78a478245fc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1840749220}
-  scoreManager: {fileID: 535177734}
 --- !u!4 &2123839961
 Transform:
   m_ObjectHideFlags: 0

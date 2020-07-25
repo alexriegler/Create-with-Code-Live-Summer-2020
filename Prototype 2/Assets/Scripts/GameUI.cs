@@ -3,21 +3,19 @@
 public class GameUI : MonoBehaviour
 {
     public Player player;
+    public PlayerHealth playerHealth;
     public ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        DrawPlayerHealth(player.startingHealth);
-        DrawScore();
-
-        player.OnPlayerHit += () => DrawPlayerHealth(player.Health);
+        player.OnPlayerHit += DrawPlayerHealth;
         scoreManager.OnScoreChange += DrawScore;
     }
 
-    void DrawPlayerHealth(int health)
+    void DrawPlayerHealth()
     {
-        print($"Lives = {health}");
+        playerHealth.UpdateHealth();
     }
 
     void DrawScore()
