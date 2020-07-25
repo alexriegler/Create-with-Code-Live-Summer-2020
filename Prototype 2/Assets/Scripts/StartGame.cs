@@ -3,6 +3,7 @@
 public class StartGame : MonoBehaviour
 {
     public SpawnManager spawnManager;
+    public ScoreManager scoreManager;
     
     private Animal animal;
 
@@ -10,6 +11,8 @@ public class StartGame : MonoBehaviour
     void Start()
     {
         animal = gameObject.GetComponent<Animal>();
+
+        scoreManager.AddAnimal(animal);
 
         animal.OnFullFeed += () => spawnManager.gameObject.SetActive(true);
     }

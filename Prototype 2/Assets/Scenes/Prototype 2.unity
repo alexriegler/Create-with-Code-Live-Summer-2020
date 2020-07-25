@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1878460943}
+  scoreManager: {fileID: 535177734}
 --- !u!1 &128850557
 GameObject:
   m_ObjectHideFlags: 0
