@@ -12,6 +12,6 @@ public static class Difficulty
     /// <returns>The difficulty percent.</returns>
     public static float GetDifficultyPercent()
     {
-        return Mathf.Clamp01(Time.time / secondsToMaxDifficulty);
+        return Mathf.Clamp01(Time.timeSinceLevelLoad / secondsToMaxDifficulty);
     }
 }
