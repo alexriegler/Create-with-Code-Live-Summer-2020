@@ -42,5 +42,5 @@ Where `#` is replaced with the prototype number, e.g., `1` or `2`. These are the
 ## Status
 Course is: _in progress_
 
-## Contact
-Created by [Alex Riegler](https://www.linkedin.com/in/alexander-riegler/ "Alexander Riegler | LinkedIn") - feel free to contact me! I am seeking work!
+## Author
+Created by Alex Riegler.
