@@ -1144,7 +1144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ef1f2aa6e0ffb4e990c4271866807d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1840749220}
 --- !u!1 &594464456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,8 +1278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1840749220}
-  playerHealth: {fileID: 1856442146}
-  scoreManager: {fileID: 535177734}
 --- !u!1 &605045549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,7 +2622,7 @@ MonoBehaviour:
   - {fileID: 2542001605315347454, guid: c335617a317e07e4284d467ac2b73350, type: 3}
   - {fileID: 6457714712380513949, guid: ef437bb59fcb8fb4cb68ad3bb27eba8b, type: 3}
   - {fileID: 8149431050422331022, guid: 918219ef6554596448a4302e1127b598, type: 3}
-  secondsBetweenSpawnsMinMax: {x: 0.7, y: 3}
+  secondsBetweenSpawnsMinMax: {x: 0.7, y: 2.5}
 --- !u!114 &2033030991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6989927754844353823, guid: dc104defb28d9d5468a2b5871deac5c5,

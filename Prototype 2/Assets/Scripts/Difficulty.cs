@@ -3,7 +3,7 @@
 public static class Difficulty
 {
     [SerializeField]
-    private static float secondsToMaxDifficulty = 60;
+    private static float secondsToMaxDifficulty = 40;
 
     // Returns the current difficulty percent
     /// <summary>
