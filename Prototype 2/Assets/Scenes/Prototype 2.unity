@@ -2461,7 +2461,7 @@ MonoBehaviour:
   projectile: {fileID: 211153199292171840, guid: 113c41053715d5245b406f6bf0494cd9,
     type: 3}
   fireRate: 0.25
-  projectileFireButton: 32
+  projectileFireButton: Fire1
 --- !u!65 &1840749218
 BoxCollider:
   m_ObjectHideFlags: 0

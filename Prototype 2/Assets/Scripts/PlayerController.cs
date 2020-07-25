@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player")]
     [SerializeField]
-    private KeyCode projectileFireButton = KeyCode.Space;
+    private string projectileFireButton = "Fire1";
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         CheckBoundaries();
 
         // Fire a projectile
-        if ((Input.GetKey(projectileFireButton) && (Time.time > nextShotTime)) || Input.GetKeyDown(projectileFireButton))
+        if ((Input.GetButton(projectileFireButton) && (Time.time > nextShotTime)) || Input.GetButtonDown(projectileFireButton))
         {
             nextShotTime = Time.time + fireRate;
             Instantiate(projectile, transform.position, projectile.transform.rotation);
