@@ -8,6 +8,8 @@
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
+  * [How to play](#how-to-play)
+  * [How to work with this Unity project](#how-to-work-with-this-unity-project)
 * [Features](#features)
 * [To-do List](#to-do-list)
 * [Status](#status)
