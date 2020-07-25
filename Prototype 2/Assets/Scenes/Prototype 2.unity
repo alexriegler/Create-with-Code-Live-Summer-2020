@@ -1729,6 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca605c841b3d7f45b8f6313aefb6deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
 --- !u!224 &1097933464 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6989927754844353822, guid: dc104defb28d9d5468a2b5871deac5c5,
@@ -1899,7 +1900,7 @@ GameObject:
   - component: {fileID: 1498738065}
   - component: {fileID: 1498738064}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
