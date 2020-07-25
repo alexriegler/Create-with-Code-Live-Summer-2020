@@ -9,7 +9,7 @@
   * [How to play the games](#how-to-play-the-games)
   * [How to work with the Unity projects](#how-to-work-with-the-unity-projects)
 * [Status](#status)
-* [Contact](#contact)
+* [Author](#author)
 
 ## General Info
 I started this course to learn about game development. I specifcally chose Unity since it's commonly used in the professional industry and the skills learned with it can be applied to game development in general. Within this repository, you will find the prototypes from each week of the [Create with Code Live](https://learn.unity.com/course/create-with-code-live-summer-2020 "Create with Code Live - Summer 2020 - Unity Learn") four-week course.
