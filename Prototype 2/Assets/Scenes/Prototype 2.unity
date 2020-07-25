@@ -1726,7 +1726,7 @@ PrefabInstance:
     - target: {fileID: 8149431050422331022, guid: 918219ef6554596448a4302e1127b598,
         type: 3}
       propertyPath: m_Name
-      value: TinyAnimalFox (1)
+      value: StartingFox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 918219ef6554596448a4302e1127b598, type: 3}
