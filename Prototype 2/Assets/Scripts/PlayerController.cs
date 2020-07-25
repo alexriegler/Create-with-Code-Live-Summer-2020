@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
         CheckBoundaries();
 
         // Fire a projectile
-        if ((Input.GetButton(projectileFireButton) && (Time.time > nextShotTime)) || (Input.GetButtonDown(projectileFireButton) && (Time.time > nextSpamShotTime)))
+        if ((Input.GetButton(projectileFireButton) && (Time.time > nextShotTime)) 
+            || (Input.GetButtonDown(projectileFireButton) && (Time.time > nextSpamShotTime)))
         {
             nextShotTime = Time.time + fireRate;
             nextSpamShotTime = Time.time + minFireRate;
