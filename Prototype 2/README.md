@@ -50,9 +50,8 @@ To work with this project, you can follow the instructions on the [main README.m
 * Increasing difficulty over time
 
 ## To-do List
-* Procedurally generated road & obstacles
-* Sound & music
-* Destructable boxes
+* Random power-ups
+* Better game object management
 * And many other possiblities...
 
 ## Status
