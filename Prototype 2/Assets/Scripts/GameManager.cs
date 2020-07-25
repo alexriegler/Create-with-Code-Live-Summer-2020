@@ -3,7 +3,8 @@
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    public Canvas gameOverCanvas;
+    public GameObject gameCanvas;
+    public GameObject gameOverCanvas;
 
     private bool gameHasEnded = false;
 
@@ -17,8 +18,9 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        gameOverCanvas.enabled = true;
-        
+        gameCanvas.SetActive(false);
+        gameOverCanvas.SetActive(true);
+
         // Show cursor
         Cursor.visible = true;
 

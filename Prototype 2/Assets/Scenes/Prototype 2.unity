@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca605c841b3d7f45b8f6313aefb6deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 535177734}
 --- !u!224 &1097933464 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6989927754844353822, guid: dc104defb28d9d5468a2b5871deac5c5,
@@ -2081,7 +2081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1840749220}
-  gameOverCanvas: {fileID: 605045552}
+  gameCanvas: {fileID: 594464456}
+  gameOverCanvas: {fileID: 605045549}
 --- !u!1001 &1723561646
 PrefabInstance:
   m_ObjectHideFlags: 0
