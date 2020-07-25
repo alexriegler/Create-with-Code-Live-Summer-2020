@@ -13,7 +13,7 @@
 * [Features](#features)
 * [To-do List](#to-do-list)
 * [Status](#status)
-* [Contact](#contact)
+* [Author](#author)
 
 ## General Info
 The [first week of the course](https://learn.unity.com/tutorial/week-1-player-control-jul-13-jul-17?uv=2018.4&courseId=5ed163d8edbc2a0969cd1ded "Week 1 - Player Control: Jul 13 - Jul 17 | Unity Learn") focused on player control and gaining familiarity with the Unity editor. We were tasked with creating a prototype game from assets provided by Unity. The game at a minimum was supposed to include a player vehicle, a following camera, obstacles with collision, and player control. There were also "challenges" provided which included creating stacks of obstacles, adding moving car obstacles, adding the ability to switch camera views, and adding split screen for two players. I implemented all of these features in my game along with some additional features and modifications.
@@ -64,5 +64,5 @@ To work with this project, you can follow the instructions on the [main README.m
 ## Status
 Project is: _finished_
 
-## Contact
+## Author
 Created by Alex Riegler.
