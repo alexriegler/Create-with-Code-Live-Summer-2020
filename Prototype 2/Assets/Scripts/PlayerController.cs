@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float fireRate = 0.25f;
     private float nextShotTime;
+    private float minFireRate = 0.1f;
+    private float nextSpamShotTime;
 
     [Header("Player")]
     [SerializeField]
@@ -32,9 +34,10 @@ public class PlayerController : MonoBehaviour
         CheckBoundaries();
 
         // Fire a projectile
-        if ((Input.GetButton(projectileFireButton) && (Time.time > nextShotTime)) || Input.GetButtonDown(projectileFireButton))
+        if ((Input.GetButton(projectileFireButton) && (Time.time > nextShotTime)) || (Input.GetButtonDown(projectileFireButton) && (Time.time > nextSpamShotTime)))
         {
             nextShotTime = Time.time + fireRate;
+            nextSpamShotTime = Time.time + minFireRate;
             Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
     }
