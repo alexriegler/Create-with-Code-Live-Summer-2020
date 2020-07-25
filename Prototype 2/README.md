@@ -1,5 +1,5 @@
-# Drag Race (Prototype 1)
-> A split screen drag racing game where players must avoid obstacles and be the first to reach the finish line.
+# If You Feed a Fox a Fruit (Prototype 2)
+> A bullet hell feeding frenzy game where the player must feed and avoid incoming animals.
 
 ![Main menu](./Screenshots/menu.PNG)
 
