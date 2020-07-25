@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float fireRate = 0.25f;
     private float nextShotTime;
+    private float minFireRate = 0.1f;
+    private float nextSpamShotTime;
 
     [Header("Player")]
     [SerializeField]
-    private KeyCode projectileFireButton = KeyCode.Space;
+    private string projectileFireButton = "Fire1";
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +34,11 @@ public class PlayerController : MonoBehaviour
         CheckBoundaries();
 
         // Fire a projectile
-        if ((Input.GetKey(projectileFireButton) && (Time.time > nextShotTime)) || Input.GetKeyDown(projectileFireButton))
+        if ((Input.GetButton(projectileFireButton) && (Time.time > nextShotTime)) 
+            || (Input.GetButtonDown(projectileFireButton) && (Time.time > nextSpamShotTime)))
         {
             nextShotTime = Time.time + fireRate;
+            nextSpamShotTime = Time.time + minFireRate;
             Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
     }

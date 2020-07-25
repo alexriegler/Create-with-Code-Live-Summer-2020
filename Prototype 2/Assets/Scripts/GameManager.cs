@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
+    public GameObject gameCanvas;
+    public GameObject gameOverCanvas;
 
     private bool gameHasEnded = false;
 
@@ -16,17 +19,18 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        // Show cursor
-        Cursor.visible = true;
-
         if (!gameHasEnded)
         {
-            print("Game Over");
+            gameCanvas.SetActive(false);
+            gameOverCanvas.SetActive(true);
+
+            // Show cursor
+            Cursor.visible = true;
         }
     }
 
-    private void Restart()
+    public void Restart()
     {
-        print("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

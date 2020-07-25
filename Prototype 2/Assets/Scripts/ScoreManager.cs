@@ -1,21 +1,25 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Player player;
-    
+    // Public property
     public int Score { get; private set; } = 0;
 
+    // Private variables
+    private Text scoreText;
     private int feedPoints = 10;
     private int fullFeedPoints = 40;
 
+    // Public events
     public event Action OnScoreChange;
 
-    public void AddAnimal(Animal animal)
+    // Private methods
+    void Start()
     {
-        animal.OnFeed += () => AddPoints(feedPoints);
-        animal.OnFullFeed += () => AddPoints(fullFeedPoints);
+        scoreText = gameObject.GetComponent<Text>();
+        scoreText.text = Score.ToString();
     }
 
     // Increases the score by points
@@ -31,4 +35,16 @@ public class ScoreManager : MonoBehaviour
         Score -= penalty;
         OnScoreChange?.Invoke();
     }
+
+    // Public methods
+
+    // Subscribes to the animal's OnFeed and OnFullFeed actions
+    public void AddAnimal(Animal animal)
+    {
+        animal.OnFeed += () => AddPoints(feedPoints);
+        animal.OnFullFeed += () => AddPoints(fullFeedPoints);
+    }
+
+    // Updates the score text to reflect the current score
+    public void UpdateScore() => scoreText.text = Score.ToString();
 }
