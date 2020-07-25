@@ -42,15 +42,12 @@ You can go [here](https://connect.unity.com/mg/other/if-you-feed-a-fox-a-fruit-p
 To work with this project, you can follow the instructions on the [main README.md](../README.md#how-to-work-with-the-unity-projects).
 
 ## Features
-* Cycle camera views
-* Rear view
-* Split screen, local multiplayer
-* Menu
-* Winning player celebration animations
-* Speedometer UI display
-* Respawning
-* Countdown timer
-* Credits
+* Mouse controlled movement
+* Constrained movement within the viewport
+* Animals spawn outside of the viewport
+* Player health and score UI
+* Game over screen
+* Increasing difficulty over time
 
 ## To-do List
 * Procedurally generated road & obstacles
