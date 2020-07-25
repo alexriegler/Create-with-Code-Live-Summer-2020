@@ -8,6 +8,8 @@
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
+  * [How to play](#how-to-play)
+  * [How to work with this Unity project](#how-to-work-with-this-unity-project)
 * [Features](#features)
 * [To-do List](#to-do-list)
 * [Status](#status)
@@ -63,4 +65,4 @@ To work with this project, you can follow the instructions on the [main README.m
 Project is: _finished_
 
 ## Contact
-Created by [Alex Riegler](https://www.linkedin.com/in/alexander-riegler/ "Alexander Riegler | LinkedIn") - feel free to contact me!
+Created by Alex Riegler.
