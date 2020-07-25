@@ -13,7 +13,7 @@
 * [Features](#features)
 * [To-do List](#to-do-list)
 * [Status](#status)
-* [Contact](#contact)
+* [Author](#author)
 
 ## General Info
 The [second week of the course](https://learn.unity.com/tutorial/week-2-basic-gameplay-jul-20-jul-24?uv=2018.4&courseId=5ed163d8edbc2a0969cd1ded "Week 2 - Basic Gameplay: Jul 20 - Jul 24 | Unity Learn") focused on basic gameplay elements and game object management. We were once again tasked with creating a prototype game from assets provided by Unity. The game at a minimum was supposed to include a top down camera, a player that can move left/right, the ability to fire projectiles, destruction of objects out of bounds, random animal spawning, and collisions. There were also some challenges which included adding the ability to move forwards/backwards, animals spawning from the sides, log game over to the console on certain conditions, track score and lives, and display a hunger bar on animals. I implemented all of these features in my game along with some additional features and modifications.
@@ -57,5 +57,5 @@ To work with this project, you can follow the instructions on the [main README.m
 ## Status
 Project is: _finished_
 
-## Contact
-Created by [Alex Riegler](https://www.linkedin.com/in/alexander-riegler/ "Alexander Riegler | LinkedIn") - feel free to contact me!
+## Author
+Created by Alex Riegler.
