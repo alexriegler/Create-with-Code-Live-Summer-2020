@@ -12,13 +12,8 @@ public class GameUI : MonoBehaviour
     {
         playerHealth = gameObject.GetComponentInChildren<PlayerHealth>();
         
-        player.OnPlayerHit += DrawPlayerHealth;
+        player.OnPlayerHit += () => playerHealth.UpdateHealth();
         scoreManager.OnScoreChange += DrawScore;
-    }
-
-    void DrawPlayerHealth()
-    {
-        playerHealth.UpdateHealth();
     }
 
     void DrawScore()
