@@ -3,12 +3,15 @@
 public class GameUI : MonoBehaviour
 {
     public Player player;
-    public PlayerHealth playerHealth;
+    
+    private PlayerHealth playerHealth;
     public ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = gameObject.GetComponentInChildren<PlayerHealth>();
+        
         player.OnPlayerHit += DrawPlayerHealth;
         scoreManager.OnScoreChange += DrawScore;
     }
