@@ -3,6 +3,7 @@
 public class GameManager : MonoBehaviour
 {
     public Player player;
+    public Canvas gameOverCanvas;
 
     private bool gameHasEnded = false;
 

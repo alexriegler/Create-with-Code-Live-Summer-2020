@@ -2081,6 +2081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1840749220}
+  gameOverCanvas: {fileID: 605045552}
 --- !u!1001 &1723561646
 PrefabInstance:
   m_ObjectHideFlags: 0
