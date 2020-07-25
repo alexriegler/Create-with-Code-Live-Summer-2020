@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        gameOverCanvas.enabled = true;
+        
         // Show cursor
         Cursor.visible = true;
 
