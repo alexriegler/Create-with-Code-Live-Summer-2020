@@ -3,7 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] string jumpButton = "Jump";
-    [SerializeField] int jumpForce = 10;
+    [SerializeField] float jumpForce = 10;
     
     private Rigidbody playerRb;
 
