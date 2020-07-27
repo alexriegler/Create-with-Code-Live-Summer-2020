@@ -26,7 +26,7 @@ I started this course to learn about game development. I specifcally chose Unity
 
 ## Setup
 ### How to play the games
-To play the games, web links are provided in their respective folders for convenience. PC and Mac installations are also provided as alternatives.
+To play the games, web links are provided in their respective folders for convenience.
 
 ### How to work with the Unity projects
 To work with the source code, you must first have Unity installed. For best results, you should have [Unity 2018.4](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity") installed. You may use other versions of Unity but you may encounter errors with the assets or code. After installing Unity, use your terminal to navigate to the folder on your computer where you want to download the repository to. Then, use the following git command,
