@@ -2,6 +2,8 @@
 
 public class PlayerController : MonoBehaviour
 {
+    public bool gameOver;
+
     [SerializeField] string jumpButton = "Jump";
     [SerializeField] float jumpForce = 10;
     [SerializeField] float gravityModifier = 1;
@@ -26,5 +28,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) => isGrounded = true;
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            print("Game Over");
+            gameOver = true;
+        }
+    }
 }
