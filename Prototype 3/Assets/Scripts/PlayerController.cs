@@ -2,13 +2,14 @@
 
 public class PlayerController : MonoBehaviour
 {
+    public bool gameOver;
+
     [SerializeField] string jumpButton = "Jump";
     [SerializeField] float jumpForce = 10;
     [SerializeField] float gravityModifier = 1;
 
     private Rigidbody playerRb;
     private bool isGrounded = true;
-    private bool gameOver;
 
     // Start is called before the first frame update
     void Start()
