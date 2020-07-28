@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityModifier = 1;
 
     private Rigidbody playerRb;
+    private Animator playerAnim;
     private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
     }
 
