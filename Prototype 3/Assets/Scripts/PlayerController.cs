@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
     private Animator playerAnim;
-    private GameObject playerMesh; 
     private bool isGrounded = true;
 
     // Start is called before the first frame update
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
-        playerMesh = GetComponentInChildren<SkinnedMeshRenderer>().gameObject;
         Physics.gravity *= gravityModifier;
     }
 
