@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Money
+  - Bomb
+  - Background
   - Ground
   layers:
   - Default
