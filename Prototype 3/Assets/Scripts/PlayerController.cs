@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            hasDoubleJumped = false;
             dirtParticle.Play();
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
@@ -87,9 +88,9 @@ public class PlayerController : MonoBehaviour
     void SecondJump()
     {
         playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        
+        hasDoubleJumped = true;
         // TODO: Change double jump animation
-        playerAnim.SetTrigger("Jump_trig");
+        playerAnim.SetTrigger("Double_Jump_trig");
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
     }
 }
