@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
     private bool isGrounded = true;
 
+    // TODO: Not yet used
     public event Action OnPlayerJump;
     public event Action OnPlayerDeath;
 
