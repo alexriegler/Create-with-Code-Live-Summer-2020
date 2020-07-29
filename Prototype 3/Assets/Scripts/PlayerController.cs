@@ -4,6 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
+    public AudioClip jumpSound;
+    public AudioClip crashSound;
 
     public bool gameOver;
 
