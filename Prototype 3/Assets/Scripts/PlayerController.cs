@@ -39,11 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown(jumpButton) && isGrounded && !gameOver)
         {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-            playerAnim.SetTrigger("Jump_trig");
-            dirtParticle.Stop();
-            playerAudio.PlayOneShot(jumpSound, jumpVolume);
+            FirstJump();
         }
     }
 
@@ -65,5 +61,15 @@ public class PlayerController : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    // Jumps the player upwards
+    void FirstJump()
+    {
+        playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isGrounded = false;
+        playerAnim.SetTrigger("Jump_trig");
+        dirtParticle.Stop();
+        playerAudio.PlayOneShot(jumpSound, jumpVolume);
     }
 }
