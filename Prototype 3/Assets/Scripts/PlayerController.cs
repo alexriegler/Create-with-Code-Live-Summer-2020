@@ -3,7 +3,8 @@
 public class PlayerController : MonoBehaviour
 {
     public ParticleSystem explosionParticle;
-    
+    public ParticleSystem dirtParticle;
+
     public bool gameOver;
 
     [SerializeField] string jumpButton = "Jump";
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
             playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
         }
     }
 
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            dirtParticle.Play();
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
             playerMesh.SetActive(false);
 
             explosionParticle.Play();
+            dirtParticle.Stop();
         }
     }
 }
