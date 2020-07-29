@@ -48,14 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             print("Game Over");
             gameOver = true;
-            // playerAnim.SetBool("Death_b", true);
-            // playerAnim.SetInteger("DeathType_int", 1);
-
-            playerRb.isKinematic = true;
-            playerMesh.SetActive(false);
 
             explosionParticle.Play();
-            dirtParticle.Stop();
+
+            Destroy(gameObject);
         }
     }
 }
