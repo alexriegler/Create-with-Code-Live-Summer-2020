@@ -2,6 +2,8 @@
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem explosionParticle;
+    
     public bool gameOver;
 
     [SerializeField] string jumpButton = "Jump";
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
+
+            explosionParticle.Play();
         }
     }
 }
