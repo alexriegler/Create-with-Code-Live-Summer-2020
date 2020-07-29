@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
     private Animator playerAnim;
+    private GameObject playerMesh; 
     private bool isGrounded = true;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        playerMesh = GetComponentInChildren<SkinnedMeshRenderer>().gameObject;
         Physics.gravity *= gravityModifier;
     }
 
@@ -43,8 +45,11 @@ public class PlayerController : MonoBehaviour
         {
             print("Game Over");
             gameOver = true;
-            playerAnim.SetBool("Death_b", true);
-            playerAnim.SetInteger("DeathType_int", 1);
+            // playerAnim.SetBool("Death_b", true);
+            // playerAnim.SetInteger("DeathType_int", 1);
+
+            playerRb.isKinematic = true;
+            playerMesh.SetActive(false);
 
             explosionParticle.Play();
         }
