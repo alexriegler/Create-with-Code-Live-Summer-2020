@@ -1,7 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
+    public AudioClip jumpSound;
+    public float jumpVolume = 1.0f;
+    public AudioClip crashSound;
+    public float crashVolume = 1.0f;
+
     public bool gameOver;
 
     [SerializeField] string jumpButton = "Jump";
@@ -10,13 +18,19 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
     private Animator playerAnim;
+    private AudioSource playerAudio;
     private bool isGrounded = true;
+
+    // TODO: Not yet used
+    public event Action OnPlayerJump;
+    public event Action OnPlayerDeath;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
     }
 
@@ -28,6 +42,8 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
             playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
+            playerAudio.PlayOneShot(jumpSound, jumpVolume);
         }
     }
 
@@ -36,13 +52,18 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            dirtParticle.Play();
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             print("Game Over");
             gameOver = true;
-            playerAnim.SetBool("Death_b", true);
-            playerAnim.SetInteger("DeathType_int", 1);
+
+            explosionParticle.Play();
+
+            explosionParticle.gameObject.GetComponent<AudioSource>().Play();
+
+            Destroy(gameObject);
         }
     }
 }
