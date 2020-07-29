@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     private AudioSource playerAudio;
     private bool isGrounded = true;
+
+    public event Action OnPlayerJump;
+    public event Action OnPlayerDeath;
 
     // Start is called before the first frame update
     void Start()
