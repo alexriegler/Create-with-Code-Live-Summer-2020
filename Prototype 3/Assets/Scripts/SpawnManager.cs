@@ -2,10 +2,12 @@
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject[] obstaclePrefabs;
+    private int obstacleIndex = 0;
 
     private float startDelay = 2;
     private float repeatRate = 2;
+
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     private PlayerController playerControllerScript;
 
@@ -25,9 +27,10 @@ public class SpawnManager : MonoBehaviour
     // Spawns an obstacle
     void SpawnObstacle()
     {
-        if (playerControllerScript.gameOver == false)
+        if (!playerControllerScript.gameOver)
         {
-            Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+            obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
+            Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
         }
     }
 }
