@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3297940876850409986}
   - component: {fileID: 3310028098993214724}
   m_Layer: 0
-  m_Name: LowBarrelObstacle 1
+  m_Name: HighBarrelObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279468091769614371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.731868, y: 0.00000011920929, z: 0}
+  m_LocalPosition: {x: 0, y: 0.00000011920929, z: 0}
   m_LocalScale: {x: 1.197294, y: 1.197294, z: 1.197294}
   m_Children:
   - {fileID: 6024791235267104096}
