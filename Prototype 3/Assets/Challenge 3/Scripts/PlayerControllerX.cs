@@ -24,6 +24,8 @@ public class PlayerControllerX : MonoBehaviour
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
 
+        playerRb = GetComponent<Rigidbody>();
+
         // Apply a small upward force at the start of the game
         playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
 
