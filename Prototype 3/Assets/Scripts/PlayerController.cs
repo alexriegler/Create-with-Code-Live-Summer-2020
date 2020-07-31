@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] string jumpButton = "Jump";
     [SerializeField] float jumpForce = 10;
+    [SerializeField] float doubleJumpForce = 5;
     [SerializeField] float gravityModifier = 1;
 
     private Rigidbody playerRb;
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
     // Allows the player to jumps upwards a second time
     void SecondJump()
     {
-        playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        playerRb.AddForce(Vector3.up * doubleJumpForce, ForceMode.Impulse);
         hasDoubleJumped = true;
         // TODO: Change double jump animation
         playerAnim.SetTrigger("Double_Jump_trig");

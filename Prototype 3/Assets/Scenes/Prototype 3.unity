@@ -301,7 +301,8 @@ MonoBehaviour:
   crashVolume: 1
   gameOver: 0
   jumpButton: Jump
-  jumpForce: 550
+  jumpForce: 650
+  doubleJumpForce: 400
   gravityModifier: 3
 --- !u!4 &338442745 stripped
 Transform:
@@ -842,7 +843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b1c5ebd00af6a409b3402da1901658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
 --- !u!114 &835818923
 MonoBehaviour:
   m_ObjectHideFlags: 0
