@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour
                 SecondJump();
             }
         }
+
+        if (Input.GetButton(dashButton))
+        {
+            print("Dash");
+        }
     }
 
     void OnCollisionEnter(Collision collision)
