@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float doubleJumpForce = 5;
     [SerializeField] float gravityModifier = 1;
 
+    [Header("Dash")]
+    [SerializeField] float baseMultiplier = 1.0f;
+    [SerializeField] float dashMultiplier = 1.5f;
+
     [Header("Input")]
     [SerializeField] string jumpButton = "Jump";
     [SerializeField] string dashButton = "Fire3";
@@ -34,7 +38,8 @@ public class PlayerController : MonoBehaviour
 
     // Events
     public event Action OnPlayerJump;
-    public event Action OnPlayerDash;
+    public event Action OnPlayerStartDash;
+    public event Action OnPlayerEndDash;
     public event Action OnPlayerDeath;
 
     // Caches required components and sets gravity
@@ -65,9 +70,13 @@ public class PlayerController : MonoBehaviour
             }
 
             // Dash input
-            if (Input.GetButton(dashButton))
+            if (Input.GetButtonDown(dashButton))
             {
-                Dash();
+                StartDash();
+            }
+            if (Input.GetButtonUp(dashButton))
+            {
+                EndDash();
             }
         }
     }
@@ -109,10 +118,17 @@ public class PlayerController : MonoBehaviour
     }
 
     // Causes the player to speed up
-    void Dash()
+    void StartDash()
     {
-        OnPlayerDash?.Invoke();
-        //playerAnim.
+        OnPlayerStartDash?.Invoke();
+        playerAnim.SetFloat("Speed_f", dashMultiplier);
+    }
+
+    // Causes the player to return to normal speed
+    void EndDash()
+    {
+        OnPlayerEndDash?.Invoke();
+        playerAnim.SetFloat("Speed_f", baseMultiplier);
     }
 
     // Sets the player to the grounded state
