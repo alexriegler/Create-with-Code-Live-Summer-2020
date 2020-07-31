@@ -13,9 +13,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
     public float crashVolume = 1.0f;
 
-    [Header("Game State")]
-    public bool gameOver;
-
     [Header("Jump")]
     [SerializeField] float jumpForce = 10;
     [SerializeField] float doubleJumpForce = 5;
@@ -24,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [Header("Input")]
     [SerializeField] string jumpButton = "Jump";
     [SerializeField] string dashButton = "Fire3";
+
+    // Determines whether input is accepted or not
+    public bool InputDisabled { get; set; } = false;
 
     // Private variables
     private Rigidbody playerRb;
@@ -48,22 +48,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: Remove gameover check
-        if (Input.GetButtonDown(jumpButton) && !gameOver)
+        if (!InputDisabled)
         {
-            if (isGrounded)
+            if (Input.GetButtonDown(jumpButton))
             {
-                FirstJump();
+                if (isGrounded)
+                {
+                    FirstJump();
+                }
+                else if (!isGrounded && !hasDoubleJumped)
+                {
+                    SecondJump();
+                }
             }
-            else if (!isGrounded && !hasDoubleJumped)
-            {
-                SecondJump();
-            }
-        }
 
-        if (Input.GetButton(dashButton))
-        {
-            print("Dash");
+            if (Input.GetButton(dashButton))
+            {
+                print("Dash");
+            }
         }
     }
 
@@ -77,8 +79,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            print("Game Over");
-            gameOver = true;
             explosionParticle.Play();
             explosionParticle.gameObject.GetComponent<AudioSource>().Play();
             OnPlayerDeath?.Invoke();
