@@ -73,16 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
-            hasDoubleJumped = false;
-            dirtParticle.Play();
+            LandOnGround();
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            explosionParticle.Play();
-            explosionParticle.gameObject.GetComponent<AudioSource>().Play();
-            OnPlayerDeath?.Invoke();
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -105,5 +100,22 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetTrigger("Double_Jump_trig");
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
         OnPlayerJump?.Invoke();
+    }
+
+    // Sets the player to the grounded state
+    void LandOnGround()
+    {
+        isGrounded = true;
+        hasDoubleJumped = false;
+        dirtParticle.Play();
+    }
+
+    // Kills the player
+    void Die()
+    {
+        explosionParticle.Play();
+        explosionParticle.gameObject.GetComponent<AudioSource>().Play();
+        OnPlayerDeath?.Invoke();
+        Destroy(gameObject);
     }
 }
