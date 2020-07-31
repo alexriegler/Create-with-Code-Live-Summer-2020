@@ -2,7 +2,7 @@
 
 public class MoveLeft : MonoBehaviour
 {
-    private float speed = 20;
+    public ScrollManager scrollManager;
 
     private PlayerController playerControllerScript;
     private float leftBound = -15;
@@ -19,7 +19,7 @@ public class MoveLeft : MonoBehaviour
         // TODO: Remove player game over bool
         if (!playerControllerScript.gameOver)
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            transform.Translate(Vector3.left * scrollManager.ScrollSpeed * Time.deltaTime);
         }
 
         if (gameObject.CompareTag("Obstacle") && transform.position.x < leftBound)
