@@ -6,12 +6,14 @@ public class Background : MoveLeft
     private Vector3 startPos;
     private float repeatWidth;
 
+    // Initializes required components and variables
     void Start()
     {
         startPos = transform.position;
         repeatWidth = GetComponent<BoxCollider>().size.x / 2;
     }
 
+    // Controls the background movement
     void Update()
     {
         Move();

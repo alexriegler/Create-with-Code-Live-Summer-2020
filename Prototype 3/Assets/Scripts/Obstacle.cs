@@ -4,6 +4,7 @@ public class Obstacle : MoveLeft
 {
     private float leftBound = -15;
 
+    // Moves obstacles and destroys them
     void Update()
     {
         Move();

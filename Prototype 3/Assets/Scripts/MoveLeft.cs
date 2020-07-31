@@ -2,8 +2,9 @@
 
 public class MoveLeft : MonoBehaviour
 {
-    public ScrollManager scrollManager;
+    private ScrollManager scrollManager;
 
+    // Get scroll manager
     void Awake()
     {
         scrollManager = FindObjectOfType<ScrollManager>();
