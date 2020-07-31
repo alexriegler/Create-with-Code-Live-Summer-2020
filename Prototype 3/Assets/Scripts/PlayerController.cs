@@ -3,20 +3,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Particles")]
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
+
+    [Header("Sounds")]
     public AudioClip jumpSound;
     public float jumpVolume = 1.0f;
     public AudioClip crashSound;
     public float crashVolume = 1.0f;
 
+    [Header("Game State")]
     public bool gameOver;
 
-    [SerializeField] string jumpButton = "Jump";
+    [Header("Jump")]
     [SerializeField] float jumpForce = 10;
     [SerializeField] float doubleJumpForce = 5;
     [SerializeField] float gravityModifier = 1;
 
+    [Header("Input")]
+    [SerializeField] string jumpButton = "Jump";
+    [SerializeField] string dashButton = "Fire3";
+
+    // Private variables
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
@@ -90,7 +99,6 @@ public class PlayerController : MonoBehaviour
     {
         playerRb.AddForce(Vector3.up * doubleJumpForce, ForceMode.Impulse);
         hasDoubleJumped = true;
-        // TODO: Change double jump animation
         playerAnim.SetTrigger("Double_Jump_trig");
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
     }
