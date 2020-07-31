@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     public event Action OnPlayerJump;
     public event Action OnPlayerDeath;
 
-    // Start is called before the first frame update
+    // Caches required components and sets gravity
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
     }
 
-    // Update is called once per frame
+    // Receives player input
     void Update()
     {
         if (!InputDisabled)
@@ -71,12 +71,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Checks player collisions with other objects
     void OnCollisionEnter(Collision collision)
     {
+        // Ground collision
         if (collision.gameObject.CompareTag("Ground"))
         {
             LandOnGround();
         }
+        // Obstacle collision
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             Die();
