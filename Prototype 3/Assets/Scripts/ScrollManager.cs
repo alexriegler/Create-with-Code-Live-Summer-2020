@@ -2,5 +2,5 @@
 
 public class ScrollManager : MonoBehaviour
 {
-    public float ScrollSpeed { get; set; } = 20;
+    public float ScrollSpeed { get; private set; } = 20;
 }
