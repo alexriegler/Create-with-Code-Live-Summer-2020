@@ -300,10 +300,11 @@ MonoBehaviour:
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
   crashVolume: 1
   gameOver: 0
-  jumpButton: Jump
-  jumpForce: 650
+  jumpForce: 600
   doubleJumpForce: 400
   gravityModifier: 3
+  jumpButton: Jump
+  dashButton: Fire3
 --- !u!4 &338442745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400066, guid: 4a7c3ad7168bb834b87a91e3f94ad3d6,
