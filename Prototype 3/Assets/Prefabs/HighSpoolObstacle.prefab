@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6239496871160414417}
+  - component: {fileID: 3750537217776021610}
   m_Layer: 0
   m_Name: HighSpoolObstacle
   m_TagString: Obstacle
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3750537217776021610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939105788973062976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799e6474012dff543968725cb26e4931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2171925710462904881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,7 +113,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowSpoolObstacle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4828730403267066112, guid: 6bbbe2f367f91604994c84cb035c2a78, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6bbbe2f367f91604994c84cb035c2a78, type: 3}
 --- !u!4 &781719532331691418 stripped
 Transform:
@@ -175,7 +189,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowSpoolObstacle (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4828730403267066112, guid: 6bbbe2f367f91604994c84cb035c2a78, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6bbbe2f367f91604994c84cb035c2a78, type: 3}
 --- !u!4 &781719532274481251 stripped
 Transform:
@@ -250,7 +265,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowSpoolObstacle (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4828730403267066112, guid: 6bbbe2f367f91604994c84cb035c2a78, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6bbbe2f367f91604994c84cb035c2a78, type: 3}
 --- !u!4 &5390361925662188197 stripped
 Transform:

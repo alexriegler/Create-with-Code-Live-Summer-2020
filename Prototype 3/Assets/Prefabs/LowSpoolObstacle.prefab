@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1512368524429133047}
   - component: {fileID: 4270926824473851808}
   - component: {fileID: 6174029615554409588}
-  - component: {fileID: 4828730403267066112}
+  - component: {fileID: 114860506571290476}
   m_Layer: 0
-  m_Name: Prop_Spool_02
+  m_Name: LowSpoolObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3226001, y: 2.120992, z: 2.3226001}
   m_Center: {x: 0, y: 1.060496, z: 0}
---- !u!114 &4828730403267066112
+--- !u!114 &114860506571290476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1512368524431371723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b1c5ebd00af6a409b3402da1901658, type: 3}
+  m_Script: {fileID: 11500000, guid: 799e6474012dff543968725cb26e4931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30

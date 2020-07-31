@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4988436742749472604}
-  - component: {fileID: 1497695665}
+  - component: {fileID: 114618355504191526}
   m_Layer: 0
   m_Name: LowCrateObstacle
   m_TagString: Obstacle
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1497695665
+--- !u!114 &114618355504191526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4988436742749472605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b1c5ebd00af6a409b3402da1901658, type: 3}
+  m_Script: {fileID: 11500000, guid: 799e6474012dff543968725cb26e4931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
 --- !u!54 &4988436742944277912
 Rigidbody:
   m_ObjectHideFlags: 0
