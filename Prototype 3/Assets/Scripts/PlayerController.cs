@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     // Events
     public event Action OnPlayerJump;
+    public event Action OnPlayerDash;
     public event Action OnPlayerDeath;
 
     // Caches required components and sets gravity
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
     // Causes the player to speed up
     void Dash()
     {
-        print("Dash");
+        OnPlayerDash?.Invoke();
     }
 
     // Sets the player to the grounded state
