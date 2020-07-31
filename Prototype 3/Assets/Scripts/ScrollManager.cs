@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class ScrollManager : MonoBehaviour
+﻿public class ScrollManager
 {
-    public float ScrollSpeed { get; private set; } = 20;
+    public float ScrollSpeed { get; set; } = 20;
 }
