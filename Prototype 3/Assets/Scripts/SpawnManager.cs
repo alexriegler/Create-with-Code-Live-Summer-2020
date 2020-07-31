@@ -28,4 +28,10 @@ public class SpawnManager : MonoBehaviour
         obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
         Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
     }
+
+    // Stop spawning obstacles
+    public void StopSpawningObstacles()
+    {
+        CancelInvoke(nameof(SpawnObstacle));
+    }
 }

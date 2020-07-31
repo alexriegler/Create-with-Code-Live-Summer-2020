@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerController player;
+    private SpawnManager spawnManager;
     public bool GameStarted { get; private set; } = false;
     public bool GameOver { get; private set; } = false;
 
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        spawnManager = FindObjectOfType<SpawnManager>();
         player.OnPlayerDeath += EndGame;
     }
 
@@ -36,8 +38,11 @@ public class GameManager : MonoBehaviour
     {
         if (!GameOver)
         {
-            print("Game Over");
             GameOver = true;
+
+            print("Game Over");
+            spawnManager.StopSpawningObstacles();
+
             OnGameOver?.Invoke();
         }
     }
