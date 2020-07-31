@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
     // Kills the player
     void Die()
     {
+        InputDisabled = true;
         explosionParticle.Play();
         explosionParticle.gameObject.GetComponent<AudioSource>().Play();
         OnPlayerDeath?.Invoke();
