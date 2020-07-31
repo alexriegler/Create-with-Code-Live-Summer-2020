@@ -299,7 +299,6 @@ MonoBehaviour:
   jumpVolume: 1
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
   crashVolume: 1
-  gameOver: 0
   jumpForce: 600
   doubleJumpForce: 400
   gravityModifier: 3
@@ -803,9 +802,8 @@ GameObject:
   m_Component:
   - component: {fileID: 835818921}
   - component: {fileID: 835818920}
-  - component: {fileID: 835818922}
-  - component: {fileID: 835818923}
   - component: {fileID: 835818924}
+  - component: {fileID: 835818922}
   m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
@@ -884,19 +882,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 835818919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b1c5ebd00af6a409b3402da1901658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &835818923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835818919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e941b489fc12f4eaffe17c33982259, type: 3}
+  m_Script: {fileID: 11500000, guid: b54602c0b406e514ca0683ddd18beb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &835818924
