@@ -34,8 +34,11 @@ public class GameManager : MonoBehaviour
     // Ends the game
     void EndGame()
     {
-        print("Game Over");
-        gameOver = true;
-        OnGameOver?.Invoke();
+        if (!GameOver)
+        {
+            print("Game Over");
+            GameOver = true;
+            OnGameOver?.Invoke();
+        }
     }
 }
