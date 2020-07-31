@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private bool hasDoubleJumped = false;
 
-    // TODO: Not yet used
+    // Events
     public event Action OnPlayerJump;
     public event Action OnPlayerDeath;
 
@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetTrigger("Jump_trig");
         dirtParticle.Stop();
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
+        OnPlayerJump?.Invoke();
     }
 
     // Allows the player to jumps upwards a second time
@@ -103,5 +104,6 @@ public class PlayerController : MonoBehaviour
         hasDoubleJumped = true;
         playerAnim.SetTrigger("Double_Jump_trig");
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
+        OnPlayerJump?.Invoke();
     }
 }
