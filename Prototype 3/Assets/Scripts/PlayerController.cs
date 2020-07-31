@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
     void Dash()
     {
         OnPlayerDash?.Invoke();
+        //playerAnim.
     }
 
     // Sets the player to the grounded state
