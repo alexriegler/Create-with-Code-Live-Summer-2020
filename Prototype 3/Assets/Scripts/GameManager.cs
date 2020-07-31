@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     private PlayerController player;
     private SpawnManager spawnManager;
+    private ScrollManager scrollManager;
     public bool GameStarted { get; private set; } = false;
     public bool GameOver { get; private set; } = false;
 
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         spawnManager = FindObjectOfType<SpawnManager>();
+        scrollManager = FindObjectOfType<ScrollManager>();
+
         player.OnPlayerDeath += EndGame;
     }
 
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
 
             print("Game Over");
             spawnManager.StopSpawningObstacles();
+            scrollManager.StopScrolling();
 
             OnGameOver?.Invoke();
         }
