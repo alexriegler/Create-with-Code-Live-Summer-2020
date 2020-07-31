@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!InputDisabled)
         {
+            // Jump input
             if (Input.GetButtonDown(jumpButton))
             {
                 if (isGrounded)
@@ -62,9 +63,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            // Dash input
             if (Input.GetButton(dashButton))
             {
-                print("Dash");
+                Dash();
             }
         }
     }
@@ -100,6 +102,12 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetTrigger("Double_Jump_trig");
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
         OnPlayerJump?.Invoke();
+    }
+
+    // Causes the player to speed up
+    void Dash()
+    {
+        print("Dash");
     }
 
     // Sets the player to the grounded state
