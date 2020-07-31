@@ -2,7 +2,7 @@
 
 public class MoveLeft : MonoBehaviour
 {
-    [SerializeField] float speed = 30;
+    private float speed = 30;
 
     private PlayerController playerControllerScript;
     private float leftBound = -15;
