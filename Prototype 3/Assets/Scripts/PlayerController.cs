@@ -77,14 +77,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            // TODO: Use ondeath event here
             print("Game Over");
             gameOver = true;
-
             explosionParticle.Play();
-
             explosionParticle.gameObject.GetComponent<AudioSource>().Play();
-
+            OnPlayerDeath?.Invoke();
             Destroy(gameObject);
         }
     }
