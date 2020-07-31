@@ -8,13 +8,13 @@ public class MoveLeft : MonoBehaviour
     private float leftBound = -15;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         // TODO: Remove player game over bool
         if (!playerControllerScript.gameOver)
