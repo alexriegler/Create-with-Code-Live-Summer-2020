@@ -4,8 +4,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerController player;
-    private bool gameStarted = false;
-    private bool gameOver = false;
+    public bool GameStarted { get; private set; } = false;
+    public bool GameOver { get; private set; } = false;
 
     // TODO: Do I need these?
     public event Action OnGameStart;
