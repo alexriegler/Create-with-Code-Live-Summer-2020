@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     // Is the player running
     public bool Running { get; private set; } = false;
 
+    // Is the player dead
+    public bool Dead { get; private set; } = false;
+
     // Private variables
     private Rigidbody playerRb;
     private Animator playerAnim;
@@ -131,7 +134,7 @@ public class PlayerController : MonoBehaviour
     // Makes the player run
     void StartRun()
     {
-        if (!Running)
+        if (!Running && !Dead)
         {
             // Set conditions for run-in-place animation
             playerAnim.SetBool("Static_b", true);
@@ -186,6 +189,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         InputDisabled = true;
+        Dead = true;
         explosionParticle.Play();
         explosionParticle.gameObject.GetComponent<AudioSource>().Play();
         OnPlayerDeath?.Invoke();
