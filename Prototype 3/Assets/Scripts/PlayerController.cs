@@ -18,16 +18,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float doubleJumpForce = 5;
     [SerializeField] float gravityModifier = 1;
 
-    [Header("Dash")]
-    [SerializeField] float baseMultiplier = 1.0f;
-    [SerializeField] float dashMultiplier = 1.5f;
-
     [Header("Input")]
     [SerializeField] string jumpButton = "Jump";
     [SerializeField] string dashButton = "Fire3";
 
+    // Public properties
     // Determines whether input is accepted or not
     public bool InputDisabled { get; set; } = false;
+
+    // Multipliers for controlling movement speed
+    public float BaseMultiplier { get; private set; } = 1.0f;
+    public float DashMultiplier { get; private set; } = 1.5f;
 
     // Private variables
     private Rigidbody playerRb;
@@ -121,14 +122,14 @@ public class PlayerController : MonoBehaviour
     void StartDash()
     {
         OnPlayerStartDash?.Invoke();
-        playerAnim.SetFloat("Speed_f", dashMultiplier);
+        playerAnim.SetFloat("Speed_f", DashMultiplier);
     }
 
     // Causes the player to return to normal speed
     void EndDash()
     {
         OnPlayerEndDash?.Invoke();
-        playerAnim.SetFloat("Speed_f", baseMultiplier);
+        playerAnim.SetFloat("Speed_f", BaseMultiplier);
     }
 
     // Sets the player to the grounded state
