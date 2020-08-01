@@ -16,6 +16,12 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateScore();
+    }
+
+    // Updates the score
+    void UpdateScore()
+    {
         distanceTraveled += scrollManager.ScrollSpeed * Time.deltaTime;
         PlayerScore = Mathf.RoundToInt(distanceTraveled);
         print(PlayerScore);
