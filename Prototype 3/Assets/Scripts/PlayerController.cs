@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -34,10 +35,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
+    private Vector3 startingPosition = Vector3.zero;
     private bool isGrounded = true;
     private bool hasDoubleJumped = false;
 
     // Events
+    public event Action OnPlayerFinishWalkIn;
     public event Action OnPlayerJump;
     public event Action OnPlayerStartDash;
     public event Action OnPlayerEndDash;
@@ -50,6 +53,8 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
+
+        StartCoroutine(WalkIn());
     }
 
     // Receives player input
@@ -95,6 +100,31 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+    }
+
+    // Moves the player to the starting position
+    IEnumerator WalkIn()
+    {
+        // Set conditions for walking animation
+        playerAnim.SetFloat("Speed_f", 0.5f);
+        playerAnim.SetBool("Static_b", false);
+
+        while (transform.position.x < startingPosition.x)
+        {
+            print(transform.position);
+            yield return null;
+        }
+
+        // Set conditions for idle animation
+        playerAnim.SetFloat("Speed_f", 0);
+        
+        // Set static animation to true
+        playerAnim.SetBool("Static_b", true);
+
+        // Constrain x & z movement and all rotation
+        playerRb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+
+        OnPlayerFinishWalkIn?.Invoke();
     }
 
     // Allows the player to jump upwards
