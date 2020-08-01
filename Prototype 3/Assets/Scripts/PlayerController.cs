@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     // Public properties
     // Determines whether input is accepted or not
-    public bool InputDisabled { get; set; } = false;
+    public bool InputDisabled { get; set; } = true;
 
     // Multipliers for controlling movement speed
     public float BaseMultiplier { get; private set; } = 1.0f;
