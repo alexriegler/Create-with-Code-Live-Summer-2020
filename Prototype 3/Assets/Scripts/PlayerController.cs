@@ -3,30 +3,47 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Particles")]
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
+
+    [Header("Sounds")]
     public AudioClip jumpSound;
     public float jumpVolume = 1.0f;
     public AudioClip crashSound;
     public float crashVolume = 1.0f;
 
-    public bool gameOver;
-
-    [SerializeField] string jumpButton = "Jump";
+    [Header("Jump")]
     [SerializeField] float jumpForce = 10;
+    [SerializeField] float doubleJumpForce = 5;
     [SerializeField] float gravityModifier = 1;
 
+    [Header("Input")]
+    [SerializeField] string jumpButton = "Jump";
+    [SerializeField] string dashButton = "Fire3";
+
+    // Public properties
+    // Determines whether input is accepted or not
+    public bool InputDisabled { get; set; } = false;
+
+    // Multipliers for controlling movement speed
+    public float BaseMultiplier { get; private set; } = 1.0f;
+    public float DashMultiplier { get; private set; } = 1.5f;
+
+    // Private variables
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
     private bool isGrounded = true;
     private bool hasDoubleJumped = false;
 
-    // TODO: Not yet used
+    // Events
     public event Action OnPlayerJump;
+    public event Action OnPlayerStartDash;
+    public event Action OnPlayerEndDash;
     public event Action OnPlayerDeath;
 
-    // Start is called before the first frame update
+    // Caches required components and sets gravity
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -35,42 +52,48 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
     }
 
-    // Update is called once per frame
+    // Receives player input
     void Update()
     {
-        // TODO: Remove gameover check
-        if (Input.GetButtonDown(jumpButton) && !gameOver)
+        if (!InputDisabled)
         {
-            if (isGrounded)
+            // Jump input
+            if (Input.GetButtonDown(jumpButton))
             {
-                FirstJump();
+                if (isGrounded)
+                {
+                    FirstJump();
+                }
+                else if (!isGrounded && !hasDoubleJumped)
+                {
+                    SecondJump();
+                }
             }
-            else if (!isGrounded && !hasDoubleJumped)
+
+            // Dash input
+            if (Input.GetButtonDown(dashButton))
             {
-                SecondJump();
+                StartDash();
+            }
+            if (Input.GetButtonUp(dashButton))
+            {
+                EndDash();
             }
         }
     }
 
+    // Checks player collisions with other objects
     void OnCollisionEnter(Collision collision)
     {
+        // Ground collision
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
-            hasDoubleJumped = false;
-            dirtParticle.Play();
+            LandOnGround();
         }
+        // Obstacle collision
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            // TODO: Use ondeath event here
-            print("Game Over");
-            gameOver = true;
-
-            explosionParticle.Play();
-
-            explosionParticle.gameObject.GetComponent<AudioSource>().Play();
-
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -82,15 +105,48 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetTrigger("Jump_trig");
         dirtParticle.Stop();
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
+        OnPlayerJump?.Invoke();
     }
 
     // Allows the player to jumps upwards a second time
     void SecondJump()
     {
-        playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        playerRb.AddForce(Vector3.up * doubleJumpForce, ForceMode.Impulse);
         hasDoubleJumped = true;
-        // TODO: Change double jump animation
         playerAnim.SetTrigger("Double_Jump_trig");
         playerAudio.PlayOneShot(jumpSound, jumpVolume);
+        OnPlayerJump?.Invoke();
+    }
+
+    // Causes the player to speed up
+    void StartDash()
+    {
+        OnPlayerStartDash?.Invoke();
+        playerAnim.SetFloat("Speed_f", DashMultiplier);
+    }
+
+    // Causes the player to return to normal speed
+    void EndDash()
+    {
+        OnPlayerEndDash?.Invoke();
+        playerAnim.SetFloat("Speed_f", BaseMultiplier);
+    }
+
+    // Sets the player to the grounded state
+    void LandOnGround()
+    {
+        isGrounded = true;
+        hasDoubleJumped = false;
+        dirtParticle.Play();
+    }
+
+    // Kills the player
+    void Die()
+    {
+        InputDisabled = true;
+        explosionParticle.Play();
+        explosionParticle.gameObject.GetComponent<AudioSource>().Play();
+        OnPlayerDeath?.Invoke();
+        Destroy(gameObject);
     }
 }
