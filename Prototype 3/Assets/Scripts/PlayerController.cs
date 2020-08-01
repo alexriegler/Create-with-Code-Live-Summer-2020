@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Set conditions for idle animation
+        playerAnim.SetInteger("Animation_int", 1);
         playerAnim.SetFloat("Speed_f", 0);
         
         // Set static animation to true
