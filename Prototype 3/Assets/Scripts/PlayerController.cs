@@ -132,7 +132,10 @@ public class PlayerController : MonoBehaviour
     }
 
     // Makes the player run
-    void StartRun()
+    /// <summary>
+    /// Starts the player run animation.
+    /// </summary>
+    public void StartRun()
     {
         if (!Running && !Dead)
         {
