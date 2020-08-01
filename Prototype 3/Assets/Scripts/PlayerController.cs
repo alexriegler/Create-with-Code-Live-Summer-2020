@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public float BaseMultiplier { get; private set; } = 1.0f;
     public float DashMultiplier { get; private set; } = 1.5f;
 
+    // Is the player running
+    public bool Running { get; private set; } = false;
+
     // Private variables
     private Rigidbody playerRb;
     private Animator playerAnim;
@@ -126,11 +129,14 @@ public class PlayerController : MonoBehaviour
     }
 
     // Makes the player run
-    void Run()
+    void StartRun()
     {
-        // Set conditions for run-in-place animation
-        playerAnim.SetBool("Static_b", true);
-        playerAnim.SetFloat("Speed_f", BaseMultiplier);
+        if (!Running)
+        {
+            // Set conditions for run-in-place animation
+            playerAnim.SetBool("Static_b", true);
+            playerAnim.SetFloat("Speed_f", BaseMultiplier);
+        }
     }
 
     // Allows the player to jump upwards
