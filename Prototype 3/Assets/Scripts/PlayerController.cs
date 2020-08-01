@@ -106,8 +106,8 @@ public class PlayerController : MonoBehaviour
     IEnumerator WalkIn()
     {
         // Set conditions for walking animation
-        playerAnim.SetFloat("Speed_f", 0.5f);
         playerAnim.SetBool("Static_b", false);
+        playerAnim.SetFloat("Speed_f", 0.5f);
 
         while (transform.position.x < startingPosition.x)
         {
@@ -118,14 +118,19 @@ public class PlayerController : MonoBehaviour
         // Set conditions for idle animation
         playerAnim.SetInteger("Animation_int", 1);
         playerAnim.SetFloat("Speed_f", 0);
-        
-        // Set static animation to true
-        playerAnim.SetBool("Static_b", true);
 
         // Constrain x & z movement and all rotation
         playerRb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
 
         OnPlayerFinishWalkIn?.Invoke();
+    }
+
+    // Makes the player run
+    void Run()
+    {
+        // Set conditions for run-in-place animation
+        playerAnim.SetBool("Static_b", true);
+        playerAnim.SetFloat("Speed_f", BaseMultiplier);
     }
 
     // Allows the player to jump upwards
