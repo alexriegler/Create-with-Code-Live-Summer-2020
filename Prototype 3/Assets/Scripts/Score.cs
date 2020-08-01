@@ -3,11 +3,11 @@
 public class Score : MonoBehaviour
 {
     public int PlayerScore { get; private set; }
+    
     private float distanceTraveled;
-
     private ScrollManager scrollManager;
 
-    // Start is called before the first frame update
+    // Gets required object
     void Start()
     {
         scrollManager = FindObjectOfType<ScrollManager>();
