@@ -34,8 +34,9 @@ public class GameManager : MonoBehaviour
     {
         print("Game Start");
 
-        scrollManager.SetScrollSpeed();
         player.StartRun();
+        spawnManager.StartSpawningObstacles();
+        scrollManager.SetScrollSpeed();
 
         OnGameStart?.Invoke();
     }
