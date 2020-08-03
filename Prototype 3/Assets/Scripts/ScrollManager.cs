@@ -6,15 +6,18 @@ public class ScrollManager : MonoBehaviour
     public float ScrollSpeed { get; private set; }
 
     private PlayerController player;
+    private GameManager gm;
     private float defaultScrollSpeed = 20;
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-
         player.OnPlayerStartDash += () => SpeedUpScrollSpeed(player.DashMultiplier);
         player.OnPlayerEndDash += SetScrollSpeed;
-        player.OnPlayerDeath += StopScrolling;
+
+        gm = FindObjectOfType<GameManager>();
+        gm.OnGameStart += SetScrollSpeed;
+        gm.OnGameOver += StopScrolling;
     }
 
     // Sets the scroll speed to the default scroll speed
