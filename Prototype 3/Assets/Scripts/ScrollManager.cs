@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ScrollManager : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class ScrollManager : MonoBehaviour
 
     void Start()
     {
-        ScrollSpeed = defaultScrollSpeed;
+        SetScrollSpeed();
 
         player = FindObjectOfType<PlayerController>();
 
         player.OnPlayerStartDash += () => SpeedUpScrollSpeed(player.DashMultiplier);
-        player.OnPlayerEndDash += ResetScrollSpeed;
+        player.OnPlayerEndDash += SetScrollSpeed;
         player.OnPlayerDeath += StopScrolling;
     }
 
@@ -23,9 +24,22 @@ public class ScrollManager : MonoBehaviour
     /// <summary>
     /// Sets the scroll speed to the default scroll speed.
     /// </summary>
-    public void ResetScrollSpeed()
+    public void SetScrollSpeed()
     {
         ScrollSpeed = defaultScrollSpeed;
+    }
+
+    // Sets the scroll speed to a specific scroll speed greater than zero
+    /// <summary>
+    /// Sets the scroll speed to a specific scroll speed greater than zero.
+    /// </summary>
+    /// <param name="scrollSpeed">The speed of the scroll.</param>
+    public void SetScrollSpeed(float scrollSpeed)
+    {
+        if (scrollSpeed > 0)
+        {
+            ScrollSpeed = scrollSpeed;
+        }
     }
 
     // Multiplies the current scroll speed by a multiplier
