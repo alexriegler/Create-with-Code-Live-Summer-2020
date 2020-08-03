@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ScrollManager : MonoBehaviour
 {
@@ -11,8 +10,6 @@ public class ScrollManager : MonoBehaviour
 
     void Start()
     {
-        SetScrollSpeed();
-
         player = FindObjectOfType<PlayerController>();
 
         player.OnPlayerStartDash += () => SpeedUpScrollSpeed(player.DashMultiplier);
