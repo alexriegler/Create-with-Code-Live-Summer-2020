@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         print("Game Start");
 
         player.StartRun();
-        spawnManager.StartSpawningObstacles();
         scrollManager.SetScrollSpeed();
 
         OnGameStart?.Invoke();
@@ -49,7 +48,6 @@ public class GameManager : MonoBehaviour
             GameOver = true;
 
             print("Game Over");
-            spawnManager.StopSpawningObstacles();
 
             OnGameOver?.Invoke();
         }

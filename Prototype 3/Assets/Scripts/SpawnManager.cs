@@ -4,11 +4,20 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] obstaclePrefabs;
 
+    private GameManager gm;
     private int obstacleIndex = 0;
     private float startDelay = 2;
     private float repeatRate = 2;
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     private bool spawning = false;
+
+    // Subscribe methods to game manager events
+    void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+        gm.OnGameStart += StartSpawningObstacles;
+        gm.OnGameOver += StopSpawningObstacles;
+    }
 
     // Public methods
 
@@ -16,7 +25,7 @@ public class SpawnManager : MonoBehaviour
     /// <summary>
     /// Starts the spawning of obstacles.
     /// </summary>
-    public void StartSpawningObstacles()
+    private void StartSpawningObstacles()
     {
         if (!spawning)
         {
@@ -29,7 +38,7 @@ public class SpawnManager : MonoBehaviour
     /// <summary>
     /// Stops the spawning of obstacles.
     /// </summary>
-    public void StopSpawningObstacles()
+    private void StopSpawningObstacles()
     {
         if (spawning)
         {
