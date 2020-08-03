@@ -61,6 +61,9 @@ public class PlayerController : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
 
+        // Deactive dirt particles
+        dirtParticle.gameObject.SetActive(false);
+
         gm = FindObjectOfType<GameManager>();
         gm.OnGameStart += StartRun;
 
@@ -146,6 +149,9 @@ public class PlayerController : MonoBehaviour
             // Set conditions for run-in-place animation
             playerAnim.SetBool("Static_b", true);
             playerAnim.SetFloat("Speed_f", BaseMultiplier);
+
+            // Activate dirt particles
+            dirtParticle.gameObject.SetActive(true);
         }
     }
 
