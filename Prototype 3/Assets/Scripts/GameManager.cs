@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
     }
 
     // Starts the game
-    void StartGame()
+    /// <summary>
+    /// Starts the game.
+    /// </summary>
+    public void StartGame()
     {
         print("Game Start");
 
@@ -38,7 +41,10 @@ public class GameManager : MonoBehaviour
     }
 
     // Ends the game
-    void EndGame()
+    /// <summary>
+    /// Ends the game.
+    /// </summary>
+    public void EndGame()
     {
         if (!GameOver)
         {
