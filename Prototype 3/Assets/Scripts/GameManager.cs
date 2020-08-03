@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private PlayerController player;
 
     // Public events
+    public event Action OnIntroFinished;
     public event Action OnGameStart;
     public event Action OnGameOver;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        player.OnPlayerFinishWalkIn += () => OnIntroFinished?.Invoke();
         player.OnPlayerDeath += EndGame;
     }
 
