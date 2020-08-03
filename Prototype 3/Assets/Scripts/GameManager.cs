@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         print("Game Start");
 
         scrollManager.SetScrollSpeed();
+        player.StartRun();
 
         OnGameStart?.Invoke();
     }
