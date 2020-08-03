@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private PlayerController player;
-    private SpawnManager spawnManager;
-    private ScrollManager scrollManager;
+    // Public properties
     public bool GameStarted { get; private set; } = false;
     public bool GameOver { get; private set; } = false;
 
-    // TODO: Do I need these?
+    // Private variables
+    private PlayerController player;
+
+    // Public events
     public event Action OnGameStart;
     public event Action OnGameOver;
 
@@ -17,16 +18,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        spawnManager = FindObjectOfType<SpawnManager>();
-        scrollManager = FindObjectOfType<ScrollManager>();
-
         player.OnPlayerDeath += EndGame;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     // Starts the game
