@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Public variables
     [Header("Particles")]
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
     public float crashVolume = 1.0f;
 
+    // Serialized variables
     [Header("Jump")]
     [SerializeField] float jumpForce = 10;
     [SerializeField] float doubleJumpForce = 5;
@@ -24,20 +27,29 @@ public class PlayerController : MonoBehaviour
 
     // Public properties
     // Determines whether input is accepted or not
-    public bool InputDisabled { get; set; } = false;
+    public bool InputDisabled { get; set; } = true;
 
     // Multipliers for controlling movement speed
     public float BaseMultiplier { get; private set; } = 1.0f;
     public float DashMultiplier { get; private set; } = 1.5f;
 
+    // Is the player running
+    public bool Running { get; private set; } = false;
+
+    // Is the player dead
+    public bool Dead { get; private set; } = false;
+
     // Private variables
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
+    private GameManager gm;
+    private Vector3 startingPosition = Vector3.zero;
     private bool isGrounded = true;
     private bool hasDoubleJumped = false;
 
     // Events
+    public event Action OnPlayerFinishWalkIn;
     public event Action OnPlayerJump;
     public event Action OnPlayerStartDash;
     public event Action OnPlayerEndDash;
@@ -50,6 +62,14 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
+
+        // Deactive dirt particles
+        dirtParticle.gameObject.SetActive(false);
+
+        gm = FindObjectOfType<GameManager>();
+        gm.OnGameStart += StartRun;
+
+        StartCoroutine(WalkIn());
     }
 
     // Receives player input
@@ -95,6 +115,60 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+    }
+
+    // Moves the player to the starting position
+    IEnumerator WalkIn()
+    {
+        // Set conditions for walking animation
+        playerAnim.SetBool("Static_b", false);
+        playerAnim.SetFloat("Speed_f", 0.5f);
+
+        while (transform.position.x < startingPosition.x)
+        {
+            print(transform.position);
+            yield return null;
+        }
+
+        // Set conditions for idle animation
+        playerAnim.SetInteger("Animation_int", 1);
+        playerAnim.SetFloat("Speed_f", 0);
+
+        // Constrain x & z movement and all rotation
+        playerRb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+
+        OnPlayerFinishWalkIn?.Invoke();
+    }
+
+    // Makes the player run
+    /// <summary>
+    /// Starts the player run animation.
+    /// </summary>
+    void StartRun()
+    {
+        if (!Running && !Dead)
+        {
+            // Set conditions for run-in-place animation
+            playerAnim.SetInteger("Animation_int", 0);
+            playerAnim.SetBool("Static_b", true);
+            playerAnim.SetFloat("Speed_f", BaseMultiplier);
+
+            // Activate dirt particles after 1 second
+            StartCoroutine(StartDirtParticles(1f));
+
+            // Set running bool to true
+            Running = true;
+
+            // Enable input
+            InputDisabled = false;
+        }
+    }
+
+    // Activates the dirt particle effect after a delay
+    IEnumerator StartDirtParticles(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dirtParticle.gameObject.SetActive(true);
     }
 
     // Allows the player to jump upwards
@@ -144,6 +218,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         InputDisabled = true;
+        Dead = true;
         explosionParticle.Play();
         explosionParticle.gameObject.GetComponent<AudioSource>().Play();
         OnPlayerDeath?.Invoke();

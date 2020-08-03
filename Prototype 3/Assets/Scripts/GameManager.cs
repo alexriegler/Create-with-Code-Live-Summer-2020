@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private PlayerController player;
-    private SpawnManager spawnManager;
+    // Public properties
     public bool GameStarted { get; private set; } = false;
     public bool GameOver { get; private set; } = false;
 
-    // TODO: Do I need these?
+    // Private variables
+    private PlayerController player;
+
+    // Public events
+    public event Action OnIntroFinished;
     public event Action OnGameStart;
     public event Action OnGameOver;
 
@@ -16,33 +19,32 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        spawnManager = FindObjectOfType<SpawnManager>();
-
+        player.OnPlayerFinishWalkIn += () => OnIntroFinished?.Invoke();
         player.OnPlayerDeath += EndGame;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Starts the game
-    void StartGame()
+    /// <summary>
+    /// Starts the game.
+    /// </summary>
+    public void StartGame()
     {
         print("Game Start");
+
         OnGameStart?.Invoke();
     }
 
     // Ends the game
-    void EndGame()
+    /// <summary>
+    /// Ends the game.
+    /// </summary>
+    public void EndGame()
     {
         if (!GameOver)
         {
             GameOver = true;
 
             print("Game Over");
-            spawnManager.StopSpawningObstacles();
 
             OnGameOver?.Invoke();
         }
