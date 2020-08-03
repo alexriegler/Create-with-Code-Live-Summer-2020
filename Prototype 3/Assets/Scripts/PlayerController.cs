@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
+    private GameManager gm;
     private Vector3 startingPosition = Vector3.zero;
     private bool isGrounded = true;
     private bool hasDoubleJumped = false;
@@ -59,6 +60,9 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
+
+        gm = FindObjectOfType<GameManager>();
+        gm.OnGameStart += StartRun;
 
         StartCoroutine(WalkIn());
     }
@@ -135,7 +139,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Starts the player run animation.
     /// </summary>
-    public void StartRun()
+    void StartRun()
     {
         if (!Running && !Dead)
         {
