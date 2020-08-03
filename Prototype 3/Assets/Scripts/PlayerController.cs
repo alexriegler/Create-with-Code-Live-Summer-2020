@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Public variables
     [Header("Particles")]
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
     public float crashVolume = 1.0f;
 
+    // Serialized variables
     [Header("Jump")]
     [SerializeField] float jumpForce = 10;
     [SerializeField] float doubleJumpForce = 5;
@@ -151,8 +153,8 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Static_b", true);
             playerAnim.SetFloat("Speed_f", BaseMultiplier);
 
-            // Activate dirt particles
-            dirtParticle.gameObject.SetActive(true);
+            // Activate dirt particles after 1 second
+            StartCoroutine(StartDirtParticles(1f));
 
             // Set running bool to true
             Running = true;
@@ -160,6 +162,13 @@ public class PlayerController : MonoBehaviour
             // Enable input
             InputDisabled = false;
         }
+    }
+
+    // Activates the dirt particle effect after a delay
+    IEnumerator StartDirtParticles(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dirtParticle.gameObject.SetActive(true);
     }
 
     // Allows the player to jump upwards
