@@ -147,11 +147,18 @@ public class PlayerController : MonoBehaviour
         if (!Running && !Dead)
         {
             // Set conditions for run-in-place animation
+            playerAnim.SetInteger("Animation_int", 0);
             playerAnim.SetBool("Static_b", true);
             playerAnim.SetFloat("Speed_f", BaseMultiplier);
 
             // Activate dirt particles
             dirtParticle.gameObject.SetActive(true);
+
+            // Set running bool to true
+            Running = true;
+
+            // Enable input
+            InputDisabled = false;
         }
     }
 
