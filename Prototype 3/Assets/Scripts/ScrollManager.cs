@@ -24,7 +24,7 @@ public class ScrollManager : MonoBehaviour
     /// <summary>
     /// Sets the scroll speed to the default scroll speed.
     /// </summary>
-    public void SetScrollSpeed()
+    private void SetScrollSpeed()
     {
         ScrollSpeed = defaultScrollSpeed;
     }
@@ -34,7 +34,7 @@ public class ScrollManager : MonoBehaviour
     /// Sets the scroll speed to a specific scroll speed greater than zero.
     /// </summary>
     /// <param name="scrollSpeed">The speed of the scroll.</param>
-    public void SetScrollSpeed(float scrollSpeed)
+    private void SetScrollSpeed(float scrollSpeed)
     {
         if (scrollSpeed > 0)
         {
