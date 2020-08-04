@@ -148,8 +148,10 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    // Makes the player walk to the starting position
-    // Assumes the player is to the left of the starting position (in terms of x)
+    /// <summary>
+    /// Makes the player walk to the starting position. Assumes the player is to the left of the starting x position.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator WalkIn()
     {
         StartWalkAnim();
