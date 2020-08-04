@@ -191,6 +191,26 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
+    /// Ends the player's run.
+    /// </summary>
+    void EndRun()
+    {
+        if (Running)
+        {
+            StartCrossedArmIdleAnim();
+
+            // Stop dirt particles
+            dirtParticle.Stop();
+
+            // Set running bool to false
+            Running = false;
+
+            // Disable input
+            InputDisabled = true;
+        }
+    }
+
+    /// <summary>
     /// Activates the dirt particle effect after a delay.
     /// </summary>
     /// <param name="delay">The amount of time in seconds to wait.</param>
@@ -272,7 +292,6 @@ public class PlayerController : MonoBehaviour
         explosionParticle.gameObject.GetComponent<AudioSource>().Play();
 
         // Player body position
-        // TODO: Need to set kinematic to false again
         playerRb.isKinematic = true;
         transform.position = startingPosition + deadPosOffset;
 
