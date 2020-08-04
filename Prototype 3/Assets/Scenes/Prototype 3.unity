@@ -193,7 +193,6 @@ GameObject:
   - component: {fileID: 314338473}
   - component: {fileID: 314338472}
   - component: {fileID: 314338471}
-  - component: {fileID: 314338469}
   - component: {fileID: 314338470}
   m_Layer: 5
   m_Name: RestartButton
@@ -222,18 +221,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 143.97174, y: 43.356934}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &314338469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314338467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d14ec69095c9b16499360ab8301c9e98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &314338470
 Animator:
   serializedVersion: 3
