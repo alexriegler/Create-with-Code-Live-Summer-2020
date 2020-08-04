@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     public event Action OnPlayerStartDash;
     public event Action OnPlayerEndDash;
     public event Action OnPlayerDeath;
+    public event Action OnPlayerRevive;
 
     // Caches required components and sets gravity
     void Start()
@@ -295,6 +296,29 @@ public class PlayerController : MonoBehaviour
 
         // Inform subscribers
         OnPlayerDeath?.Invoke();
+    }
+
+    /// <summary>
+    /// Brings the player body to the start position and starts the run.
+    /// </summary>
+    void Revive()
+    {
+        if (Dead)
+        {
+            // The player is alive
+            Dead = false;
+
+            // Place player at origin
+            transform.position = startingPosition;
+            // Set kinematic to false again
+            playerRb.isKinematic = false;
+
+            // Begin the run
+            StartRun();
+
+            // Inform subscribers player revived
+            OnPlayerRevive?.Invoke();
+        }
     }
     #endregion
 }
