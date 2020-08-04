@@ -118,12 +118,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #region Player animations
+    // Sets the parameters for the walking animation
+    void StartWalkingAnim()
+    {
+        playerAnim.SetBool("Static_b", false);
+        playerAnim.SetFloat("Speed_f", 0.5f);
+    }
+    #endregion
+
     // Moves the player to the starting position
     IEnumerator WalkIn()
     {
-        // Set conditions for walking animation
-        playerAnim.SetBool("Static_b", false);
-        playerAnim.SetFloat("Speed_f", 0.5f);
+        StartWalkingAnim();
 
         while (transform.position.x < startingPosition.x)
         {
