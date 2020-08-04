@@ -276,6 +276,9 @@ public class PlayerController : MonoBehaviour
         playerRb.isKinematic = true;
         transform.position = startingPosition + deadPosOffset;
 
+        // Go to idle animation state
+        StartCrossedArmIdleAnim();
+
         // Inform subscribers
         OnPlayerDeath?.Invoke();
     }
