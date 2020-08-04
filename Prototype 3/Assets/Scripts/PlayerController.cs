@@ -197,16 +197,16 @@ public class PlayerController : MonoBehaviour
     {
         if (Running)
         {
-            StartCrossedArmIdleAnim();
-
-            // Stop dirt particles
-            dirtParticle.Stop();
+            // Disable input
+            InputDisabled = true;
 
             // Set running bool to false
             Running = false;
 
-            // Disable input
-            InputDisabled = true;
+            // Stop dirt particles
+            dirtParticle.Stop();
+
+            StartCrossedArmIdleAnim();
         }
     }
 
@@ -280,23 +280,18 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Die()
     {
-        // Set state bools
-        InputDisabled = true;
+        EndRun();
+
+        // Set dead bool to true
         Dead = true;
 
-        // Particles
-        dirtParticle.Stop();
+        // Play explosion effect
         explosionParticle.Play();
-
-        // Audio
         explosionParticle.gameObject.GetComponent<AudioSource>().Play();
 
-        // Player body position
+        // Place player body off screen
         playerRb.isKinematic = true;
         transform.position = startingPosition + deadPosOffset;
-
-        // Go to idle animation state
-        StartCrossedArmIdleAnim();
 
         // Inform subscribers
         OnPlayerDeath?.Invoke();
