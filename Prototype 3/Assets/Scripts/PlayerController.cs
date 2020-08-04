@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
         gm = FindObjectOfType<GameManager>();
         gm.OnGameStart += StartRun;
+        gm.OnGameRestart += Revive;
 
         StartCoroutine(WalkIn());
     }
