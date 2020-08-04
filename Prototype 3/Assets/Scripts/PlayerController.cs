@@ -197,6 +197,7 @@ public class PlayerController : MonoBehaviour
         dirtParticle.gameObject.SetActive(true);
     }
 
+    #region Player action methods
     // Allows the player to jump upwards
     void FirstJump()
     {
@@ -262,4 +263,5 @@ public class PlayerController : MonoBehaviour
         // Inform subscribers
         OnPlayerDeath?.Invoke();
     }
+    #endregion
 }
