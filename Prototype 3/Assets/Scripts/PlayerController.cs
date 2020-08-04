@@ -126,6 +126,13 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetFloat("Speed_f", 0.5f);
     }
 
+    // Sets the parameters for the crossed arms idle animation
+    void StartCrossedArmIdleAnim()
+    {
+        playerAnim.SetInteger("Animation_int", 1);
+        playerAnim.SetFloat("Speed_f", 0);
+    }
+
     // Sets the parameters for the run-in-place animation
     void StartStaticRunAnim()
     {
@@ -147,9 +154,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        // Set conditions for idle animation
-        playerAnim.SetInteger("Animation_int", 1);
-        playerAnim.SetFloat("Speed_f", 0);
+        StartCrossedArmIdleAnim();
 
         // Constrain x & z movement and all rotation
         playerRb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
