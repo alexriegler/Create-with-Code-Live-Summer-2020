@@ -57,21 +57,26 @@ public class PlayerController : MonoBehaviour
     public event Action OnPlayerDeath;
     public event Action OnPlayerRevive;
 
-    // Caches required components and sets gravity
+    // Played before first update frame
     void Start()
     {
+        // Get components
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
+
+        // Set gravity
         Physics.gravity *= gravityModifier;
 
         // Deactive dirt particles
         dirtParticle.gameObject.SetActive(false);
 
+        // Game manager subscriptions
         gm = FindObjectOfType<GameManager>();
         gm.OnGameStart += StartRun;
         gm.OnGameRestart += Revive;
 
+        // Start player intro
         StartCoroutine(WalkIn());
     }
 
@@ -150,6 +155,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    #region Game intro methods
     /// <summary>
     /// Makes the player walk to the starting position. Assumes the player is to the left of the starting x position.
     /// </summary>
@@ -171,7 +177,9 @@ public class PlayerController : MonoBehaviour
 
         OnPlayerFinishWalkIn?.Invoke();
     }
+    #endregion
 
+    #region Gameplay methods
     /// <summary>
     /// Starts the player run animation.
     /// </summary>
@@ -193,6 +201,17 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
+    /// Activates the dirt particle effect after a delay.
+    /// </summary>
+    /// <param name="delay">The amount of time in seconds to wait.</param>
+    /// <returns></returns>
+    IEnumerator StartDirtParticles(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dirtParticle.gameObject.SetActive(true);
+    }
+
+    /// <summary>
     /// Ends the player's run.
     /// </summary>
     void EndRun()
@@ -211,17 +230,7 @@ public class PlayerController : MonoBehaviour
             StartCrossedArmIdleAnim();
         }
     }
-
-    /// <summary>
-    /// Activates the dirt particle effect after a delay.
-    /// </summary>
-    /// <param name="delay">The amount of time in seconds to wait.</param>
-    /// <returns></returns>
-    IEnumerator StartDirtParticles(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        dirtParticle.gameObject.SetActive(true);
-    }
+    #endregion
 
     #region Player action methods
     /// <summary>
