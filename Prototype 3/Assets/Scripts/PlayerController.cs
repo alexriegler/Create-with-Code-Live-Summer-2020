@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
             // Set running bool to true
             Running = true;
 
-            // Enable input
+            // Turn off disabled input
             InputDisabled = false;
         }
     }
