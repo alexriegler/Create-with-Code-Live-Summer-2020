@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,8 +30,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        print("Game Start");
-
         OnGameStart?.Invoke();
     }
 
@@ -43,10 +42,16 @@ public class GameManager : MonoBehaviour
         if (!GameOver)
         {
             GameOver = true;
-
-            print("Game Over");
-
             OnGameOver?.Invoke();
         }
+    }
+
+    // Restarts the game by reloading the current scene
+    /// <summary>
+    /// Restarts the game.
+    /// </summary>
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
