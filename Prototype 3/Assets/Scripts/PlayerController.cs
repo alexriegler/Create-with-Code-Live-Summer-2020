@@ -170,7 +170,6 @@ public class PlayerController : MonoBehaviour
         OnPlayerFinishWalkIn?.Invoke();
     }
 
-    // Makes the player run
     /// <summary>
     /// Starts the player run animation.
     /// </summary>
