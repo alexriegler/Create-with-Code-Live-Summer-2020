@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
     private GameManager gm;
     private Vector3 startingPosition = Vector3.zero;
+    private Vector3 deadPosOffset = new Vector3(0, 0, 10);
     private bool isGrounded = true;
     private bool hasDoubleJumped = false;
 
@@ -217,11 +218,23 @@ public class PlayerController : MonoBehaviour
     // Kills the player
     void Die()
     {
+        // Set state bools
         InputDisabled = true;
         Dead = true;
+
+        // Particles
+        dirtParticle.Stop();
         explosionParticle.Play();
+
+        // Audio
         explosionParticle.gameObject.GetComponent<AudioSource>().Play();
+
+        // Player body position
+        // TODO: Need to set kinematic to false again
+        playerRb.isKinematic = true;
+        transform.position = startingPosition + deadPosOffset;
+
+        // Inform subscribers
         OnPlayerDeath?.Invoke();
-        Destroy(gameObject);
     }
 }
