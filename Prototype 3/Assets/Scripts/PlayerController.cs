@@ -118,22 +118,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    #region Player animations
-    // Sets the parameters for the walking animation
+    #region Player animation methods
+    /// <summary>
+    /// Sets the parameters for the walking animation.
+    /// </summary>
     void StartWalkAnim()
     {
         playerAnim.SetBool("Static_b", false);
         playerAnim.SetFloat("Speed_f", 0.5f);
     }
 
-    // Sets the parameters for the crossed arms idle animation
+    /// <summary>
+    /// Sets the parameters for the crossed arms idle animation.
+    /// </summary>
     void StartCrossedArmIdleAnim()
     {
         playerAnim.SetInteger("Animation_int", 1);
         playerAnim.SetFloat("Speed_f", 0);
     }
 
-    // Sets the parameters for the run-in-place animation
+    /// <summary>
+    /// Sets the parameters for the run-in-place animation.
+    /// </summary>
     void StartStaticRunAnim()
     {
         playerAnim.SetInteger("Animation_int", 0);
