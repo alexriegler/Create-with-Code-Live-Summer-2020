@@ -190,7 +190,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Activates the dirt particle effect after a delay
+    /// <summary>
+    /// Activates the dirt particle effect after a delay.
+    /// </summary>
+    /// <param name="delay">The amount of time in seconds to wait.</param>
+    /// <returns></returns>
     IEnumerator StartDirtParticles(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -198,7 +202,9 @@ public class PlayerController : MonoBehaviour
     }
 
     #region Player action methods
-    // Allows the player to jump upwards
+    /// <summary>
+    /// Makes the player to jump upwards.
+    /// </summary>
     void FirstJump()
     {
         playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -209,7 +215,9 @@ public class PlayerController : MonoBehaviour
         OnPlayerJump?.Invoke();
     }
 
-    // Allows the player to jumps upwards a second time
+    /// <summary>
+    /// Makes the player jumps a second time while in the air.
+    /// </summary>
     void SecondJump()
     {
         playerRb.AddForce(Vector3.up * doubleJumpForce, ForceMode.Impulse);
@@ -219,21 +227,27 @@ public class PlayerController : MonoBehaviour
         OnPlayerJump?.Invoke();
     }
 
-    // Causes the player to speed up
+    /// <summary>
+    /// Makes the player speed up.
+    /// </summary>
     void StartDash()
     {
         OnPlayerStartDash?.Invoke();
         playerAnim.SetFloat("Speed_f", DashMultiplier);
     }
 
-    // Causes the player to return to normal speed
+    /// <summary>
+    /// Returns the player to normal speed.
+    /// </summary>
     void EndDash()
     {
         OnPlayerEndDash?.Invoke();
         playerAnim.SetFloat("Speed_f", BaseMultiplier);
     }
 
-    // Sets the player to the grounded state
+    /// <summary>
+    /// Sets the player to the grounded state.
+    /// </summary>
     void LandOnGround()
     {
         isGrounded = true;
@@ -241,7 +255,9 @@ public class PlayerController : MonoBehaviour
         dirtParticle.Play();
     }
 
-    // Kills the player
+    /// <summary>
+    /// Kills the player.
+    /// </summary>
     void Die()
     {
         // Set state bools
