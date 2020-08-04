@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public event Action OnIntroFinished;
     public event Action OnGameStart;
     public event Action OnGameOver;
+    public event Action OnGameRestart;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        OnGameRestart?.Invoke();
+
         // bring player to origin/start
         //    - start running immediately
         //    - bool dead should be set to false
