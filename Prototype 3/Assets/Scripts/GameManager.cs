@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        // Calls the OnIntroFinished event when the player finishes their walk in
         player.OnPlayerFinishWalkIn += () => OnIntroFinished?.Invoke();
+        // Ends the game when the player dies
         player.OnPlayerDeath += EndGame;
     }
 
