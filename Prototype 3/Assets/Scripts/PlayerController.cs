@@ -125,6 +125,14 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetBool("Static_b", false);
         playerAnim.SetFloat("Speed_f", 0.5f);
     }
+
+    // Sets the parameters for the run-in-place animation
+    void StartStaticRunAnim()
+    {
+        playerAnim.SetInteger("Animation_int", 0);
+        playerAnim.SetBool("Static_b", true);
+        playerAnim.SetFloat("Speed_f", BaseMultiplier);
+    }
     #endregion
 
     // Makes the player walk to the starting position
@@ -157,10 +165,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!Running && !Dead)
         {
-            // Set conditions for run-in-place animation
-            playerAnim.SetInteger("Animation_int", 0);
-            playerAnim.SetBool("Static_b", true);
-            playerAnim.SetFloat("Speed_f", BaseMultiplier);
+            StartStaticRunAnim();
 
             // Activate dirt particles after 1 second
             StartCoroutine(StartDirtParticles(1f));
