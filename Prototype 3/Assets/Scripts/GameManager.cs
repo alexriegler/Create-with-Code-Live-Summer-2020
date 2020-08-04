@@ -53,5 +53,15 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // bring player to origin/start
+        //    - start running immediately
+        //    - bool dead should be set to false
+        //    - revive method?
+        // reset background
+        // remove obstacles and start spawning again
+        // restart button deactivated
+        // score reset
+        //     - keep track of previous scores?
+        // 
     }
 }
