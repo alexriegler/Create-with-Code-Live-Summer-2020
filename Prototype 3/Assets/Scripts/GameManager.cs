@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource themeMusic;
+
     // Public properties
-    public bool GameStarted { get; private set; } = false;
     public bool GameOver { get; private set; } = false;
 
     // Private variables
@@ -14,12 +15,17 @@ public class GameManager : MonoBehaviour
     public event Action OnIntroFinished;
     public event Action OnGameStart;
     public event Action OnGameOver;
+    public event Action OnGameRestart;
 
     // Start is called before the first frame update
     void Start()
     {
+        themeMusic.Stop();
+        
         player = FindObjectOfType<PlayerController>();
+        // Calls the OnIntroFinished event when the player finishes their walk in
         player.OnPlayerFinishWalkIn += () => OnIntroFinished?.Invoke();
+        // Ends the game when the player dies
         player.OnPlayerDeath += EndGame;
     }
 
@@ -29,8 +35,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        print("Game Start");
-
+        if (!themeMusic.isPlaying)
+        {
+            themeMusic.Play();
+        }
         OnGameStart?.Invoke();
     }
 
@@ -43,10 +51,18 @@ public class GameManager : MonoBehaviour
         if (!GameOver)
         {
             GameOver = true;
-
-            print("Game Over");
-
             OnGameOver?.Invoke();
         }
+    }
+
+    // Restarts the game by reloading the current scene
+    /// <summary>
+    /// Restarts the game.
+    /// </summary>
+    public void RestartGame()
+    {
+        GameOver = false;
+        OnGameRestart?.Invoke();
+        StartGame();
     }
 }
