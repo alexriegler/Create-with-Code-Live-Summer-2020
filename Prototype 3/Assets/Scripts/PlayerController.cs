@@ -224,8 +224,8 @@ public class PlayerController : MonoBehaviour
             // Set running bool to false
             Running = false;
 
-            // Stop dirt particles
-            dirtParticle.Stop();
+            // Deactive dirt particles
+            dirtParticle.gameObject.SetActive(false);
 
             StartCrossedArmIdleAnim();
         }
