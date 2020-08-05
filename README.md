@@ -17,7 +17,7 @@ I started this course to learn about game development. I specifcally chose Unity
 ### Prototypes
 1. [Drag Race](./Prototype%201)
 2. [If You Feed a Fox a Fruit](./Prototype%202)
-3. _in progress_
+3. [Street Runner](./Prototype%203)
 4. _in progress_
 
 ## Technologies
