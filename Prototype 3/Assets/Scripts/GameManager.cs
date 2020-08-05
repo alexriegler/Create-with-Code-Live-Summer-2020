@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource themeMusic;
+
     // Public properties
     public bool GameOver { get; private set; } = false;
 
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        themeMusic.Stop();
+        
         player = FindObjectOfType<PlayerController>();
         // Calls the OnIntroFinished event when the player finishes their walk in
         player.OnPlayerFinishWalkIn += () => OnIntroFinished?.Invoke();
@@ -31,6 +35,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
+        if (!themeMusic.isPlaying)
+        {
+            themeMusic.Play();
+        }
         OnGameStart?.Invoke();
     }
 

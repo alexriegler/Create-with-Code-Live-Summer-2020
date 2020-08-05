@@ -1433,6 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9968384aab87c84cb0dabcac722ac88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  themeMusic: {fileID: 534669906}
 --- !u!4 &1181510297
 Transform:
   m_ObjectHideFlags: 0
