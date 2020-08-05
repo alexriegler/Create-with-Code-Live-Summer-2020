@@ -21,7 +21,7 @@ I started this course to learn about game development. I specifcally chose Unity
 4. _in progress_
 
 ## Technologies
-* [Unity 2018.4.24f1](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity")
+* [Unity 2018.4](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity")
 * C# 4.0
 
 ## Setup
