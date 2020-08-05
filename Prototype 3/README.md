@@ -32,12 +32,12 @@ End of the game
 ![End of the game](./Screenshots/gameOver00.PNG)
 
 ## Technologies
-* [Unity 2018.4.24f1](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity")
+* [Unity 2018.4.25f1](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity")
 * C# 4.0
 
 ## Setup
 ### How to play
-You can go [here](https://connect.unity.com/mg/other/if-you-feed-a-fox-a-fruit-prototype-2 "If You Feed a Fox a Fruit (Prototype 2) - Unity Connect") to play the WebGL version of the game online from the Unity Connect website.
+You can go [here](https://connect.unity.com/mg/other/street-runner-prototype-3 "Street Runner (Prototype 3) - Unity Connect") to play the WebGL version of the game online from the Unity Connect website.
 
 ### How to work with this Unity project
 To work with this project, you can follow the instructions on the [main README.md](../README.md#how-to-work-with-the-unity-projects).
