@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // Public properties
-    public bool GameStarted { get; private set; } = false;
     public bool GameOver { get; private set; } = false;
 
     // Private variables
@@ -55,6 +53,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RestartGame()
     {
+        GameOver = false;
         OnGameRestart?.Invoke();
+        StartGame();
     }
 }
