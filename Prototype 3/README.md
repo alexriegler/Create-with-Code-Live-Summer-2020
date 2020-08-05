@@ -43,12 +43,13 @@ You can go [here](https://connect.unity.com/mg/other/street-runner-prototype-3 "
 To work with this project, you can follow the instructions on the [main README.md](../README.md#how-to-work-with-the-unity-projects).
 
 ## Features
-* Mouse controlled movement
-* Constrained movement within the viewport
-* Animals spawn outside of the viewport
-* Player health and score UI
-* Game over screen
-* Increasing difficulty over time
+* Infinite side scroll
+* Random obstacle spawning
+* Score UI
+* Double jump
+* Super speed ability
+* Intro walk in animation
+* Restart button
 
 ## To-do List
 * Random power-ups
