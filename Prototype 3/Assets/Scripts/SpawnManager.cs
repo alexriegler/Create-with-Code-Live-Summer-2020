@@ -19,8 +19,6 @@ public class SpawnManager : MonoBehaviour
         gm.OnGameOver += StopSpawningObstacles;
     }
 
-    // Public methods
-
     /// <summary>
     /// Starts the spawning of obstacles.
     /// </summary>
@@ -44,8 +42,6 @@ public class SpawnManager : MonoBehaviour
             spawning = false;
         }
     }
-
-    // Private methods
 
     // Spawns an obstacle
     void SpawnObstacle()
