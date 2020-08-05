@@ -21,7 +21,6 @@ public class SpawnManager : MonoBehaviour
 
     // Public methods
 
-    // Starts the spawning of obstacles
     /// <summary>
     /// Starts the spawning of obstacles.
     /// </summary>
@@ -34,7 +33,6 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    // Stops the spawning of obstacles
     /// <summary>
     /// Stops the spawning of obstacles.
     /// </summary>
