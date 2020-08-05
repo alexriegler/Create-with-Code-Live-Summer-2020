@@ -52,8 +52,10 @@ To work with this project, you can follow the instructions on the [main README.m
 * Restart button
 
 ## To-do List
-* Random power-ups
-* Better game object management
+* Increase obstacle spawn rate when dashing
+* Increasing difficulty over time
+* Muffle music on death
+* Starting music (street sounds maybe)
 * And many other possiblities...
 
 ## Status
