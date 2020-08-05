@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         gm.OnGameStart += StartSpawningObstacles;
         gm.OnGameOver += StopSpawningObstacles;
+        gm.OnGameRestart += DestroySpawnedObjects;
     }
 
     /// <summary>
@@ -48,5 +49,16 @@ public class SpawnManager : MonoBehaviour
     {
         obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
         Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
+    }
+
+    // Destroys all spawned obstacles
+    void DestroySpawnedObjects()
+    {
+        Obstacle[] spawnedObjects = FindObjectsOfType<Obstacle>();
+
+        foreach (Obstacle obstacle in spawnedObjects)
+        {
+            Destroy(obstacle.gameObject);
+        }
     }
 }
