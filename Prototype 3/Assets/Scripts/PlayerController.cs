@@ -302,7 +302,7 @@ public class PlayerController : MonoBehaviour
 
         // Place player body off screen
         playerRb.isKinematic = true;
-        transform.position = startingPosition + deadPosOffset;
+        transform.localPosition = startingPosition + deadPosOffset;
 
         // Inform subscribers
         OnPlayerDeath?.Invoke();
@@ -319,7 +319,7 @@ public class PlayerController : MonoBehaviour
             Dead = false;
 
             // Place player at origin
-            transform.position = startingPosition;
+            transform.localPosition = startingPosition;
             // Set kinematic to false again
             playerRb.isKinematic = false;
 
