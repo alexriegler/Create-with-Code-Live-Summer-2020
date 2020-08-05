@@ -1,7 +1,5 @@
-# If You Feed a Fox a Fruit (Prototype 2)
-> A bullet hell feeding frenzy game where the player must feed and avoid incoming animals.
-
-![Splash Image](./Screenshots/thumbnail00.PNG)
+# Street Runner (Prototype 3)
+> A side scrolling infinite runner game where the player must avoid obstacles of varying sizes.
 
 ## Table of contents
 * [General Info](#general-info)
