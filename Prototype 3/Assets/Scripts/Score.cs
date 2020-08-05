@@ -5,6 +5,7 @@ public class Score : MonoBehaviour
 {
     public int PlayerScore { get; private set; }
 
+    private GameManager gm;
     private ScrollManager scrollManager;
     private PlayerController player;
     private Text scoreText;
@@ -17,7 +18,10 @@ public class Score : MonoBehaviour
     void Start()
     {
         scoreMultiplier = defaultMultiplier;
-        
+
+        gm = FindObjectOfType<GameManager>();
+        gm.OnGameRestart += ResetScore;
+
         scrollManager = FindObjectOfType<ScrollManager>();
         
         player = FindObjectOfType<PlayerController>();
@@ -41,5 +45,13 @@ public class Score : MonoBehaviour
         distanceTraveled += scrollManager.ScrollSpeed * scoreMultiplier * Time.deltaTime;
         PlayerScore = Mathf.RoundToInt(distanceTraveled);
         scoreText.text = PlayerScore.ToString("N0");
+    }
+
+    // Resets the score
+    void ResetScore()
+    {
+        PlayerScore = 0;
+        distanceTraveled = 0;
+        scoreMultiplier = defaultMultiplier;
     }
 }
