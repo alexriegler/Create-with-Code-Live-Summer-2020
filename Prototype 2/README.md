@@ -39,7 +39,7 @@ Game Over Screen
 You can go [here](https://connect.unity.com/mg/other/if-you-feed-a-fox-a-fruit-prototype-2 "If You Feed a Fox a Fruit (Prototype 2) - Unity Connect") to play the WebGL version of the game online from the Unity Connect website.
 
 ### How to work with this Unity project
-To work with this project, you can follow the instructions on the [main README.md](../README.md#how-to-work-with-the-unity-projects).
+You can view the code [here](./Assets/Scripts). To work with this project, you can follow the instructions on the [main README.md](../README.md#how-to-work-with-the-unity-projects).
 
 ## Features
 * Mouse controlled movement
