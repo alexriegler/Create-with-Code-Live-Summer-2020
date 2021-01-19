@@ -1,5 +1,5 @@
-# Create with Code Live - Summer 2020
-> This repository contains my prototypes from [Unity's Create with Code Live](https://learn.unity.com/course/create-with-code-live-summer-2020 "Create with Code Live - Summer 2020 - Unity Learn") course.
+# Unity Prototypes
+> This repository contains some of my game prototypes created with Unity.
 
 ## Table of Contents
 * [General Info](#general-info)
@@ -12,13 +12,12 @@
 * [Author](#author)
 
 ## General Info
-I started this course to learn about game development. I specifcally chose Unity since it's commonly used in the professional industry and the skills learned with it can be applied to game development in general. Within this repository, you will find the prototypes from each week of the [Create with Code Live](https://learn.unity.com/course/create-with-code-live-summer-2020 "Create with Code Live - Summer 2020 - Unity Learn") four-week course.
+This repository contains some game prototypes that I created while I was learning how to use Unity. Each game uses assets from Unity's [Create with Code Live](https://learn.unity.com/course/create-with-code-live-summer-2020 "Create with Code Live - Summer 2020 - Unity Learn") resource. I wanted to learn Unity since it's commonly used in the professional game development industry and the skills learned with it can be applied to game development in general.
 
 ### Prototypes
 1. [Drag Race](./Prototype%201)
 2. [If You Feed a Fox a Fruit](./Prototype%202)
 3. [Street Runner](./Prototype%203)
-4. _in progress_
 
 ## Technologies
 * [Unity 2018.4](https://unity3d.com/unity/qa/lts-releases "LTS Releases - Unity")
@@ -37,10 +36,10 @@ The repository should then be downloaded to your computer. From there you can na
 
 `/Create-with-Code-Live-Summer-2020/Prototype #`
 
-Where `#` is replaced with the prototype number, e.g., `1` or `2`. These are the Unity project folders. You are free to do whatever you want with them, with proper attribution.
+Where `#` is replaced with the prototype number, e.g., `1` or `2`. These are the Unity project folders. You are free to do whatever you want with them.
 
 ## Status
-Course is: _in progress_
+Course is: _finished_
 
 ## Author
 Created by Alex Riegler.
